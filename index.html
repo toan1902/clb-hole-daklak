@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CLB Doanh Nhân Họ Lê Đắk Lắk</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --red:       #B71C1C;
+      --red-dark:  #7B1212;
+      --gold:      #C9960C;
+      --gold-light:#F5D060;
+      --cream:     #FDF6E3;
+      --warm-gray: #5D4037;
+      --text:      #2C1A0E;
+      --white:     #FFFFFF;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Be Vietnam Pro', sans-serif; color: var(--text); background: var(--cream); }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(123,18,18,0.97);
+      backdrop-filter: blur(8px);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5%;
+      height: 64px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+    }
+
+    .nav-logo {
+      display: flex; align-items: center; gap: 12px;
+      text-decoration: none;
+    }
+    .nav-logo .logo-mark {
+      width: 42px; height: 42px;
+      background: var(--gold);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-weight: 900; font-size: 20px;
+      color: var(--red-dark);
+      flex-shrink: 0;
+    }
+    .nav-logo span {
+      font-family: 'Playfair Display', serif;
+      font-size: 14px; font-weight: 700;
+      color: var(--gold-light);
+      line-height: 1.3;
+    }
+
+    .nav-links { display: flex; gap: 24px; list-style: none; }
+    .nav-links a {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      font-size: 13px; font-weight: 500;
+      letter-spacing: 0.2px;
+      transition: color .2s;
+      white-space: nowrap;
+    }
+    .nav-links a:hover { color: var(--gold-light); }
+
+    /* ─── ANNOUNCEMENT BAR ─── */
+    .announcement {
+      background: var(--gold);
+      color: var(--red-dark);
+      text-align: center;
+      font-size: 13px; font-weight: 700;
+      padding: 10px 20px;
+      letter-spacing: 0.3px;
+      margin-top: 64px;
+    }
+    .announcement a { color: var(--red-dark); text-decoration: underline; }
+
+    /* ─── HERO ─── */
+    #hero {
+      min-height: 92vh;
+      background:
+        linear-gradient(160deg, rgba(123,18,18,0.88) 0%, rgba(20,8,0,0.72) 100%),
+        url('https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=1600&q=80') center/cover no-repeat;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center;
+      padding: 60px 20px 60px;
+      position: relative;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      color: var(--gold-light);
+      font-size: 12px; font-weight: 600;
+      letter-spacing: 2.5px; text-transform: uppercase;
+      margin-bottom: 20px;
+      opacity: 0.9;
+    }
+    .hero-eyebrow::before, .hero-eyebrow::after {
+      content: ''; width: 28px; height: 1px; background: var(--gold);
+    }
+
+    #hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(32px, 5.5vw, 68px);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.15;
+      max-width: 860px;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+      margin-bottom: 14px;
+    }
+    #hero h1 em { color: var(--gold-light); font-style: normal; }
+
+    .hero-motto {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px; font-style: italic;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 24px;
+      letter-spacing: 0.5px;
+    }
+
+    #hero p {
+      color: rgba(255,255,255,0.78);
+      font-size: 16px; font-weight: 300;
+      max-width: 540px;
+      line-height: 1.85;
+      margin-bottom: 40px;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--red-dark);
+      padding: 13px 34px;
+      border-radius: 3px;
+      font-weight: 700; font-size: 14px;
+      text-decoration: none;
+      transition: background .2s, transform .15s;
+      display: inline-block;
+      margin-right: 12px;
+    }
+    .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+    .btn-outline {
+      border: 2px solid rgba(255,255,255,0.5);
+      color: rgba(255,255,255,0.85);
+      padding: 11px 28px;
+      border-radius: 3px;
+      font-weight: 600; font-size: 14px;
+      text-decoration: none;
+      display: inline-block;
+      transition: border-color .2s, color .2s;
+    }
+    .btn-outline:hover { border-color: var(--gold-light); color: var(--gold-light); }
+
+    .hero-stats {
+      display: flex; gap: 48px;
+      margin-top: 56px;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      padding-top: 32px;
+    }
+    .hero-stats .stat { text-align: center; }
+    .hero-stats .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px; font-weight: 900;
+      color: var(--gold-light);
+    }
+    .hero-stats .stat-label {
+      font-size: 11px; color: rgba(255,255,255,0.65);
+      letter-spacing: 1px; text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    /* ─── SECTIONS COMMON ─── */
+    section { padding: 80px 6%; }
+
+    .section-label {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 10px;
+    }
+    .section-label::before {
+      content: '';
+      display: block; width: 28px; height: 2px;
+      background: var(--gold);
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(24px, 3.5vw, 40px);
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.25;
+      margin-bottom: 14px;
+    }
+
+    .section-sub {
+      font-size: 15px; color: var(--warm-gray);
+      max-width: 560px; line-height: 1.85;
+      margin-bottom: 48px;
+    }
+
+    /* ─── TICKER / NEWS BAR ─── */
+    .ticker-wrap {
+      background: #1A0A05;
+      overflow: hidden;
+      padding: 10px 0;
+      display: flex; align-items: center;
+    }
+    .ticker-label {
+      background: var(--red);
+      color: #fff;
+      font-size: 11px; font-weight: 700;
+      padding: 4px 14px;
+      white-space: nowrap;
+      margin-right: 16px;
+      flex-shrink: 0;
+      letter-spacing: 1px;
+    }
+    .ticker-content {
+      color: rgba(255,255,255,0.75);
+      font-size: 13px;
+      white-space: nowrap;
+      animation: ticker 30s linear infinite;
+    }
+    @keyframes ticker {
+      0% { transform: translateX(100vw); }
+      100% { transform: translateX(-100%); }
+    }
+
+    /* ─── GIỚI THIỆU ─── */
+    #gioithieu { background: var(--white); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-img {
+      position: relative;
+      border-radius: 6px; overflow: hidden;
+    }
+    .about-img img {
+      width: 100%; height: 420px;
+      object-fit: cover; display: block;
+    }
+    .about-img::after {
+      content: '';
+      position: absolute; bottom: -14px; right: -14px;
+      width: 100px; height: 100px;
+      border: 3px solid var(--gold);
+      border-radius: 3px;
+      z-index: -1;
+    }
+
+    .about-quote {
+      border-left: 4px solid var(--gold);
+      padding: 16px 20px;
+      background: var(--cream);
+      margin-bottom: 28px;
+      border-radius: 0 6px 6px 0;
+    }
+    .about-quote p {
+      font-family: 'Playfair Display', serif;
+      font-size: 15px; font-style: italic;
+      color: var(--red-dark);
+      line-height: 1.7;
+    }
+    .about-quote cite {
+      display: block; margin-top: 8px;
+      font-size: 12px; color: var(--warm-gray);
+      font-style: normal; font-weight: 600;
+    }
+
+    .value-cards {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 14px; margin-top: 28px;
+    }
+    .value-card {
+      background: var(--cream);
+      border-left: 3px solid var(--gold);
+      padding: 16px 18px;
+      border-radius: 0 6px 6px 0;
+    }
+    .value-card h4 { font-weight: 700; font-size: 13px; color: var(--red-dark); margin-bottom: 5px; }
+    .value-card p { font-size: 12px; color: var(--warm-gray); line-height: 1.6; }
+
+    /* ─── LIÊN KẾT QUỐC GIA ─── */
+    #national {
+      background: linear-gradient(135deg, #1A0A05 0%, #3B1A0A 100%);
+      padding: 48px 6%;
+    }
+    .national-inner {
+      display: flex; align-items: center; gap: 40px;
+      max-width: 900px; margin: 0 auto;
+    }
+    .national-logo {
+      width: 80px; height: 80px;
+      background: var(--gold);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 36px; font-weight: 900;
+      color: var(--red-dark);
+      flex-shrink: 0;
+    }
+    .national-text h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px; color: var(--gold-light); margin-bottom: 8px;
+    }
+    .national-text p { color: rgba(255,255,255,0.7); font-size: 14px; line-height: 1.7; }
+    .national-text a {
+      display: inline-block; margin-top: 12px;
+      color: var(--gold-light); font-weight: 700; font-size: 13px;
+      text-decoration: none; border-bottom: 1px solid var(--gold);
+      padding-bottom: 2px;
+    }
+
+    /* ─── BAN LÃNH ĐẠO ─── */
+    #lanhDao { background: var(--cream); }
+
+    .leaders-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 24px;
+    }
+
+    .leader-card {
+      background: var(--white);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 3px 16px rgba(0,0,0,0.07);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .leader-card:hover { transform: translateY(-5px); box-shadow: 0 10px 28px rgba(0,0,0,0.12); }
+
+    .leader-placeholder {
+      width: 100%; height: 200px;
+      background: linear-gradient(135deg, var(--red) 0%, var(--red-dark) 100%);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 10px;
+    }
+    .avatar-letter {
+      width: 68px; height: 68px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.12);
+      border: 3px solid var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 30px; font-weight: 900;
+      color: var(--gold-light);
+    }
+    .leader-info { padding: 18px; }
+    .leader-info h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px; font-weight: 700;
+      color: var(--text); margin-bottom: 4px;
+    }
+    .leader-role {
+      font-size: 11px; font-weight: 700;
+      color: var(--red);
+      text-transform: uppercase; letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+    .leader-info p { font-size: 12px; color: var(--warm-gray); line-height: 1.6; }
+    .leader-phone {
+      display: inline-flex; align-items: center; gap: 6px;
+      margin-top: 10px;
+      font-size: 13px; font-weight: 600;
+      color: var(--red);
+      text-decoration: none;
+    }
+    .leader-phone:hover { text-decoration: underline; }
+
+    /* ─── HOẠT ĐỘNG NỔI BẬT ─── */
+    #hoatDong { background: var(--white); }
+
+    .activity-tabs {
+      display: flex; gap: 0;
+      border-bottom: 2px solid #E8D5B0;
+      margin-bottom: 36px;
+      overflow-x: auto;
+    }
+    .tab-btn {
+      padding: 10px 22px;
+      font-size: 13px; font-weight: 600;
+      color: var(--warm-gray);
+      background: none; border: none;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -2px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: color .2s, border-color .2s;
+    }
+    .tab-btn.active { color: var(--red); border-bottom-color: var(--red); }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: 1.7fr 1fr 1fr;
+      gap: 20px;
+    }
+
+    .news-card {
+      border-radius: 8px; overflow: hidden;
+      background: var(--cream);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      transition: transform .2s;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .news-card:hover { transform: translateY(-4px); }
+
+    .news-img-placeholder {
+      display: flex; align-items: center; justify-content: center;
+      font-size: 36px;
+      background: linear-gradient(135deg, var(--red) 0%, #D4780A 100%);
+    }
+    .news-card:first-child .news-img-placeholder { height: 240px; }
+    .news-card:not(:first-child) .news-img-placeholder { height: 155px; }
+
+    .news-body { padding: 18px; }
+    .news-tag {
+      font-size: 10px; font-weight: 700;
+      color: var(--red); letter-spacing: 1.5px;
+      text-transform: uppercase; margin-bottom: 7px;
+    }
+    .news-body h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 15px; font-weight: 700;
+      color: var(--text); margin-bottom: 7px;
+      line-height: 1.4;
+    }
+    .news-card:first-child .news-body h3 { font-size: 19px; }
+    .news-body p { font-size: 12px; color: var(--warm-gray); line-height: 1.65; }
+    .news-date { font-size: 11px; color: #A0856A; margin-top: 10px; }
+
+    /* ─── KHUYẾN HỌC ─── */
+    #khuyenHoc {
+      background: linear-gradient(135deg, #7B1212 0%, #B71C1C 100%);
+      padding: 80px 6%;
+    }
+    .khuyen-hoc-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .khuyen-hoc-text .section-label { color: var(--gold-light); }
+    .khuyen-hoc-text .section-label::before { background: var(--gold-light); }
+    .khuyen-hoc-text .section-title { color: var(--white); }
+    .khuyen-hoc-text p { color: rgba(255,255,255,0.8); font-size: 15px; line-height: 1.85; margin-bottom: 28px; }
+
+    .khuyen-cards {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .khuyen-card {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+    }
+    .khuyen-card .kh-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px; font-weight: 900;
+      color: var(--gold-light);
+    }
+    .khuyen-card .kh-label {
+      font-size: 12px; color: rgba(255,255,255,0.7);
+      margin-top: 4px; line-height: 1.4;
+    }
+
+    /* ─── TÌM VỀ CỘI NGUỒN ─── */
+    #coiNguon { background: var(--cream); }
+    .nguon-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .nguon-card {
+      background: var(--white);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    }
+    .nguon-card-img {
+      height: 180px;
+      background: linear-gradient(135deg, #5D2E0C 0%, var(--red-dark) 100%);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 52px;
+    }
+    .nguon-card-body { padding: 20px; }
+    .nguon-card-body h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px; font-weight: 700;
+      color: var(--text); margin-bottom: 8px;
+    }
+    .nguon-card-body p { font-size: 13px; color: var(--warm-gray); line-height: 1.65; }
+    .nguon-card-body a {
+      display: inline-block; margin-top: 12px;
+      font-size: 12px; font-weight: 700;
+      color: var(--red);
+      text-decoration: none;
+    }
+    .nguon-card-body a:hover { text-decoration: underline; }
+
+    /* ─── DANH NHÂN ─── */
+    #danhNhan { background: var(--white); }
+    .danh-nhan-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .danh-nhan-card {
+      text-align: center;
+      padding: 28px 16px;
+      border-radius: 8px;
+      background: var(--cream);
+      transition: transform .2s;
+    }
+    .danh-nhan-card:hover { transform: translateY(-4px); }
+    .danh-nhan-icon {
+      width: 70px; height: 70px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--red) 0%, var(--gold) 100%);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 14px;
+      font-size: 28px;
+    }
+    .danh-nhan-card h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 15px; font-weight: 700;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .danh-nhan-card p { font-size: 12px; color: var(--warm-gray); line-height: 1.6; }
+
+    /* ─── THÀNH VIÊN ─── */
+    #thanhVien { background: var(--cream); }
+    .members-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+      gap: 18px;
+    }
+    .member-card {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 22px 14px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      transition: transform .2s;
+    }
+    .member-card:hover { transform: translateY(-4px); }
+    .member-avatar {
+      width: 58px; height: 58px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--red) 0%, var(--gold) 100%);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 10px;
+      font-family: 'Playfair Display', serif;
+      font-size: 22px; font-weight: 900;
+      color: var(--white);
+    }
+    .member-card h4 { font-weight: 700; font-size: 13px; color: var(--text); margin-bottom: 3px; }
+    .member-card .biz { font-size: 11px; color: var(--warm-gray); line-height: 1.5; }
+    .member-card .badge {
+      display: inline-block;
+      margin-top: 8px;
+      background: var(--red);
+      color: var(--white);
+      font-size: 10px; font-weight: 700;
+      padding: 2px 10px; border-radius: 10px;
+    }
+
+    /* ─── JOIN ─── */
+    #join {
+      background: linear-gradient(135deg, var(--red-dark) 0%, #6B0F0F 100%);
+      text-align: center;
+      padding: 80px 6%;
+    }
+    #join h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(24px, 3.5vw, 40px);
+      color: var(--white); margin-bottom: 14px;
+    }
+    #join p {
+      color: rgba(255,255,255,0.75);
+      font-size: 15px; max-width: 480px;
+      margin: 0 auto 32px;
+      line-height: 1.85;
+    }
+    .btn-outline-gold {
+      border: 2px solid var(--gold);
+      color: var(--gold-light);
+      padding: 12px 32px;
+      border-radius: 3px;
+      font-weight: 700; font-size: 14px;
+      text-decoration: none;
+      display: inline-block;
+      transition: background .2s, color .2s;
+    }
+    .btn-outline-gold:hover { background: var(--gold); color: var(--red-dark); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #130604;
+      color: rgba(255,255,255,0.6);
+      padding: 52px 6% 28px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr 1fr;
+      gap: 36px;
+      margin-bottom: 36px;
+    }
+    .footer-brand h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--gold-light);
+      font-size: 16px; margin-bottom: 10px;
+    }
+    .footer-brand p { font-size: 12px; line-height: 1.85; }
+    .footer-brand .motto {
+      margin-top: 12px;
+      font-style: italic;
+      color: var(--gold);
+      font-size: 12px;
+    }
+    .footer-col h4 {
+      color: var(--gold);
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 7px; }
+    .footer-col ul a {
+      color: rgba(255,255,255,0.55);
+      text-decoration: none; font-size: 12px;
+      transition: color .2s;
+    }
+    .footer-col ul a:hover { color: var(--gold-light); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 20px;
+      display: flex; justify-content: space-between;
+      font-size: 11px; color: rgba(255,255,255,0.3);
+      flex-wrap: wrap; gap: 8px;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1024px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .danh-nhan-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 900px) {
+      .about-grid, .khuyen-hoc-grid { grid-template-columns: 1fr; }
+      .about-img { display: none; }
+      .news-grid { grid-template-columns: 1fr; }
+      .nguon-grid { grid-template-columns: 1fr 1fr; }
+      .national-inner { flex-direction: column; text-align: center; }
+    }
+    @media (max-width: 640px) {
+      nav { padding: 0 4%; }
+      .nav-links { display: none; }
+      .hero-stats { gap: 20px; flex-wrap: wrap; justify-content: center; }
+      section { padding: 56px 4%; }
+      .nguon-grid, .khuyen-cards { grid-template-columns: 1fr; }
+      .danh-nhan-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#hero">
+    <div class="logo-mark">Lê</div>
+    <span>CLB Doanh Nhân Họ Lê<br>Đắk Lắk</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#gioithieu">Giới thiệu</a></li>
+    <li><a href="#lanhDao">Ban lãnh đạo</a></li>
+    <li><a href="#hoatDong">Hoạt động</a></li>
+    <li><a href="#khuyenHoc">Khuyến học</a></li>
+    <li><a href="#coiNguon">Cội nguồn</a></li>
+    <li><a href="#thanhVien">Thành viên</a></li>
+    <li><a href="#join">Tham gia</a></li>
+  </ul>
+</nav>
+
+<!-- ANNOUNCEMENT -->
+<div class="announcement">
+  🏆 CLB Doanh nhân Họ Lê Việt Nam vừa tổ chức Đại hội lần thứ I thành công tốt đẹp tại Thanh Hoá (10/2025) —
+  <a href="https://holevietnam.vn/dai-hoi-dai-bieu-clb-doanh-nhan-ho-le-viet-nam-lan-thu-i-thanh-cong-tot-dep/" target="_blank">Xem chi tiết</a>
+</div>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <span class="ticker-label">TIN MỚI</span>
+  <span class="ticker-content">
+    Đại hội CLB Doanh nhân Họ Lê Việt Nam lần I: 300 đại biểu, bầu 46 ủy viên BCH, Chủ tịch TS. Lê Xuân Thảo &nbsp;|&nbsp;
+    CLB Doanh nhân Họ Lê Đắk Lắk kết nối với mạng lưới doanh nhân Họ Lê toàn quốc &nbsp;|&nbsp;
+    Chương trình Khuyến học – Khuyến tài năm 2025: Trao 50 suất học bổng &nbsp;|&nbsp;
+    Hội nghị giao thương doanh nghiệp Họ Lê Tây Nguyên sắp diễn ra tại Buôn Ma Thuột
+  </span>
+</div>
+
+<!-- HERO -->
+<section id="hero" style="margin-top:0;">
+  <div class="hero-eyebrow">Thành lập tại Đắk Lắk · Trực thuộc CLB DN Họ Lê Việt Nam</div>
+  <h1>Câu Lạc Bộ<br><em>Doanh Nhân Họ Lê</em><br>Đắk Lắk</h1>
+  <div class="hero-motto">"Đoàn kết · Phát triển · Rạng danh Lê tộc Việt Nam"</div>
+  <p>Nơi kết nối, chia sẻ và cùng nhau phát triển của những doanh nhân mang dòng họ Lê trên mảnh đất Tây Nguyên hùng vĩ.</p>
+  <div>
+    <a href="#join" class="btn-gold">Tham gia CLB</a>
+    <a href="#gioithieu" class="btn-outline">Tìm hiểu thêm</a>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num">120+</div><div class="stat-label">Thành viên</div></div>
+    <div class="stat"><div class="stat-num">5+</div><div class="stat-label">Năm hoạt động</div></div>
+    <div class="stat"><div class="stat-num">30+</div><div class="stat-label">Doanh nghiệp</div></div>
+    <div class="stat"><div class="stat-num">15+</div><div class="stat-label">Sự kiện / năm</div></div>
+  </div>
+</section>
+
+<!-- GIỚI THIỆU -->
+<section id="gioithieu">
+  <div class="about-grid">
+    <div class="about-img">
+      <img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=800&q=80" alt="Họp mặt CLB" />
+    </div>
+    <div>
+      <div class="section-label">Về chúng tôi</div>
+      <h2 class="section-title">Đoàn kết dòng họ —<br>Kiến tạo tương lai</h2>
+
+      <div class="about-quote">
+        <p>"Với tinh thần Tự hào truyền thống, kiến tạo tương lai và Bản lĩnh vững vàng, vươn tới thịnh vượng, chúng tôi cùng nhau xây dựng mạng lưới kinh doanh Họ Lê vững mạnh trên đất Tây Nguyên."</p>
+        <cite>— Ban Chủ nhiệm CLB Doanh nhân Họ Lê Đắk Lắk</cite>
+      </div>
+
+      <p class="section-sub" style="margin-bottom:20px;">
+        Câu lạc bộ Doanh nhân Họ Lê Đắk Lắk là thành viên của <strong>CLB Doanh nhân Họ Lê Việt Nam</strong> — tổ chức trực thuộc Hội đồng Họ Lê Việt Nam. Chúng tôi hoạt động theo tinh thần <em>tương thân tương ái</em>, cùng nhau phát triển kinh doanh và gìn giữ truyền thống dòng tộc.
+      </p>
+
+      <div class="value-cards">
+        <div class="value-card">
+          <h4>🤝 Kết nối giao thương</h4>
+          <p>Xây dựng mạng lưới hợp tác kinh doanh giữa các thành viên trong và ngoài tỉnh.</p>
+        </div>
+        <div class="value-card">
+          <h4>📈 Phát triển kinh tế</h4>
+          <p>Chia sẻ kinh nghiệm, hỗ trợ khởi nghiệp và mở rộng quy mô doanh nghiệp.</p>
+        </div>
+        <div class="value-card">
+          <h4>🎋 Tri ân tiên tổ</h4>
+          <p>Gìn giữ đạo lý "uống nước nhớ nguồn", kết nối về Lam Kinh đất tổ nhà Lê.</p>
+        </div>
+        <div class="value-card">
+          <h4>🌱 Tương thân tương ái</h4>
+          <p>Hỗ trợ thành viên khó khăn, đóng góp cho cộng đồng và xã hội Đắk Lắk.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIÊN KẾT TỔ CHỨC QUỐC GIA -->
+<div id="national">
+  <div class="national-inner">
+    <div class="national-logo">Lê</div>
+    <div class="national-text">
+      <h3>Trực thuộc Hội đồng Họ Lê Việt Nam</h3>
+      <p>CLB Doanh nhân Họ Lê Đắk Lắk là thành viên chính thức của <strong style="color:var(--gold-light)">CLB Doanh nhân Họ Lê Việt Nam</strong> — tổ chức với hơn 300 doanh nhân tiêu biểu từ khắp mọi miền đất nước. Đại hội lần thứ I (10/2025) đã bầu BCH 46 thành viên, Chủ tịch là <strong style="color:var(--gold-light)">TS. Lê Xuân Thảo</strong> — Phó Chủ tịch thường trực Hội đồng Họ Lê Việt Nam.</p>
+      <a href="https://holevietnam.vn" target="_blank">Truy cập Hội đồng Họ Lê Việt Nam →</a>
+    </div>
+  </div>
+</div>
+
+<!-- BAN LÃNH ĐẠO -->
+<section id="lanhDao">
+  <div style="text-align:center; max-width:600px; margin:0 auto 48px;">
+    <div class="section-label" style="justify-content:center;">Ban điều hành</div>
+    <h2 class="section-title">Những Người Dẫn Dắt</h2>
+    <p class="section-sub" style="margin:0 auto;">Đội ngũ lãnh đạo tâm huyết, kiến tạo và phát triển cộng đồng doanh nhân Họ Lê tại Đắk Lắk.</p>
+  </div>
+
+  <div class="leaders-grid">
+    <div class="leader-card">
+      <div class="leader-placeholder"><div class="avatar-letter">VV</div></div>
+      <div class="leader-info">
+        <h3>Lê Văn Vương</h3>
+        <div class="leader-role">Chủ tịch</div>
+        <p>Chủ tịch CLB Doanh nhân Họ Lê Đắk Lắk, người dẫn dắt và đại diện cho cộng đồng doanh nhân dòng họ Lê trên địa bàn tỉnh.</p>
+        <a class="leader-phone" href="tel:0945820779">📞 0945 820 779</a>
+      </div>
+    </div>
+
+    <div class="leader-card">
+      <div class="leader-placeholder"><div class="avatar-letter">QH</div></div>
+      <div class="leader-info">
+        <h3>Lê Quốc Hùng</h3>
+        <div class="leader-role">Phó Chủ tịch</div>
+        <p>Phó Chủ tịch CLB, hỗ trợ điều hành và thúc đẩy các hoạt động kết nối kinh doanh của doanh nhân Họ Lê.</p>
+        <a class="leader-phone" href="tel:0886575868">📞 0886 575 868</a>
+      </div>
+    </div>
+
+    <div class="leader-card">
+      <div class="leader-placeholder"><div class="avatar-letter">TQ</div></div>
+      <div class="leader-info">
+        <h3>Lê Thị Quỳnh</h3>
+        <div class="leader-role">Phó Chủ tịch</div>
+        <p>Phó Chủ tịch CLB, phụ trách các hoạt động phát triển thành viên và chương trình khuyến học – khuyến tài.</p>
+        <a class="leader-phone" href="tel:0906515888">📞 0906 515 888</a>
+      </div>
+    </div>
+
+    <div class="leader-card">
+      <div class="leader-placeholder"><div class="avatar-letter">TD</div></div>
+      <div class="leader-info">
+        <h3>Lê Tấn Dũng</h3>
+        <div class="leader-role">Phó Chủ tịch</div>
+        <p>Phó Chủ tịch CLB, phụ trách kết nối giao thương và mở rộng quan hệ hợp tác với các tỉnh thành trong cả nước.</p>
+        <a class="leader-phone" href="tel:0889334747">📞 0889 334 747</a>
+      </div>
+    </div>
+
+    <div class="leader-card">
+      <div class="leader-placeholder"><div class="avatar-letter">QT</div></div>
+      <div class="leader-info">
+        <h3>Lê Quang Toàn</h3>
+        <div class="leader-role">Chánh Văn phòng</div>
+        <p>Điều phối hoạt động văn phòng CLB, quản lý hành chính và tổ chức các sự kiện của câu lạc bộ.</p>
+        <a class="leader-phone" href="tel:0823047047">📞 0823 047 047</a>
+      </div>
+    </div>
+
+    <div class="leader-card">
+      <div class="leader-placeholder"><div class="avatar-letter">LL</div></div>
+      <div class="leader-info">
+        <h3>Lê Long</h3>
+        <div class="leader-role">Ủy viên BCH</div>
+        <p>Ủy viên Ban Chấp hành, tham gia hoạch định chiến lược và triển khai các hoạt động của CLB.</p>
+        <a class="leader-phone" href="tel:0984553246">📞 0984 553 246</a>
+      </div>
+    </div>
+
+    <div class="leader-card">
+      <div class="leader-placeholder"><div class="avatar-letter">VK</div></div>
+      <div class="leader-info">
+        <h3>Lê Văn Khâm</h3>
+        <div class="leader-role">Ủy viên BCH</div>
+        <p>Ủy viên Ban Chấp hành, đóng góp vào các hoạt động phát triển tổ chức và tương thân tương ái của CLB.</p>
+        <a class="leader-phone" href="tel:0379786574">📞 0379 786 574</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOẠT ĐỘNG NỔI BẬT -->
+<section id="hoatDong">
+  <div class="section-label">Tin tức & Sự kiện</div>
+  <h2 class="section-title">Hoạt Động Nổi Bật</h2>
+  <p class="section-sub">Cập nhật những tin tức mới nhất về hoạt động của CLB Doanh nhân Họ Lê Đắk Lắk và tổ chức Họ Lê toàn quốc.</p>
+
+  <div class="activity-tabs">
+    <button class="tab-btn active">Tất cả</button>
+    <button class="tab-btn">Kết nối · Giao thương</button>
+    <button class="tab-btn">Khuyến học</button>
+    <button class="tab-btn">Tri ân tiên tổ</button>
+    <button class="tab-btn">Tương thân tương ái</button>
+  </div>
+
+  <div class="news-grid">
+    <div class="news-card">
+      <div class="news-img-placeholder" style="height:240px;">🏆</div>
+      <div class="news-body">
+        <div class="news-tag">Sự kiện quốc gia</div>
+        <h3>Đại hội CLB Doanh nhân Họ Lê Việt Nam lần thứ I — 300 đại biểu tại Hải Tiến, Thanh Hoá</h3>
+        <p>CLB Doanh nhân Họ Lê Đắk Lắk cử đoàn đại biểu tham dự Đại hội lần thứ I, nhiệm kỳ 2024-2030. Đại hội đã bầu 46 ủy viên BCH; TS. Lê Xuân Thảo đắc cử Chủ tịch CLB toàn quốc. Phái đoàn Đắk Lắk trình bày sáng kiến kết nối doanh nghiệp Tây Nguyên.</p>
+        <div class="news-date">📅 12 tháng 10, 2025</div>
+      </div>
+    </div>
+
+    <div class="news-card">
+      <div class="news-img-placeholder" style="height:155px;">🌿</div>
+      <div class="news-body">
+        <div class="news-tag">Tri ân tiên tổ</div>
+        <h3>Hành trình về nguồn — Lễ dâng hương tại Lam Kinh, Thanh Hoá</h3>
+        <p>Đoàn doanh nhân Họ Lê Đắk Lắk cùng đoàn dâng hương tưởng niệm Đức Vua Lê Thái Tổ tại Khu di tích đặc biệt Lam Kinh.</p>
+        <div class="news-date">📅 11 tháng 10, 2025</div>
+      </div>
+    </div>
+
+    <div class="news-card">
+      <div class="news-img-placeholder" style="height:155px;">🎓</div>
+      <div class="news-body">
+        <div class="news-tag">Khuyến học</div>
+        <h3>Trao 50 suất học bổng "Họ Lê Tiếp Sức" cho học sinh xuất sắc Đắk Lắk</h3>
+        <p>CLB phối hợp Ban Khuyến học trao tặng học bổng, góp phần đầu tư cho thế hệ tương lai dòng họ.</p>
+        <div class="news-date">📅 20 tháng 10, 2024</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KHUYẾN HỌC – KHUYẾN TÀI -->
+<section id="khuyenHoc">
+  <div class="khuyen-hoc-grid">
+    <div class="khuyen-hoc-text">
+      <div class="section-label">Khuyến học · Khuyến tài</div>
+      <h2 class="section-title" style="color:var(--white)">Đầu Tư Cho<br>Thế Hệ Tương Lai</h2>
+      <p>CLB thực hiện phong trào khuyến học – khuyến tài theo tinh thần của Hội đồng Họ Lê Việt Nam: đẩy mạnh học tập suốt đời, vinh danh nhân tài, hỗ trợ học sinh, sinh viên Họ Lê vươn lên.</p>
+      <a href="#join" class="btn-outline-gold">Ủng hộ quỹ học bổng</a>
+    </div>
+    <div class="khuyen-cards">
+      <div class="khuyen-card">
+        <div class="kh-num">50+</div>
+        <div class="kh-label">Suất học bổng<br>đã trao</div>
+      </div>
+      <div class="khuyen-card">
+        <div class="kh-num">200+</div>
+        <div class="kh-label">Triệu đồng<br>quỹ học bổng</div>
+      </div>
+      <div class="khuyen-card">
+        <div class="kh-num">5</div>
+        <div class="kh-label">Năm triển khai<br>liên tục</div>
+      </div>
+      <div class="khuyen-card">
+        <div class="kh-num">100%</div>
+        <div class="kh-label">Học sinh nhận<br>đều đậu ĐH</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TÌM VỀ CỘI NGUỒN -->
+<section id="coiNguon">
+  <div style="text-align:center; max-width:600px; margin:0 auto 48px;">
+    <div class="section-label" style="justify-content:center;">Tìm về cội nguồn</div>
+    <h2 class="section-title">Dòng Họ Lê — Lịch Sử Vẻ Vang</h2>
+    <p class="section-sub" style="margin:0 auto;">Dòng họ Lê Việt Nam gắn liền với trang sử hào hùng của dân tộc. Cùng nhau tìm hiểu và gìn giữ truyền thống dòng tộc ngàn năm.</p>
+  </div>
+  <div class="nguon-grid">
+    <div class="nguon-card">
+      <div class="nguon-card-img">🏯</div>
+      <div class="nguon-card-body">
+        <h3>Lam Kinh — Đất Tổ Nhà Lê</h3>
+        <p>Khu di tích quốc gia đặc biệt Lam Kinh (Thanh Hoá) — nơi phát tích của nhà Lê, nơi Đức Vua Lê Thái Tổ khởi nghĩa Lam Sơn đánh đuổi giặc Minh.</p>
+        <a href="https://holevietnam.vn/danh-muc/video/lam-kinh-dat-to-nha-le/" target="_blank">Tìm hiểu thêm →</a>
+      </div>
+    </div>
+    <div class="nguon-card">
+      <div class="nguon-card-img">📜</div>
+      <div class="nguon-card-body">
+        <h3>Gia Phả Dòng Họ</h3>
+        <p>Lưu giữ và kết nối gia phả các chi nhánh Họ Lê tại Đắk Lắk, kết nối về nguồn cội với Hội đồng Họ Lê Việt Nam.</p>
+        <a href="https://holevietnam.vn/chuyen-muc/tim-ve-coi-nguon/gia-pha-dong-ho/" target="_blank">Kết nối gia phả →</a>
+      </div>
+    </div>
+    <div class="nguon-card">
+      <div class="nguon-card-img">🔗</div>
+      <div class="nguon-card-body">
+        <h3>Kết Nối Dòng Họ</h3>
+        <p>Kết nối với Họ Lê tại các tỉnh thành, cùng sinh hoạt trong mạng lưới Hội đồng Họ Lê toàn quốc và quốc tế.</p>
+        <a href="https://holevietnam.vn/chuyen-muc/tim-ve-coi-nguon/ket-noi-dong-ho/" target="_blank">Kết nối ngay →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DANH NHÂN HỌ LÊ -->
+<section id="danhNhan">
+  <div style="text-align:center; max-width:600px; margin:0 auto 48px;">
+    <div class="section-label" style="justify-content:center;">Tự hào truyền thống</div>
+    <h2 class="section-title">Danh Nhân Họ Lê Tiêu Biểu</h2>
+    <p class="section-sub" style="margin:0 auto;">Những người con ưu tú của dòng họ Lê đã để lại dấu ấn trong lịch sử và văn hoá Việt Nam.</p>
+  </div>
+  <div class="danh-nhan-grid">
+    <div class="danh-nhan-card">
+      <div class="danh-nhan-icon">👑</div>
+      <h4>Vua Lê Thái Tổ</h4>
+      <p>Người khởi nghĩa Lam Sơn, đánh đuổi giặc Minh, lập nên nhà Lê — triều đại huy hoàng nhất lịch sử Việt Nam.</p>
+    </div>
+    <div class="danh-nhan-card">
+      <div class="danh-nhan-icon">🏛️</div>
+      <h4>Vua Lê Thánh Tông</h4>
+      <p>Vị vua anh minh, thi nhân lỗi lạc, xây dựng Đại Việt thịnh trị, mở mang bờ cõi về phương Nam.</p>
+    </div>
+    <div class="danh-nhan-card">
+      <div class="danh-nhan-icon">⚕️</div>
+      <h4>Hải Thượng Lãn Ông<br>Lê Hữu Trác</h4>
+      <p>Đại danh y của dân tộc, người đặt nền tảng cho y học cổ truyền Việt Nam, ảnh hưởng mang tầm quốc tế.</p>
+    </div>
+    <div class="danh-nhan-card">
+      <div class="danh-nhan-icon">🌟</div>
+      <h4>Doanh Nhân Họ Lê<br>Thời Hiện Đại</h4>
+      <p>Thế hệ doanh nhân Họ Lê hôm nay tiếp nối truyền thống, kiến tạo tương lai và rạng danh dòng tộc.</p>
+    </div>
+  </div>
+</section>
+
+<!-- THÀNH VIÊN -->
+<section id="thanhVien">
+  <div style="text-align:center; max-width:600px; margin:0 auto 48px;">
+    <div class="section-label" style="justify-content:center;">Cộng đồng</div>
+    <h2 class="section-title">Thành Viên Tiêu Biểu</h2>
+    <p class="section-sub" style="margin:0 auto;">Hơn 120 doanh nhân mang Họ Lê đang hoạt động trong nhiều lĩnh vực tại Đắk Lắk.</p>
+  </div>
+
+  <div style="
+    background: var(--white);
+    border: 2px dashed #D4A017;
+    border-radius: 12px;
+    padding: 56px 32px;
+    text-align: center;
+    max-width: 620px;
+    margin: 0 auto;
+  ">
+    <div style="font-size: 52px; margin-bottom: 16px;">👥</div>
+    <h3 style="font-family:'Playfair Display',serif; font-size:22px; color:var(--text); margin-bottom:10px;">
+      Danh sách thành viên đang được cập nhật
+    </h3>
+    <p style="font-size:14px; color:var(--warm-gray); line-height:1.8; max-width:400px; margin:0 auto 24px;">
+      CLB có hơn <strong>120 thành viên</strong> là doanh nhân Họ Lê đang hoạt động tại Đắk Lắk. Danh sách đầy đủ sẽ được công bố sớm sau khi hoàn tất đăng ký chính thức.
+    </p>
+    <a href="#join" class="btn-gold">Đăng ký tham gia CLB →</a>
+  </div>
+</section>
+
+<!-- JOIN -->
+<section id="join">
+  <h2>Trở Thành Thành Viên<br>Câu Lạc Bộ Họ Lê Đắk Lắk</h2>
+  <p>Cùng chúng tôi xây dựng mạng lưới doanh nhân Họ Lê vững mạnh — nơi mỗi thành viên được kết nối, hỗ trợ và cùng nhau phát triển dưới tinh thần <em>"Đoàn kết – Phát triển – Rạng danh Lê tộc Việt Nam".</em></p>
+  <a href="tel:0823047047" class="btn-outline-gold">📞 Liên hệ đăng ký: 0823 047 047</a>
+  <p style="color:rgba(255,255,255,0.5); font-size:12px; margin-top:10px;">Lê Quang Toàn — Chánh Văn phòng</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <h3>CLB Doanh Nhân Họ Lê Đắk Lắk</h3>
+      <p>
+        Địa chỉ: 321 Y Wang, P. Ea Kao, T.Đắk Lắk<br>
+        Email: clbdoanhnanhhole.daklak@gmail.com<br>
+        Điện thoại: <a href="tel:0945820779" style="color:rgba(255,255,255,0.6);">0945 820 779</a> (Chủ tịch Lê Văn Vương)
+      </p>
+      <p class="motto">"Đoàn kết · Phát triển · Rạng danh Lê tộc Việt Nam"</p>
+    </div>
+    <div class="footer-col">
+      <h4>Điều hướng</h4>
+      <ul>
+        <li><a href="#gioithieu">Giới thiệu CLB</a></li>
+        <li><a href="#lanhDao">Ban lãnh đạo</a></li>
+        <li><a href="#hoatDong">Tin tức & Sự kiện</a></li>
+        <li><a href="#khuyenHoc">Khuyến học – Khuyến tài</a></li>
+        <li><a href="#coiNguon">Tìm về cội nguồn</a></li>
+        <li><a href="#thanhVien">Thành viên</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Tổ chức quốc gia</h4>
+      <ul>
+        <li><a href="https://holevietnam.vn" target="_blank">Hội đồng Họ Lê Việt Nam</a></li>
+        <li><a href="https://holevietnam.vn/chuyen-muc/clb-doanh-nhan-ho-le-2/" target="_blank">CLB DN Họ Lê Việt Nam</a></li>
+        <li><a href="https://holevietnam.vn/truyen-thong-dong-ho/" target="_blank">Truyền thống dòng họ</a></li>
+        <li><a href="https://holevietnam.vn/danh-muc/video/lam-kinh-dat-to-nha-le/" target="_blank">Lam Kinh – Đất tổ nhà Lê</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kết nối</h4>
+      <ul>
+        <li><a href="#">Facebook CLB</a></li>
+        <li><a href="#">Nhóm Zalo</a></li>
+        <li><a href="#">Điều lệ CLB</a></li>
+        <li><a href="#">Quy ước hoạt động</a></li>
+        <li><a href="#join">Liên hệ & Đăng ký</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 CLB Doanh Nhân Họ Lê Đắk Lắk · Trực thuộc Hội đồng Họ Lê Việt Nam</span>
+    <span>Đoàn kết · Uy tín · Phát triển</span>
+  </div>
+</footer>
+
+</body>
+</html>
