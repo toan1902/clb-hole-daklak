@@ -1,0 +1,62 @@
+[
+  {
+    "id": "hero-title",
+    "label": "Tiêu đề đầu trang",
+    "default": "Câu Lạc Bộ\nDoanh Nhân Họ Lê\nĐắk Lắk",
+    "rows": 3
+  },
+  {
+    "id": "hero-motto",
+    "label": "Khẩu hiệu",
+    "default": "\"Đoàn kết · Phát triển · Rạng danh Lê tộc Việt Nam\"",
+    "rows": 3
+  },
+  {
+    "id": "hero-intro",
+    "label": "Mô tả đầu trang",
+    "default": "Nơi kết nối, chia sẻ và cùng nhau phát triển của những doanh nhân mang dòng họ Lê trên mảnh đất Tây Nguyên hùng vĩ.",
+    "rows": 3
+  },
+  {
+    "id": "about-title",
+    "label": "Tiêu đề giới thiệu",
+    "default": "Đoàn kết dòng họ —\nKiến tạo tương lai",
+    "rows": 3
+  },
+  {
+    "id": "about-quote",
+    "label": "Lời giới thiệu của Ban Chủ nhiệm",
+    "default": "\"Với tinh thần Tự hào truyền thống, kiến tạo tương lai và Bản lĩnh vững vàng, vươn tới thịnh vượng, chúng tôi cùng nhau xây dựng mạng lưới kinh doanh Họ Lê vững mạnh trên đất Tây Nguyên.\"",
+    "rows": 3
+  },
+  {
+    "id": "about-intro",
+    "label": "Nội dung giới thiệu",
+    "default": "Câu lạc bộ Doanh nhân Họ Lê Đắk Lắk là thành viên của CLB Doanh nhân Họ Lê Việt Nam — tổ chức trực thuộc Hội đồng Họ Lê Việt Nam. Chúng tôi hoạt động theo tinh thần tương thân tương ái, cùng nhau phát triển kinh doanh và gìn giữ truyền thống dòng tộc.",
+    "rows": 3
+  },
+  {
+    "id": "join-title",
+    "label": "Tiêu đề tham gia CLB",
+    "default": "Trở Thành Thành Viên\nCâu Lạc Bộ Họ Lê Đắk Lắk",
+    "rows": 3
+  },
+  {
+    "id": "join-intro",
+    "label": "Lời mời tham gia CLB",
+    "default": "Cùng chúng tôi xây dựng mạng lưới doanh nhân Họ Lê vững mạnh — nơi mỗi thành viên được kết nối, hỗ trợ và cùng nhau phát triển dưới tinh thần \"Đoàn kết – Phát triển – Rạng danh Lê tộc Việt Nam\".",
+    "rows": 3
+  },
+  {
+    "id": "contact",
+    "label": "Thông tin liên hệ cuối trang",
+    "default": "Địa chỉ: 321 Y Wang, P. Ea Kao, T.Đắk Lắk\nEmail: clbdoanhnanhhole.daklak@gmail.com\nĐiện thoại: 0945 820 779 (Chủ tịch Lê Văn Vương)",
+    "rows": 5
+  },
+  {
+    "id": "ticker",
+    "label": "Dòng tin chạy",
+    "default": "Đại hội CLB Doanh nhân Họ Lê Việt Nam lần I: 300 đại biểu, bầu 46 ủy viên BCH, Chủ tịch TS. Lê Xuân Thảo | \nCLB Doanh nhân Họ Lê Đắk Lắk kết nối với mạng lưới doanh nhân Họ Lê toàn quốc | \nChương trình Khuyến học – Khuyến tài năm 2025: Trao 50 suất học bổng | \nHội nghị giao thương doanh nghiệp Họ Lê Tây Nguyên sắp diễn ra tại Buôn Ma Thuột",
+    "rows": 5
+  }
+]
