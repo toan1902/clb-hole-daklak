@@ -22,7 +22,7 @@ http.createServer(async(req,res)=>{
    res.setHeader('Content-Type','application/json');return res.end(JSON.stringify(data));
   }
   const name=u.pathname.endsWith('/')?u.pathname+'index.html':u.pathname;
-  if(!/^\/(?:index\.html|doanh-nghiep\.html|tin-(?:tuc|chi-tiet)\.html|stc-config\.js|admin\/(?:index\.html|app\.js|style\.css)|assets\/[a-z0-9.-]+)$/.test(name))throw Error('Not found');
+  if(!/^\/(?:index\.html|(?:doanh-nghiep|thanh-vien)\.html|tin-(?:tuc|chi-tiet)\.html|stc-config\.js|admin\/(?:index\.html|app\.js|style\.css)|assets\/[a-z0-9.-]+)$/.test(name))throw Error('Not found');
   res.setHeader('Content-Type',({'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.json':'application/json'})[path.extname(name)]||'application/octet-stream');res.end(fs.readFileSync(path.join(root,name)));
  }catch(e){res.statusCode=400;res.end(JSON.stringify({message:e.message}))}
 }).listen(4174,'127.0.0.1',()=>console.log('Isolated UI fixture: http://localhost:4174/admin/'));

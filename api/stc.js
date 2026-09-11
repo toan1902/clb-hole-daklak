@@ -68,7 +68,7 @@ module.exports=async function handler(req,res) {
         upstream('/rest/v1/ldbc_site_content?select=id,value')]);
       return send(200,{posts,content});
     }
-    if(action==='members'&&req.method==='GET')return send(200,await upstream('/rest/v1/ldbc_posts?select=id,title,slug,category,excerpt,cover_url,published_at&category=eq.'+encodeURIComponent('Doanh nghiệp thành viên')+'&status=eq.published&order=title.asc&limit=500'));
+    if(action==='members'&&req.method==='GET')return send(200,await upstream('/rest/v1/ldbc_posts?select=id,title,slug,category,excerpt,cover_url,published_at,body&category=eq.'+encodeURIComponent('Doanh nghiệp thành viên')+'&status=eq.published&order=title.asc&limit=500'));
     if(action==='article'&&req.method==='GET') {
       if(!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(q.slug||''))throw failure(400,'Đường dẫn bài viết không hợp lệ.');
       const rows=await upstream('/rest/v1/ldbc_posts?select=*&status=eq.published&slug=eq.'+encodeURIComponent(q.slug));

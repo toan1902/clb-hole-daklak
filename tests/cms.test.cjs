@@ -43,3 +43,11 @@ test('Unsafe homepage URLs are rejected after administrator authentication',asyn
  const r=await call('save-content',{method:'POST',cookie:'ldbc_access=example',body:{id:field.id,value:'javascript:alert(1)',updated_at:'2026-09-01T00:00:00Z'}});
  assert.equal(r.statusCode,400);assert.equal(writes,0);
 });
+test('Business ownership is stable when a member changes display name and supports legacy profiles',()=>{
+ const p={...sample,category:'Doanh nghiệp thành viên',body:[{type:'profile',member_id:'le-quang-toan',representative:'Tên hiển thị mới'}]};
+ const saved=CMS.validatePost(p);assert.equal(CMS.memberKey(saved),'le-quang-toan');
+ assert.equal(CMS.memberKey({body:[{type:'profile',representative:'Lê Văn Vương'}]}),'le-van-vuong');
+ assert.notEqual(CMS.memberKey(saved),CMS.memberKey({body:[{type:'profile',member_id:'le-van-vuong'}]}));
+ assert.throws(()=>CMS.validatePost({...p,body:[{type:'profile',member_id:'../admin'}]}));
+ const catalog=require('../assets/members.json');assert.equal(catalog.length,7);assert.equal(new Set(catalog.map(m=>m.id)).size,7);
+});

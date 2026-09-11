@@ -1,0 +1,107 @@
+[
+  {
+    "id": "le-van-vuong",
+    "name": "Lê Văn Vương",
+    "role": "Chủ tịch",
+    "bio": "Chủ tịch CLB Doanh nhân Họ Lê Đắk Lắk, người dẫn dắt và đại diện cho cộng đồng doanh nhân dòng họ Lê trên địa bàn tỉnh.",
+    "phone": "tel:0945820779",
+    "initials": "VV",
+    "fields": {
+      "name": "page-64",
+      "role": "page-65",
+      "bio": "page-66",
+      "phone": "page-68",
+      "avatar": "page-62"
+    }
+  },
+  {
+    "id": "le-quoc-hung",
+    "name": "Lê Quốc Hùng",
+    "role": "Phó Chủ tịch",
+    "bio": "Phó Chủ tịch CLB, hỗ trợ điều hành và thúc đẩy các hoạt động kết nối kinh doanh của doanh nhân Họ Lê.",
+    "phone": "tel:0886575868",
+    "initials": "QH",
+    "fields": {
+      "name": "page-71",
+      "role": "page-72",
+      "bio": "page-73",
+      "phone": "page-75",
+      "avatar": "page-69"
+    }
+  },
+  {
+    "id": "le-thi-quynh",
+    "name": "Lê Thị Quỳnh",
+    "role": "Phó Chủ tịch",
+    "bio": "Phó Chủ tịch CLB, phụ trách các hoạt động phát triển thành viên và chương trình khuyến học – khuyến tài.",
+    "phone": "tel:0906515888",
+    "initials": "TQ",
+    "fields": {
+      "name": "page-78",
+      "role": "page-72",
+      "bio": "page-80",
+      "phone": "page-82",
+      "avatar": "page-76"
+    }
+  },
+  {
+    "id": "le-tan-dung",
+    "name": "Lê Tấn Dũng",
+    "role": "Phó Chủ tịch",
+    "bio": "Phó Chủ tịch CLB, phụ trách kết nối giao thương và mở rộng quan hệ hợp tác với các tỉnh thành trong cả nước.",
+    "phone": "tel:0889334747",
+    "initials": "TD",
+    "fields": {
+      "name": "page-85",
+      "role": "page-72",
+      "bio": "page-87",
+      "phone": "page-89",
+      "avatar": "page-83"
+    }
+  },
+  {
+    "id": "le-quang-toan",
+    "name": "Lê Quang Toàn",
+    "role": "Chánh Văn phòng",
+    "bio": "Điều phối hoạt động văn phòng CLB, quản lý hành chính và tổ chức các sự kiện của câu lạc bộ.",
+    "phone": "tel:0823047047",
+    "initials": "QT",
+    "fields": {
+      "name": "page-92",
+      "role": "page-93",
+      "bio": "page-94",
+      "phone": "page-96",
+      "avatar": "page-90"
+    }
+  },
+  {
+    "id": "le-long",
+    "name": "Lê Long",
+    "role": "Ủy viên BCH",
+    "bio": "Ủy viên Ban Chấp hành, tham gia hoạch định chiến lược và triển khai các hoạt động của CLB.",
+    "phone": "tel:0984553246",
+    "initials": "LL",
+    "fields": {
+      "name": "page-99",
+      "role": "page-100",
+      "bio": "page-101",
+      "phone": "page-103",
+      "avatar": "page-97"
+    }
+  },
+  {
+    "id": "le-van-kham",
+    "name": "Lê Văn Khâm",
+    "role": "Ủy viên BCH",
+    "bio": "Ủy viên Ban Chấp hành, đóng góp vào các hoạt động phát triển tổ chức và tương thân tương ái của CLB.",
+    "phone": "tel:0379786574",
+    "initials": "VK",
+    "fields": {
+      "name": "page-106",
+      "role": "page-100",
+      "bio": "page-108",
+      "phone": "page-110",
+      "avatar": "page-104"
+    }
+  }
+]

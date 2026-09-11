@@ -83,3 +83,9 @@ Các bài kiểm thử tự động dùng Supabase giả lập: kiểm tra xác 
 `scripts/prepare-content.cjs` là công cụ chuyển đổi nguồn ban đầu, đã chạy một lần; không chạy lại trên nguồn hiện tại. `supabase-seed.sql` mới là tệp cần dùng để nạp dữ liệu gốc vào database.
 
 Tài liệu nền tảng: [Vercel configuration](https://vercel.com/docs/project-configuration/vercel-json), [Supabase API keys](https://supabase.com/docs/guides/getting-started/api-keys).
+
+## Doanh nghiệp nằm trong hồ sơ thành viên
+
+Bấm một trong 7 thẻ Ban điều hành để mở `thanh-vien.html?id=...`. Hồ sơ giữ tên, chức vụ, giới thiệu, điện thoại và ảnh đã sửa trong Nội dung trang chủ; bên dưới là tất cả doanh nghiệp đã xuất bản của người đó. Trong quản trị doanh nghiệp, chọn **Thuộc hồ sơ thành viên** trước khi lưu. Mã thành viên giữ nguyên khi thay đổi tên hiển thị. Với thành viên khác, nhập tên đại diện; trang chủ nhóm doanh nghiệp theo thành viên thay vì tạo một thẻ cho mỗi doanh nghiệp. Không cần nâng cấp schema cho liên kết này.
+
+Đã kiểm thử cục bộ bấm thẻ mở đúng hồ sơ, tách doanh nghiệp của hai thành viên, trạng thái chưa có doanh nghiệp, cùng 21 kiểm thử tự động và build. Tệp nạp 208 trường trang chủ vẫn là bước độc lập.

@@ -23,7 +23,9 @@
         if(input.category!=='Doanh nghiệp thành viên')throw Error('Thông tin doanh nghiệp chỉ dùng trong hồ sơ thành viên.');
         const website=b.website?websiteURL(b.website):'';
         if(b.website&&!website)throw Error('Website doanh nghiệp không hợp lệ.');
-        return {type:'profile',representative:limit(b.representative||'',240),sector:limit(b.sector||'',240),phone:limit(b.phone||'',80),address:limit(b.address||'',500),website};
+        const member_id=limit(b.member_id||'',180);
+        if(member_id&&!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(member_id))throw Error('Mã thành viên không hợp lệ.');
+        return {type:'profile',...(member_id?{member_id}:{}),representative:limit(b.representative||'',240),sector:limit(b.sector||'',240),phone:limit(b.phone||'',80),address:limit(b.address||'',500),website};
       }
       if (b.type === 'link') { const href=websiteURL(b.href); if(!href) throw Error('Liên kết website phải bắt đầu bằng https:// hoặc http://.'); return {type:'link',href,text:limit(b.text,240,true)}; }
       if (b.type === 'img') { const src=imageURL(b.src); if(!src) throw Error('Địa chỉ ảnh không hợp lệ.'); return {type:'img',src,caption:limit(b.caption || '',500)}; }
@@ -69,6 +71,7 @@
       imageStyle:old?.imageStyle||''
     };
   }
-  const api={categories,slug,imageURL,websiteURL,validatePost,renderBody,presentation};
+  function memberKey(post){const p=post.body?.find(b=>b.type==='profile');return p?.member_id||slug(p?.representative||'');}
+  const api={categories,slug,imageURL,websiteURL,validatePost,renderBody,presentation,memberKey};
   if(typeof module!=='undefined') module.exports=api; else root.CMS=api;
 })(typeof window==='undefined'?globalThis:window);

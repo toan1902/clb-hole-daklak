@@ -14,9 +14,35 @@
     if(slug)originalCards.set(slug,card.cloneNode(true));
   }
   try{
-    const [health,legacy]=await Promise.all([request('health'),asset('/assets/legacy-layout.json?v=2')]);
+    const [health,legacy,catalog]=await Promise.all([request('health'),asset('/assets/legacy-layout.json?v=2'),asset('/assets/members.json?v=4')]);
     let posts=[],content=[];
     if(!health.configured)posts=await asset('/assets/original-posts.json');
+    if(location.pathname==='/thanh-vien.html'){
+      const id=new URLSearchParams(location.search).get('id');
+      const [businesses,homepage]=health.configured?await Promise.all([request('members'),request('public')]):[[],{content:[]}];
+      const owned=businesses.filter(p=>CMS.memberKey(p)===id),original=catalog.find(m=>m.id===id);
+      const profile=owned[0]?.body?.find(b=>b.type==='profile');
+      if(!original&&!profile)throw Error('Không tìm thấy hồ sơ thành viên.');
+      const field=(key,fallback='')=>homepage.content.find(c=>c.id===original?.fields?.[key])?.value??original?.[key]??fallback;
+      const name=field('name',profile?.representative||'Thành viên');
+      title.textContent=name;document.title=name+' · Hồ sơ thành viên LĐBC';
+      document.getElementById('tag').textContent=field('role','Thành viên');
+      document.getElementById('date').textContent='';
+      const banner=document.getElementById('banner');banner.textContent=original?.initials||'Lê';
+      const avatar=CMS.imageURL(field('avatar'));
+      if(avatar){const img=el('img');img.src=avatar;img.alt=name;img.style.cssText='width:160px;height:160px;object-fit:cover;border-radius:50%';banner.replaceChildren(img)}
+      const container=document.getElementById('content');container.replaceChildren();
+      if(field('bio'))container.append(el('p',field('bio')));
+      const phone=field('phone');if(/^tel:\+?[\d ()-]+$/.test(phone)){const a=el('a','Điện thoại: '+phone.slice(4));a.href=phone;container.append(a)}
+      container.append(el('h2','Doanh nghiệp của thành viên'));
+      if(!owned.length)container.append(el('p','Thông tin doanh nghiệp đang được cập nhật.'));
+      for(const business of owned){
+        const section=el('section');section.append(el('h2',business.title),el('p',business.excerpt));
+        if(CMS.imageURL(business.cover_url)){const img=el('img');img.src=CMS.imageURL(business.cover_url);img.alt=business.title;img.style.cssText='max-width:320px;max-height:320px;object-fit:contain';section.append(img)}
+        const body=el('div');CMS.renderBody(body,business.body);section.append(body);container.append(section);
+      }
+      return;
+    }
     if(title){
       const slug=new URLSearchParams(location.search).get('id')||new URLSearchParams(location.search).get('slug');
       const p=health.configured?await request('article&slug='+encodeURIComponent(slug||'')):posts.find(p=>p.slug===slug);
@@ -55,16 +81,24 @@
       }
     }
     const memberSection=document.getElementById('thanhVien');
+    document.querySelectorAll('.leader-card').forEach((card,i)=>{
+      const member=catalog[i];if(!member)return;
+      const href='/thanh-vien.html?id='+encodeURIComponent(member.id);
+      card.style.cursor='pointer';card.tabIndex=0;card.setAttribute('role','link');card.setAttribute('aria-label','Hồ sơ '+card.querySelector('h3').textContent);
+      card.onclick=e=>{if(!e.target.closest('a,button'))location.href=href};
+      card.onkeydown=e=>{if(e.target===card&&e.key==='Enter'){e.preventDefault();location.href=href}};
+    });
     if(memberSection&&health.configured){
       try{
         const members=await request('members');
-        if(members.length){
+        const people=new Map();
+        for(const business of members){const key=CMS.memberKey(business),profile=business.body?.find(b=>b.type==='profile');if(key&&!catalog.some(m=>m.id===key)&&!people.has(key))people.set(key,profile)}
+        if(people.size){
           const grid=el('div',undefined,'members-grid');
-          for(const member of members){
-            const card=el('a',undefined,'member-card');card.href='/doanh-nghiep.html?id='+encodeURIComponent(member.slug);card.style.cssText='text-decoration:none;color:inherit';
+          for(const [id,member] of people){
+            const card=el('a',undefined,'member-card');card.href='/thanh-vien.html?id='+encodeURIComponent(id);card.style.cssText='text-decoration:none;color:inherit';
             const avatar=el('div','Lê','member-avatar');
-            if(CMS.imageURL(member.cover_url)){const img=el('img');img.src=CMS.imageURL(member.cover_url);img.alt=member.title;img.loading='lazy';img.style.cssText='width:100%;height:100%;object-fit:cover;border-radius:inherit';avatar.replaceChildren(img)}
-            card.append(avatar,el('h4',member.title),el('p',member.excerpt,'biz'));grid.append(card);
+            card.append(avatar,el('h4',member.representative),el('p','Xem hồ sơ và doanh nghiệp','biz'));grid.append(card);
           }
           memberSection.lastElementChild.replaceWith(grid);
         }
