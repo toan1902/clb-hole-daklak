@@ -58,5 +58,1787 @@
     "label": "Dòng tin chạy",
     "default": "Đại hội CLB Doanh nhân Họ Lê Việt Nam lần I: 300 đại biểu, bầu 46 ủy viên BCH, Chủ tịch TS. Lê Xuân Thảo | \nCLB Doanh nhân Họ Lê Đắk Lắk kết nối với mạng lưới doanh nhân Họ Lê toàn quốc | \nChương trình Khuyến học – Khuyến tài năm 2025: Trao 50 suất học bổng | \nHội nghị giao thương doanh nghiệp Họ Lê Tây Nguyên sắp diễn ra tại Buôn Ma Thuột",
     "rows": 5
+  },
+  {
+    "id": "page-11",
+    "label": "Thông tin chung · Lê CLB Doanh Nhân Họ Lê Đắk Lắk",
+    "group": "Thông tin chung",
+    "default": "Lê CLB Doanh Nhân Họ Lê Đắk Lắk",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-12",
+    "label": "Thông tin chung · Liên kết: Lê CLB Doanh Nhân Họ Lê Đắk Lắk",
+    "group": "Thông tin chung",
+    "default": "#hero",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > nav:nth-of-type(1) > a:nth-of-type(1)",
+    "kind": "href"
+  },
+  {
+    "id": "page-13",
+    "label": "Thông tin chung · Giới thiệu",
+    "group": "Thông tin chung",
+    "default": "Giới thiệu",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > nav:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-14",
+    "label": "Thông tin chung · Liên kết: Giới thiệu",
+    "group": "Thông tin chung",
+    "default": "#gioithieu",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > nav:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(1)",
+    "kind": "href"
+  },
+  {
+    "id": "page-15",
+    "label": "Thông tin chung · Ban lãnh đạo",
+    "group": "Thông tin chung",
+    "default": "Ban lãnh đạo",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > nav:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > a:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-16",
+    "label": "Thông tin chung · Liên kết: Ban lãnh đạo",
+    "group": "Thông tin chung",
+    "default": "#lanhDao",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > nav:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(2) > a:nth-of-type(1)",
+    "kind": "href"
+  },
+  {
+    "id": "page-17",
+    "label": "Thông tin chung · Hoạt động",
+    "group": "Thông tin chung",
+    "default": "Hoạt động",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > nav:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-18",
+    "label": "Thông tin chung · Liên kết: Hoạt động",
+    "group": "Thông tin chung",
+    "default": "#hoatDong",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > nav:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1)",
+    "kind": "href"
+  },
+  {
+    "id": "page-19",
+    "label": "Thông tin chung · Khuyến học",
+    "group": "Thông tin chung",
+    "default": "Khuyến học",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > nav:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(4) > a:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-20",
+    "label": "Thông tin chung · Liên kết: Khuyến học",
+    "group": "Thông tin chung",
+    "default": "#khuyenHoc",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > nav:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(4) > a:nth-of-type(1)",
+    "kind": "href"
+  },
+  {
+    "id": "page-21",
+    "label": "Thông tin chung · Cội nguồn",
+    "group": "Thông tin chung",
+    "default": "Cội nguồn",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > nav:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(5) > a:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-22",
+    "label": "Thông tin chung · Liên kết: Cội nguồn",
+    "group": "Thông tin chung",
+    "default": "#coiNguon",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > nav:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(5) > a:nth-of-type(1)",
+    "kind": "href"
+  },
+  {
+    "id": "page-23",
+    "label": "Thông tin chung · Thành viên",
+    "group": "Thông tin chung",
+    "default": "Thành viên",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > nav:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(6) > a:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-24",
+    "label": "Thông tin chung · Liên kết: Thành viên",
+    "group": "Thông tin chung",
+    "default": "#thanhVien",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > nav:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(6) > a:nth-of-type(1)",
+    "kind": "href"
+  },
+  {
+    "id": "page-25",
+    "label": "Thông tin chung · Tham gia",
+    "group": "Thông tin chung",
+    "default": "Tham gia",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > nav:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(7) > a:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-26",
+    "label": "Thông tin chung · Liên kết: Tham gia",
+    "group": "Thông tin chung",
+    "default": "#join",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > nav:nth-of-type(1) > ul:nth-of-type(1) > li:nth-of-type(7) > a:nth-of-type(1)",
+    "kind": "href"
+  },
+  {
+    "id": "page-27",
+    "label": "Thông tin chung · Xem chi tiết",
+    "group": "Thông tin chung",
+    "default": "Xem chi tiết",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-28",
+    "label": "Thông tin chung · Liên kết: Xem chi tiết",
+    "group": "Thông tin chung",
+    "default": "https://holevietnam.vn/dai-hoi-dai-bieu-clb-doanh-nhan-ho-le-viet-nam-lan-thu-i-thanh-cong-tot-dep/",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+    "kind": "href"
+  },
+  {
+    "id": "page-29",
+    "label": "Thông tin chung · TIN MỚI",
+    "group": "Thông tin chung",
+    "default": "TIN MỚI",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-30",
+    "label": "Đầu trang · Thành lập tại Đắk Lắk · Trực thuộc CLB DN Họ Lê Việt Nam",
+    "group": "Đầu trang",
+    "default": "Thành lập tại Đắk Lắk · Trực thuộc CLB DN Họ Lê Việt Nam",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-31",
+    "label": "Đầu trang · Tham gia CLB",
+    "group": "Đầu trang",
+    "default": "Tham gia CLB",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(3) > a:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-32",
+    "label": "Đầu trang · Liên kết: Tham gia CLB",
+    "group": "Đầu trang",
+    "default": "#join",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(3) > a:nth-of-type(1)",
+    "kind": "href"
+  },
+  {
+    "id": "page-33",
+    "label": "Đầu trang · Tìm hiểu thêm",
+    "group": "Đầu trang",
+    "default": "Tìm hiểu thêm",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(3) > a:nth-of-type(2)",
+    "kind": "text"
+  },
+  {
+    "id": "page-34",
+    "label": "Đầu trang · Liên kết: Tìm hiểu thêm",
+    "group": "Đầu trang",
+    "default": "#gioithieu",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(3) > a:nth-of-type(2)",
+    "kind": "href"
+  },
+  {
+    "id": "page-35",
+    "label": "Đầu trang · 120+",
+    "group": "Đầu trang",
+    "default": "120+",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-36",
+    "label": "Đầu trang · Thành viên",
+    "group": "Đầu trang",
+    "default": "Thành viên",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(2)",
+    "kind": "text"
+  },
+  {
+    "id": "page-37",
+    "label": "Đầu trang · 5+",
+    "group": "Đầu trang",
+    "default": "5+",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(2) > div:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-38",
+    "label": "Đầu trang · Năm hoạt động",
+    "group": "Đầu trang",
+    "default": "Năm hoạt động",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(2) > div:nth-of-type(2)",
+    "kind": "text"
+  },
+  {
+    "id": "page-39",
+    "label": "Đầu trang · 30+",
+    "group": "Đầu trang",
+    "default": "30+",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(3) > div:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-40",
+    "label": "Đầu trang · Doanh nghiệp",
+    "group": "Đầu trang",
+    "default": "Doanh nghiệp",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(3) > div:nth-of-type(2)",
+    "kind": "text"
+  },
+  {
+    "id": "page-41",
+    "label": "Đầu trang · 15+",
+    "group": "Đầu trang",
+    "default": "15+",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(4) > div:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-42",
+    "label": "Đầu trang · Sự kiện / năm",
+    "group": "Đầu trang",
+    "default": "Sự kiện / năm",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(4) > div:nth-of-type(2)",
+    "kind": "text"
+  },
+  {
+    "id": "page-43",
+    "label": "Giới thiệu · Hình ảnh: Họp mặt CLB",
+    "group": "Giới thiệu",
+    "default": "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=800&q=80",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > img:nth-of-type(1)",
+    "kind": "src"
+  },
+  {
+    "id": "page-44",
+    "label": "Giới thiệu · Về chúng tôi",
+    "group": "Giới thiệu",
+    "default": "Về chúng tôi",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-45",
+    "label": "Giới thiệu · — Ban Chủ nhiệm CLB Doanh nhân Họ Lê Đắk Lắk",
+    "group": "Giới thiệu",
+    "default": "— Ban Chủ nhiệm CLB Doanh nhân Họ Lê Đắk Lắk",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > cite:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-46",
+    "label": "Giới thiệu · 🤝 Kết nối giao thương",
+    "group": "Giới thiệu",
+    "default": "🤝 Kết nối giao thương",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > h4:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-47",
+    "label": "Giới thiệu · Xây dựng mạng lưới hợp tác kinh doanh giữa các thành viên trong và ngoài tỉ",
+    "group": "Giới thiệu",
+    "default": "Xây dựng mạng lưới hợp tác kinh doanh giữa các thành viên trong và ngoài tỉnh.",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-48",
+    "label": "Giới thiệu · 📈 Phát triển kinh tế",
+    "group": "Giới thiệu",
+    "default": "📈 Phát triển kinh tế",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(2) > h4:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-49",
+    "label": "Giới thiệu · Chia sẻ kinh nghiệm, hỗ trợ khởi nghiệp và mở rộng quy mô doanh nghiệp.",
+    "group": "Giới thiệu",
+    "default": "Chia sẻ kinh nghiệm, hỗ trợ khởi nghiệp và mở rộng quy mô doanh nghiệp.",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(2) > p:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-50",
+    "label": "Giới thiệu · 🎋 Tri ân tiên tổ",
+    "group": "Giới thiệu",
+    "default": "🎋 Tri ân tiên tổ",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(3) > h4:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-51",
+    "label": "Giới thiệu · Gìn giữ đạo lý \"uống nước nhớ nguồn\", kết nối về Lam Kinh đất tổ nhà Lê.",
+    "group": "Giới thiệu",
+    "default": "Gìn giữ đạo lý \"uống nước nhớ nguồn\", kết nối về Lam Kinh đất tổ nhà Lê.",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(3) > p:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-52",
+    "label": "Giới thiệu · 🌱 Tương thân tương ái",
+    "group": "Giới thiệu",
+    "default": "🌱 Tương thân tương ái",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(4) > h4:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-53",
+    "label": "Giới thiệu · Hỗ trợ thành viên khó khăn, đóng góp cho cộng đồng và xã hội Đắk Lắk.",
+    "group": "Giới thiệu",
+    "default": "Hỗ trợ thành viên khó khăn, đóng góp cho cộng đồng và xã hội Đắk Lắk.",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(4) > p:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-54",
+    "label": "Tổ chức quốc gia · Lê",
+    "group": "Tổ chức quốc gia",
+    "default": "Lê",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-55",
+    "label": "Tổ chức quốc gia · Trực thuộc Hội đồng Họ Lê Việt Nam",
+    "group": "Tổ chức quốc gia",
+    "default": "Trực thuộc Hội đồng Họ Lê Việt Nam",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > h3:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-56",
+    "label": "Tổ chức quốc gia · CLB Doanh nhân Họ Lê Đắk Lắk là thành viên chính thức của CLB Doanh nhân Họ",
+    "group": "Tổ chức quốc gia",
+    "default": "CLB Doanh nhân Họ Lê Đắk Lắk là thành viên chính thức của CLB Doanh nhân Họ Lê Việt Nam — tổ chức với hơn 300 doanh nhân tiêu biểu từ khắp mọi miền đất nước. Đại hội lần thứ I (10/2025) đã bầu BCH 46 thành viên, Chủ tịch là TS. Lê Xuân Thảo — Phó Chủ tịch thường trực Hội đồng Họ Lê Việt Nam.",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-57",
+    "label": "Tổ chức quốc gia · Truy cập Hội đồng Họ Lê Việt Nam →",
+    "group": "Tổ chức quốc gia",
+    "default": "Truy cập Hội đồng Họ Lê Việt Nam →",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-58",
+    "label": "Tổ chức quốc gia · Liên kết: Truy cập Hội đồng Họ Lê Việt Nam →",
+    "group": "Tổ chức quốc gia",
+    "default": "https://holevietnam.vn",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1)",
+    "kind": "href"
+  },
+  {
+    "id": "page-59",
+    "label": "Ban điều hành · Ban điều hành",
+    "group": "Ban điều hành",
+    "default": "Ban điều hành",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-60",
+    "label": "Ban điều hành · Những Người Dẫn Dắt",
+    "group": "Ban điều hành",
+    "default": "Những Người Dẫn Dắt",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(1) > h2:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-61",
+    "label": "Ban điều hành · Đội ngũ lãnh đạo tâm huyết, kiến tạo và phát triển cộng đồng doanh nhân Họ ",
+    "group": "Ban điều hành",
+    "default": "Đội ngũ lãnh đạo tâm huyết, kiến tạo và phát triển cộng đồng doanh nhân Họ Lê tại Đắk Lắk.",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(1) > p:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-62",
+    "label": "Ban điều hành · Ảnh đại diện: Lê Văn Vương Chủ tịch Chủ tịch CLB Doanh nhân Họ L",
+    "group": "Ban điều hành",
+    "default": "",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1)",
+    "kind": "image"
+  },
+  {
+    "id": "page-63",
+    "label": "Ban điều hành · VV",
+    "group": "Ban điều hành",
+    "default": "VV",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-64",
+    "label": "Ban điều hành · Lê Văn Vương",
+    "group": "Ban điều hành",
+    "default": "Lê Văn Vương",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > h3:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-65",
+    "label": "Ban điều hành · Chủ tịch",
+    "group": "Ban điều hành",
+    "default": "Chủ tịch",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-66",
+    "label": "Ban điều hành · Chủ tịch CLB Doanh nhân Họ Lê Đắk Lắk, người dẫn dắt và đại diện cho cộng đ",
+    "group": "Ban điều hành",
+    "default": "Chủ tịch CLB Doanh nhân Họ Lê Đắk Lắk, người dẫn dắt và đại diện cho cộng đồng doanh nhân dòng họ Lê trên địa bàn tỉnh.",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-67",
+    "label": "Ban điều hành · 📞 0945 820 779",
+    "group": "Ban điều hành",
+    "default": "📞 0945 820 779",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-68",
+    "label": "Ban điều hành · Liên kết: 📞 0945 820 779",
+    "group": "Ban điều hành",
+    "default": "tel:0945820779",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1)",
+    "kind": "href"
+  },
+  {
+    "id": "page-69",
+    "label": "Ban điều hành · Ảnh đại diện: Lê Quốc Hùng Phó Chủ tịch Phó Chủ tịch CLB, hỗ trợ",
+    "group": "Ban điều hành",
+    "default": "",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1)",
+    "kind": "image"
+  },
+  {
+    "id": "page-70",
+    "label": "Ban điều hành · QH",
+    "group": "Ban điều hành",
+    "default": "QH",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-71",
+    "label": "Ban điều hành · Lê Quốc Hùng",
+    "group": "Ban điều hành",
+    "default": "Lê Quốc Hùng",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > h3:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-72",
+    "label": "Ban điều hành · Phó Chủ tịch",
+    "group": "Ban điều hành",
+    "default": "Phó Chủ tịch",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-73",
+    "label": "Ban điều hành · Phó Chủ tịch CLB, hỗ trợ điều hành và thúc đẩy các hoạt động kết nối kinh d",
+    "group": "Ban điều hành",
+    "default": "Phó Chủ tịch CLB, hỗ trợ điều hành và thúc đẩy các hoạt động kết nối kinh doanh của doanh nhân Họ Lê.",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > p:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-74",
+    "label": "Ban điều hành · 📞 0886 575 868",
+    "group": "Ban điều hành",
+    "default": "📞 0886 575 868",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > a:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-75",
+    "label": "Ban điều hành · Liên kết: 📞 0886 575 868",
+    "group": "Ban điều hành",
+    "default": "tel:0886575868",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > a:nth-of-type(1)",
+    "kind": "href"
+  },
+  {
+    "id": "page-76",
+    "label": "Ban điều hành · Ảnh đại diện: Lê Thị Quỳnh Phó Chủ tịch Phó Chủ tịch CLB, phụ tr",
+    "group": "Ban điều hành",
+    "default": "",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1)",
+    "kind": "image"
+  },
+  {
+    "id": "page-77",
+    "label": "Ban điều hành · TQ",
+    "group": "Ban điều hành",
+    "default": "TQ",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-78",
+    "label": "Ban điều hành · Lê Thị Quỳnh",
+    "group": "Ban điều hành",
+    "default": "Lê Thị Quỳnh",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(2) > h3:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-79",
+    "label": "Ban điều hành · Phó Chủ tịch",
+    "group": "Ban điều hành",
+    "default": "Phó Chủ tịch",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-80",
+    "label": "Ban điều hành · Phó Chủ tịch CLB, phụ trách các hoạt động phát triển thành viên và chương t",
+    "group": "Ban điều hành",
+    "default": "Phó Chủ tịch CLB, phụ trách các hoạt động phát triển thành viên và chương trình khuyến học – khuyến tài.",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(2) > p:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-81",
+    "label": "Ban điều hành · 📞 0906 515 888",
+    "group": "Ban điều hành",
+    "default": "📞 0906 515 888",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(2) > a:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-82",
+    "label": "Ban điều hành · Liên kết: 📞 0906 515 888",
+    "group": "Ban điều hành",
+    "default": "tel:0906515888",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(2) > a:nth-of-type(1)",
+    "kind": "href"
+  },
+  {
+    "id": "page-83",
+    "label": "Ban điều hành · Ảnh đại diện: Lê Tấn Dũng Phó Chủ tịch Phó Chủ tịch CLB, phụ trá",
+    "group": "Ban điều hành",
+    "default": "",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(4) > div:nth-of-type(1)",
+    "kind": "image"
+  },
+  {
+    "id": "page-84",
+    "label": "Ban điều hành · TD",
+    "group": "Ban điều hành",
+    "default": "TD",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-85",
+    "label": "Ban điều hành · Lê Tấn Dũng",
+    "group": "Ban điều hành",
+    "default": "Lê Tấn Dũng",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(4) > div:nth-of-type(2) > h3:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-86",
+    "label": "Ban điều hành · Phó Chủ tịch",
+    "group": "Ban điều hành",
+    "default": "Phó Chủ tịch",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(4) > div:nth-of-type(2) > div:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-87",
+    "label": "Ban điều hành · Phó Chủ tịch CLB, phụ trách kết nối giao thương và mở rộng quan hệ hợp tác ",
+    "group": "Ban điều hành",
+    "default": "Phó Chủ tịch CLB, phụ trách kết nối giao thương và mở rộng quan hệ hợp tác với các tỉnh thành trong cả nước.",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(4) > div:nth-of-type(2) > p:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-88",
+    "label": "Ban điều hành · 📞 0889 334 747",
+    "group": "Ban điều hành",
+    "default": "📞 0889 334 747",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(4) > div:nth-of-type(2) > a:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-89",
+    "label": "Ban điều hành · Liên kết: 📞 0889 334 747",
+    "group": "Ban điều hành",
+    "default": "tel:0889334747",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(4) > div:nth-of-type(2) > a:nth-of-type(1)",
+    "kind": "href"
+  },
+  {
+    "id": "page-90",
+    "label": "Ban điều hành · Ảnh đại diện: Lê Quang Toàn Chánh Văn phòng Điều phối hoạt động ",
+    "group": "Ban điều hành",
+    "default": "",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(5) > div:nth-of-type(1)",
+    "kind": "image"
+  },
+  {
+    "id": "page-91",
+    "label": "Ban điều hành · QT",
+    "group": "Ban điều hành",
+    "default": "QT",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-92",
+    "label": "Ban điều hành · Lê Quang Toàn",
+    "group": "Ban điều hành",
+    "default": "Lê Quang Toàn",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(5) > div:nth-of-type(2) > h3:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-93",
+    "label": "Ban điều hành · Chánh Văn phòng",
+    "group": "Ban điều hành",
+    "default": "Chánh Văn phòng",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(5) > div:nth-of-type(2) > div:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-94",
+    "label": "Ban điều hành · Điều phối hoạt động văn phòng CLB, quản lý hành chính và tổ chức các sự kiệ",
+    "group": "Ban điều hành",
+    "default": "Điều phối hoạt động văn phòng CLB, quản lý hành chính và tổ chức các sự kiện của câu lạc bộ.",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(5) > div:nth-of-type(2) > p:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-95",
+    "label": "Ban điều hành · 📞 0823 047 047",
+    "group": "Ban điều hành",
+    "default": "📞 0823 047 047",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(5) > div:nth-of-type(2) > a:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-96",
+    "label": "Ban điều hành · Liên kết: 📞 0823 047 047",
+    "group": "Ban điều hành",
+    "default": "tel:0823047047",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(5) > div:nth-of-type(2) > a:nth-of-type(1)",
+    "kind": "href"
+  },
+  {
+    "id": "page-97",
+    "label": "Ban điều hành · Ảnh đại diện: Lê Long Ủy viên BCH Ủy viên Ban Chấp hành, tham gi",
+    "group": "Ban điều hành",
+    "default": "",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(6) > div:nth-of-type(1)",
+    "kind": "image"
+  },
+  {
+    "id": "page-98",
+    "label": "Ban điều hành · LL",
+    "group": "Ban điều hành",
+    "default": "LL",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(6) > div:nth-of-type(1) > div:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-99",
+    "label": "Ban điều hành · Lê Long",
+    "group": "Ban điều hành",
+    "default": "Lê Long",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(6) > div:nth-of-type(2) > h3:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-100",
+    "label": "Ban điều hành · Ủy viên BCH",
+    "group": "Ban điều hành",
+    "default": "Ủy viên BCH",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(6) > div:nth-of-type(2) > div:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-101",
+    "label": "Ban điều hành · Ủy viên Ban Chấp hành, tham gia hoạch định chiến lược và triển khai các hoạ",
+    "group": "Ban điều hành",
+    "default": "Ủy viên Ban Chấp hành, tham gia hoạch định chiến lược và triển khai các hoạt động của CLB.",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(6) > div:nth-of-type(2) > p:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-102",
+    "label": "Ban điều hành · 📞 0984 553 246",
+    "group": "Ban điều hành",
+    "default": "📞 0984 553 246",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(6) > div:nth-of-type(2) > a:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-103",
+    "label": "Ban điều hành · Liên kết: 📞 0984 553 246",
+    "group": "Ban điều hành",
+    "default": "tel:0984553246",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(6) > div:nth-of-type(2) > a:nth-of-type(1)",
+    "kind": "href"
+  },
+  {
+    "id": "page-104",
+    "label": "Ban điều hành · Ảnh đại diện: Lê Văn Khâm Ủy viên BCH Ủy viên Ban Chấp hành, đón",
+    "group": "Ban điều hành",
+    "default": "",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(7) > div:nth-of-type(1)",
+    "kind": "image"
+  },
+  {
+    "id": "page-105",
+    "label": "Ban điều hành · VK",
+    "group": "Ban điều hành",
+    "default": "VK",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(7) > div:nth-of-type(1) > div:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-106",
+    "label": "Ban điều hành · Lê Văn Khâm",
+    "group": "Ban điều hành",
+    "default": "Lê Văn Khâm",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(7) > div:nth-of-type(2) > h3:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-107",
+    "label": "Ban điều hành · Ủy viên BCH",
+    "group": "Ban điều hành",
+    "default": "Ủy viên BCH",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(7) > div:nth-of-type(2) > div:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-108",
+    "label": "Ban điều hành · Ủy viên Ban Chấp hành, đóng góp vào các hoạt động phát triển tổ chức và tươ",
+    "group": "Ban điều hành",
+    "default": "Ủy viên Ban Chấp hành, đóng góp vào các hoạt động phát triển tổ chức và tương thân tương ái của CLB.",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(7) > div:nth-of-type(2) > p:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-109",
+    "label": "Ban điều hành · 📞 0379 786 574",
+    "group": "Ban điều hành",
+    "default": "📞 0379 786 574",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(7) > div:nth-of-type(2) > a:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-110",
+    "label": "Ban điều hành · Liên kết: 📞 0379 786 574",
+    "group": "Ban điều hành",
+    "default": "tel:0379786574",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(7) > div:nth-of-type(2) > a:nth-of-type(1)",
+    "kind": "href"
+  },
+  {
+    "id": "page-111",
+    "label": "Tin tức · Tin tức & Sự kiện",
+    "group": "Tin tức",
+    "default": "Tin tức & Sự kiện",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-112",
+    "label": "Tin tức · Hoạt Động Nổi Bật",
+    "group": "Tin tức",
+    "default": "Hoạt Động Nổi Bật",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(4) > h2:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-113",
+    "label": "Tin tức · Cập nhật những tin tức mới nhất về hoạt động của CLB Doanh nhân Họ Lê Đắk L",
+    "group": "Tin tức",
+    "default": "Cập nhật những tin tức mới nhất về hoạt động của CLB Doanh nhân Họ Lê Đắk Lắk và tổ chức Họ Lê toàn quốc.",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(4) > p:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-114",
+    "label": "Khuyến học · Khuyến học · Khuyến tài",
+    "group": "Khuyến học",
+    "default": "Khuyến học · Khuyến tài",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-115",
+    "label": "Khuyến học · Đầu Tư Cho Thế Hệ Tương Lai",
+    "group": "Khuyến học",
+    "default": "Đầu Tư Cho Thế Hệ Tương Lai",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-116",
+    "label": "Khuyến học · CLB thực hiện phong trào khuyến học – khuyến tài theo tinh thần của Hội đồn",
+    "group": "Khuyến học",
+    "default": "CLB thực hiện phong trào khuyến học – khuyến tài theo tinh thần của Hội đồng Họ Lê Việt Nam: đẩy mạnh học tập suốt đời, vinh danh nhân tài, hỗ trợ học sinh, sinh viên Họ Lê vươn lên.",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-117",
+    "label": "Khuyến học · Ủng hộ quỹ học bổng",
+    "group": "Khuyến học",
+    "default": "Ủng hộ quỹ học bổng",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-118",
+    "label": "Khuyến học · Liên kết: Ủng hộ quỹ học bổng",
+    "group": "Khuyến học",
+    "default": "#join",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(1)",
+    "kind": "href"
+  },
+  {
+    "id": "page-119",
+    "label": "Khuyến học · 50+",
+    "group": "Khuyến học",
+    "default": "50+",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-120",
+    "label": "Khuyến học · Suất học bổng đã trao",
+    "group": "Khuyến học",
+    "default": "Suất học bổng đã trao",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2)",
+    "kind": "text"
+  },
+  {
+    "id": "page-121",
+    "label": "Khuyến học · 200+",
+    "group": "Khuyến học",
+    "default": "200+",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-122",
+    "label": "Khuyến học · Triệu đồng quỹ học bổng",
+    "group": "Khuyến học",
+    "default": "Triệu đồng quỹ học bổng",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2)",
+    "kind": "text"
+  },
+  {
+    "id": "page-123",
+    "label": "Khuyến học · 5",
+    "group": "Khuyến học",
+    "default": "5",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-124",
+    "label": "Khuyến học · Năm triển khai liên tục",
+    "group": "Khuyến học",
+    "default": "Năm triển khai liên tục",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(2)",
+    "kind": "text"
+  },
+  {
+    "id": "page-125",
+    "label": "Khuyến học · 100%",
+    "group": "Khuyến học",
+    "default": "100%",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(4) > div:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-126",
+    "label": "Khuyến học · Học sinh nhận đều đậu ĐH",
+    "group": "Khuyến học",
+    "default": "Học sinh nhận đều đậu ĐH",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(5) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(4) > div:nth-of-type(2)",
+    "kind": "text"
+  },
+  {
+    "id": "page-127",
+    "label": "Cội nguồn · Tìm về cội nguồn",
+    "group": "Cội nguồn",
+    "default": "Tìm về cội nguồn",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(1) > div:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-128",
+    "label": "Cội nguồn · Dòng Họ Lê — Lịch Sử Vẻ Vang",
+    "group": "Cội nguồn",
+    "default": "Dòng Họ Lê — Lịch Sử Vẻ Vang",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(1) > h2:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-129",
+    "label": "Cội nguồn · Dòng họ Lê Việt Nam gắn liền với trang sử hào hùng của dân tộc. Cùng nhau t",
+    "group": "Cội nguồn",
+    "default": "Dòng họ Lê Việt Nam gắn liền với trang sử hào hùng của dân tộc. Cùng nhau tìm hiểu và gìn giữ truyền thống dòng tộc ngàn năm.",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(1) > p:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-130",
+    "label": "Cội nguồn · 🏯",
+    "group": "Cội nguồn",
+    "default": "🏯",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-131",
+    "label": "Cội nguồn · Lam Kinh — Đất Tổ Nhà Lê",
+    "group": "Cội nguồn",
+    "default": "Lam Kinh — Đất Tổ Nhà Lê",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > h3:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-132",
+    "label": "Cội nguồn · Khu di tích quốc gia đặc biệt Lam Kinh (Thanh Hoá) — nơi phát tích của nhà ",
+    "group": "Cội nguồn",
+    "default": "Khu di tích quốc gia đặc biệt Lam Kinh (Thanh Hoá) — nơi phát tích của nhà Lê, nơi Đức Vua Lê Thái Tổ khởi nghĩa Lam Sơn đánh đuổi giặc Minh.",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-133",
+    "label": "Cội nguồn · Tìm hiểu thêm →",
+    "group": "Cội nguồn",
+    "default": "Tìm hiểu thêm →",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-134",
+    "label": "Cội nguồn · Liên kết: Tìm hiểu thêm →",
+    "group": "Cội nguồn",
+    "default": "https://holevietnam.vn/danh-muc/video/lam-kinh-dat-to-nha-le/",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1)",
+    "kind": "href"
+  },
+  {
+    "id": "page-135",
+    "label": "Cội nguồn · 📜",
+    "group": "Cội nguồn",
+    "default": "📜",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-136",
+    "label": "Cội nguồn · Gia Phả Dòng Họ",
+    "group": "Cội nguồn",
+    "default": "Gia Phả Dòng Họ",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > h3:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-137",
+    "label": "Cội nguồn · Lưu giữ và kết nối gia phả các chi nhánh Họ Lê tại Đắk Lắk, kết nối về nguồ",
+    "group": "Cội nguồn",
+    "default": "Lưu giữ và kết nối gia phả các chi nhánh Họ Lê tại Đắk Lắk, kết nối về nguồn cội với Hội đồng Họ Lê Việt Nam.",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > p:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-138",
+    "label": "Cội nguồn · Kết nối gia phả →",
+    "group": "Cội nguồn",
+    "default": "Kết nối gia phả →",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > a:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-139",
+    "label": "Cội nguồn · Liên kết: Kết nối gia phả →",
+    "group": "Cội nguồn",
+    "default": "https://holevietnam.vn/chuyen-muc/tim-ve-coi-nguon/gia-pha-dong-ho/",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > a:nth-of-type(1)",
+    "kind": "href"
+  },
+  {
+    "id": "page-140",
+    "label": "Cội nguồn · 🔗",
+    "group": "Cội nguồn",
+    "default": "🔗",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-141",
+    "label": "Cội nguồn · Kết Nối Dòng Họ",
+    "group": "Cội nguồn",
+    "default": "Kết Nối Dòng Họ",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(2) > h3:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-142",
+    "label": "Cội nguồn · Kết nối với Họ Lê tại các tỉnh thành, cùng sinh hoạt trong mạng lưới Hội đồ",
+    "group": "Cội nguồn",
+    "default": "Kết nối với Họ Lê tại các tỉnh thành, cùng sinh hoạt trong mạng lưới Hội đồng Họ Lê toàn quốc và quốc tế.",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(2) > p:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-143",
+    "label": "Cội nguồn · Kết nối ngay →",
+    "group": "Cội nguồn",
+    "default": "Kết nối ngay →",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(2) > a:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-144",
+    "label": "Cội nguồn · Liên kết: Kết nối ngay →",
+    "group": "Cội nguồn",
+    "default": "https://holevietnam.vn/chuyen-muc/tim-ve-coi-nguon/ket-noi-dong-ho/",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(6) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(2) > a:nth-of-type(1)",
+    "kind": "href"
+  },
+  {
+    "id": "page-145",
+    "label": "Danh nhân · Tự hào truyền thống",
+    "group": "Danh nhân",
+    "default": "Tự hào truyền thống",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(7) > div:nth-of-type(1) > div:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-146",
+    "label": "Danh nhân · Danh Nhân Họ Lê Tiêu Biểu",
+    "group": "Danh nhân",
+    "default": "Danh Nhân Họ Lê Tiêu Biểu",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(7) > div:nth-of-type(1) > h2:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-147",
+    "label": "Danh nhân · Những người con ưu tú của dòng họ Lê đã để lại dấu ấn trong lịch sử và văn ",
+    "group": "Danh nhân",
+    "default": "Những người con ưu tú của dòng họ Lê đã để lại dấu ấn trong lịch sử và văn hoá Việt Nam.",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(7) > div:nth-of-type(1) > p:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-148",
+    "label": "Danh nhân · 👑",
+    "group": "Danh nhân",
+    "default": "👑",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(7) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-149",
+    "label": "Danh nhân · Vua Lê Thái Tổ",
+    "group": "Danh nhân",
+    "default": "Vua Lê Thái Tổ",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(7) > div:nth-of-type(2) > div:nth-of-type(1) > h4:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-150",
+    "label": "Danh nhân · Người khởi nghĩa Lam Sơn, đánh đuổi giặc Minh, lập nên nhà Lê — triều đại h",
+    "group": "Danh nhân",
+    "default": "Người khởi nghĩa Lam Sơn, đánh đuổi giặc Minh, lập nên nhà Lê — triều đại huy hoàng nhất lịch sử Việt Nam.",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(7) > div:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-151",
+    "label": "Danh nhân · 🏛️",
+    "group": "Danh nhân",
+    "default": "🏛️",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(7) > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-152",
+    "label": "Danh nhân · Vua Lê Thánh Tông",
+    "group": "Danh nhân",
+    "default": "Vua Lê Thánh Tông",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(7) > div:nth-of-type(2) > div:nth-of-type(2) > h4:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-153",
+    "label": "Danh nhân · Vị vua anh minh, thi nhân lỗi lạc, xây dựng Đại Việt thịnh trị, mở mang bờ ",
+    "group": "Danh nhân",
+    "default": "Vị vua anh minh, thi nhân lỗi lạc, xây dựng Đại Việt thịnh trị, mở mang bờ cõi về phương Nam.",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(7) > div:nth-of-type(2) > div:nth-of-type(2) > p:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-154",
+    "label": "Danh nhân · ⚕️",
+    "group": "Danh nhân",
+    "default": "⚕️",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(7) > div:nth-of-type(2) > div:nth-of-type(3) > div:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-155",
+    "label": "Danh nhân · Hải Thượng Lãn Ông Lê Hữu Trác",
+    "group": "Danh nhân",
+    "default": "Hải Thượng Lãn Ông Lê Hữu Trác",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(7) > div:nth-of-type(2) > div:nth-of-type(3) > h4:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-156",
+    "label": "Danh nhân · Đại danh y của dân tộc, người đặt nền tảng cho y học cổ truyền Việt Nam, ản",
+    "group": "Danh nhân",
+    "default": "Đại danh y của dân tộc, người đặt nền tảng cho y học cổ truyền Việt Nam, ảnh hưởng mang tầm quốc tế.",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(7) > div:nth-of-type(2) > div:nth-of-type(3) > p:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-157",
+    "label": "Danh nhân · 🌟",
+    "group": "Danh nhân",
+    "default": "🌟",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(7) > div:nth-of-type(2) > div:nth-of-type(4) > div:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-158",
+    "label": "Danh nhân · Doanh Nhân Họ Lê Thời Hiện Đại",
+    "group": "Danh nhân",
+    "default": "Doanh Nhân Họ Lê Thời Hiện Đại",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(7) > div:nth-of-type(2) > div:nth-of-type(4) > h4:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-159",
+    "label": "Danh nhân · Thế hệ doanh nhân Họ Lê hôm nay tiếp nối truyền thống, kiến tạo tương lai v",
+    "group": "Danh nhân",
+    "default": "Thế hệ doanh nhân Họ Lê hôm nay tiếp nối truyền thống, kiến tạo tương lai và rạng danh dòng tộc.",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(7) > div:nth-of-type(2) > div:nth-of-type(4) > p:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-160",
+    "label": "Thành viên · Cộng đồng",
+    "group": "Thành viên",
+    "default": "Cộng đồng",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(8) > div:nth-of-type(1) > div:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-161",
+    "label": "Thành viên · Thành Viên Tiêu Biểu",
+    "group": "Thành viên",
+    "default": "Thành Viên Tiêu Biểu",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(8) > div:nth-of-type(1) > h2:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-162",
+    "label": "Thành viên · Hơn 120 doanh nhân mang Họ Lê đang hoạt động trong nhiều lĩnh vực tại Đắk L",
+    "group": "Thành viên",
+    "default": "Hơn 120 doanh nhân mang Họ Lê đang hoạt động trong nhiều lĩnh vực tại Đắk Lắk.",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(8) > div:nth-of-type(1) > p:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-163",
+    "label": "Thành viên · 👥",
+    "group": "Thành viên",
+    "default": "👥",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(8) > div:nth-of-type(2) > div:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-164",
+    "label": "Thành viên · Danh sách thành viên đang được cập nhật",
+    "group": "Thành viên",
+    "default": "Danh sách thành viên đang được cập nhật",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(8) > div:nth-of-type(2) > h3:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-165",
+    "label": "Thành viên · CLB có hơn 120 thành viên là doanh nhân Họ Lê đang hoạt động tại Đắk Lắk. D",
+    "group": "Thành viên",
+    "default": "CLB có hơn 120 thành viên là doanh nhân Họ Lê đang hoạt động tại Đắk Lắk. Danh sách đầy đủ sẽ được công bố sớm sau khi hoàn tất đăng ký chính thức.",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(8) > div:nth-of-type(2) > p:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-166",
+    "label": "Thành viên · Đăng ký tham gia CLB →",
+    "group": "Thành viên",
+    "default": "Đăng ký tham gia CLB →",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(8) > div:nth-of-type(2) > a:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-167",
+    "label": "Thành viên · Liên kết: Đăng ký tham gia CLB →",
+    "group": "Thành viên",
+    "default": "#join",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(8) > div:nth-of-type(2) > a:nth-of-type(1)",
+    "kind": "href"
+  },
+  {
+    "id": "page-168",
+    "label": "Đăng ký tham gia · 📞 Liên hệ đăng ký: 0823 047 047",
+    "group": "Đăng ký tham gia",
+    "default": "📞 Liên hệ đăng ký: 0823 047 047",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(9) > a:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-169",
+    "label": "Đăng ký tham gia · Liên kết: 📞 Liên hệ đăng ký: 0823 047 047",
+    "group": "Đăng ký tham gia",
+    "default": "tel:0823047047",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(9) > a:nth-of-type(1)",
+    "kind": "href"
+  },
+  {
+    "id": "page-170",
+    "label": "Đăng ký tham gia · Lê Quang Toàn — Chánh Văn phòng",
+    "group": "Đăng ký tham gia",
+    "default": "Lê Quang Toàn — Chánh Văn phòng",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > section:nth-of-type(9) > p:nth-of-type(2)",
+    "kind": "text"
+  },
+  {
+    "id": "page-171",
+    "label": "Thông tin chung · CLB Doanh Nhân Họ Lê Đắk Lắk",
+    "group": "Thông tin chung",
+    "default": "CLB Doanh Nhân Họ Lê Đắk Lắk",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > h3:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-172",
+    "label": "Thông tin chung · \"Đoàn kết · Phát triển · Rạng danh Lê tộc Việt Nam\"",
+    "group": "Thông tin chung",
+    "default": "\"Đoàn kết · Phát triển · Rạng danh Lê tộc Việt Nam\"",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2)",
+    "kind": "text"
+  },
+  {
+    "id": "page-173",
+    "label": "Thông tin chung · Điều hướng",
+    "group": "Thông tin chung",
+    "default": "Điều hướng",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > h4:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-174",
+    "label": "Thông tin chung · Giới thiệu CLB",
+    "group": "Thông tin chung",
+    "default": "Giới thiệu CLB",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > ul:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-175",
+    "label": "Thông tin chung · Liên kết: Giới thiệu CLB",
+    "group": "Thông tin chung",
+    "default": "#gioithieu",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > ul:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(1)",
+    "kind": "href"
+  },
+  {
+    "id": "page-176",
+    "label": "Thông tin chung · Ban lãnh đạo",
+    "group": "Thông tin chung",
+    "default": "Ban lãnh đạo",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > ul:nth-of-type(1) > li:nth-of-type(2) > a:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-177",
+    "label": "Thông tin chung · Liên kết: Ban lãnh đạo",
+    "group": "Thông tin chung",
+    "default": "#lanhDao",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > ul:nth-of-type(1) > li:nth-of-type(2) > a:nth-of-type(1)",
+    "kind": "href"
+  },
+  {
+    "id": "page-178",
+    "label": "Thông tin chung · Tin tức & Sự kiện",
+    "group": "Thông tin chung",
+    "default": "Tin tức & Sự kiện",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > ul:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-179",
+    "label": "Thông tin chung · Liên kết: Tin tức & Sự kiện",
+    "group": "Thông tin chung",
+    "default": "#hoatDong",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > ul:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1)",
+    "kind": "href"
+  },
+  {
+    "id": "page-180",
+    "label": "Thông tin chung · Khuyến học – Khuyến tài",
+    "group": "Thông tin chung",
+    "default": "Khuyến học – Khuyến tài",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > ul:nth-of-type(1) > li:nth-of-type(4) > a:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-181",
+    "label": "Thông tin chung · Liên kết: Khuyến học – Khuyến tài",
+    "group": "Thông tin chung",
+    "default": "#khuyenHoc",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > ul:nth-of-type(1) > li:nth-of-type(4) > a:nth-of-type(1)",
+    "kind": "href"
+  },
+  {
+    "id": "page-182",
+    "label": "Thông tin chung · Tìm về cội nguồn",
+    "group": "Thông tin chung",
+    "default": "Tìm về cội nguồn",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > ul:nth-of-type(1) > li:nth-of-type(5) > a:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-183",
+    "label": "Thông tin chung · Liên kết: Tìm về cội nguồn",
+    "group": "Thông tin chung",
+    "default": "#coiNguon",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > ul:nth-of-type(1) > li:nth-of-type(5) > a:nth-of-type(1)",
+    "kind": "href"
+  },
+  {
+    "id": "page-184",
+    "label": "Thông tin chung · Thành viên",
+    "group": "Thông tin chung",
+    "default": "Thành viên",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > ul:nth-of-type(1) > li:nth-of-type(6) > a:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-185",
+    "label": "Thông tin chung · Liên kết: Thành viên",
+    "group": "Thông tin chung",
+    "default": "#thanhVien",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > ul:nth-of-type(1) > li:nth-of-type(6) > a:nth-of-type(1)",
+    "kind": "href"
+  },
+  {
+    "id": "page-186",
+    "label": "Thông tin chung · Tổ chức quốc gia",
+    "group": "Thông tin chung",
+    "default": "Tổ chức quốc gia",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > h4:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-187",
+    "label": "Thông tin chung · Hội đồng Họ Lê Việt Nam",
+    "group": "Thông tin chung",
+    "default": "Hội đồng Họ Lê Việt Nam",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > ul:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-188",
+    "label": "Thông tin chung · Liên kết: Hội đồng Họ Lê Việt Nam",
+    "group": "Thông tin chung",
+    "default": "https://holevietnam.vn",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > ul:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(1)",
+    "kind": "href"
+  },
+  {
+    "id": "page-189",
+    "label": "Thông tin chung · CLB DN Họ Lê Việt Nam",
+    "group": "Thông tin chung",
+    "default": "CLB DN Họ Lê Việt Nam",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > ul:nth-of-type(1) > li:nth-of-type(2) > a:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-190",
+    "label": "Thông tin chung · Liên kết: CLB DN Họ Lê Việt Nam",
+    "group": "Thông tin chung",
+    "default": "https://holevietnam.vn/chuyen-muc/clb-doanh-nhan-ho-le-2/",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > ul:nth-of-type(1) > li:nth-of-type(2) > a:nth-of-type(1)",
+    "kind": "href"
+  },
+  {
+    "id": "page-191",
+    "label": "Thông tin chung · Truyền thống dòng họ",
+    "group": "Thông tin chung",
+    "default": "Truyền thống dòng họ",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > ul:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-192",
+    "label": "Thông tin chung · Liên kết: Truyền thống dòng họ",
+    "group": "Thông tin chung",
+    "default": "https://holevietnam.vn/truyen-thong-dong-ho/",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > ul:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1)",
+    "kind": "href"
+  },
+  {
+    "id": "page-193",
+    "label": "Thông tin chung · Lam Kinh – Đất tổ nhà Lê",
+    "group": "Thông tin chung",
+    "default": "Lam Kinh – Đất tổ nhà Lê",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > ul:nth-of-type(1) > li:nth-of-type(4) > a:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-194",
+    "label": "Thông tin chung · Liên kết: Lam Kinh – Đất tổ nhà Lê",
+    "group": "Thông tin chung",
+    "default": "https://holevietnam.vn/danh-muc/video/lam-kinh-dat-to-nha-le/",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > ul:nth-of-type(1) > li:nth-of-type(4) > a:nth-of-type(1)",
+    "kind": "href"
+  },
+  {
+    "id": "page-195",
+    "label": "Thông tin chung · Kết nối",
+    "group": "Thông tin chung",
+    "default": "Kết nối",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > h4:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-196",
+    "label": "Thông tin chung · Facebook CLB",
+    "group": "Thông tin chung",
+    "default": "Facebook CLB",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-197",
+    "label": "Thông tin chung · Liên kết: Facebook CLB",
+    "group": "Thông tin chung",
+    "default": "#",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(1) > a:nth-of-type(1)",
+    "kind": "href"
+  },
+  {
+    "id": "page-198",
+    "label": "Thông tin chung · Nhóm Zalo",
+    "group": "Thông tin chung",
+    "default": "Nhóm Zalo",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(2) > a:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-199",
+    "label": "Thông tin chung · Liên kết: Nhóm Zalo",
+    "group": "Thông tin chung",
+    "default": "#",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(2) > a:nth-of-type(1)",
+    "kind": "href"
+  },
+  {
+    "id": "page-200",
+    "label": "Thông tin chung · Điều lệ CLB",
+    "group": "Thông tin chung",
+    "default": "Điều lệ CLB",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-201",
+    "label": "Thông tin chung · Liên kết: Điều lệ CLB",
+    "group": "Thông tin chung",
+    "default": "#",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1)",
+    "kind": "href"
+  },
+  {
+    "id": "page-202",
+    "label": "Thông tin chung · Quy ước hoạt động",
+    "group": "Thông tin chung",
+    "default": "Quy ước hoạt động",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(4) > a:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-203",
+    "label": "Thông tin chung · Liên kết: Quy ước hoạt động",
+    "group": "Thông tin chung",
+    "default": "#",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(4) > a:nth-of-type(1)",
+    "kind": "href"
+  },
+  {
+    "id": "page-204",
+    "label": "Thông tin chung · Liên hệ & Đăng ký",
+    "group": "Thông tin chung",
+    "default": "Liên hệ & Đăng ký",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(5) > a:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-205",
+    "label": "Thông tin chung · Liên kết: Liên hệ & Đăng ký",
+    "group": "Thông tin chung",
+    "default": "#join",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > ul:nth-of-type(1) > li:nth-of-type(5) > a:nth-of-type(1)",
+    "kind": "href"
+  },
+  {
+    "id": "page-206",
+    "label": "Thông tin chung · © 2025 CLB Doanh Nhân Họ Lê Đắk Lắk · Trực thuộc Hội đồng Họ Lê Việt Nam",
+    "group": "Thông tin chung",
+    "default": "© 2025 CLB Doanh Nhân Họ Lê Đắk Lắk · Trực thuộc Hội đồng Họ Lê Việt Nam",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1)",
+    "kind": "text"
+  },
+  {
+    "id": "page-207",
+    "label": "Thông tin chung · Đoàn kết · Uy tín · Phát triển",
+    "group": "Thông tin chung",
+    "default": "Đoàn kết · Uy tín · Phát triển",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > footer:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(2)",
+    "kind": "text"
+  },
+  {
+    "id": "page-208",
+    "label": "Thông tin chung · ×",
+    "group": "Thông tin chung",
+    "default": "×",
+    "rows": 3,
+    "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > span:nth-of-type(1)",
+    "kind": "text"
   }
 ]

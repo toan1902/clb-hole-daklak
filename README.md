@@ -3,13 +3,17 @@
 Website: https://xn--lbc-vqa.vn/ — CLB Doanh nhân Họ Lê Đắk Lắk.
 Giữ website HTML hiện tại trên GitHub/Vercel. Thêm `/admin/` và Supabase để lưu dữ liệu thật.
 
+Giao diện trang chủ và trang chi tiết bài viết giữ nguyên từ bản đang công khai `b26c9b7`: HTML, CSS, Google Fonts, điều hướng, biểu tượng, kích thước thẻ tin và định dạng ngày. Không thêm nút hay liên kết vào bố cục cũ. Truy cập quản trị trực tiếp bằng `/admin/`. Các bài cũ giữ nguyên tiêu đề/tóm tắt riêng trên thẻ trang chủ cho đến khi quản trị viên chỉnh trường tương ứng; dữ liệu bài đầy đủ vẫn được giữ nguyên. Bộ kiểm thử `public-layout.test.cjs` đối chiếu mã giao diện và cách trình bày bài cũ với bản gốc.
+
 ## Có thể làm gì?
 
 - Thêm, sửa, xem trước bài viết; lưu nháp hoặc xuất bản.
 - Thêm đoạn văn, tiêu đề mục, ảnh và chú thích; sắp xếp thứ tự nội dung.
 - Tải ảnh bìa và ảnh trong bài (JPG/PNG/WEBP, tối đa 3 MB).
 - Chuyển bài vào thùng rác và khôi phục; không xóa dữ liệu vĩnh viễn.
-- Sửa 10 mục trang chủ: tiêu đề, khẩu hiệu, giới thiệu, lời mời tham gia, liên hệ và dòng tin chạy.
+- Sửa 208 trường trang chủ theo nhóm: tiêu đề, giới thiệu, số liệu, ban điều hành (tên, chức vụ, giới thiệu, điện thoại, ảnh), khuyến học, cội nguồn, danh nhân, liên hệ và liên kết.
+- Thêm/sửa hồ sơ doanh nghiệp thành viên: tên, tóm tắt, ảnh đại diện/logo, người đại diện, lĩnh vực, điện thoại, địa chỉ, website; nội dung chi tiết nhiều đoạn, ảnh và liên kết. Lưu nháp, xuất bản, đưa vào thùng rác và khôi phục.
+- Hồ sơ đã xuất bản hiện trong mục Thành viên và mở trang riêng `doanh-nghiep.html?id=...`. Dữ liệu hồ sơ dùng cùng bảng bài viết, với chuyên mục riêng và khối `profile`; được loại khỏi danh sách tin tức. Không cần thay đổi schema để lưu hồ sơ.
 - Tìm và lọc bài theo trạng thái; tải bản sao JSON của bài và nội dung trang chủ.
 - Giữ 4 bài cũ, ngày đăng, ảnh và đường dẫn `tin-chi-tiet.html?id=...`.
 
@@ -40,6 +44,10 @@ Giữ website HTML hiện tại trên GitHub/Vercel. Thêm `/admin/` và Supabas
 
 ## Dùng hằng ngày
 
+**Nâng cấp dữ liệu trang chủ:** chạy thêm `supabase-content-expanded.sql` trong SQL Editor của dự án `udxnpxtffsmenwhnajeb`. Tệp chỉ thêm những mục còn thiếu bằng `ON CONFLICT DO NOTHING`, không ghi đè nội dung đã sửa hoặc thay đổi quyền. Nếu chưa chạy, các mục mới trong quản trị sẽ báo chưa khởi tạo và chưa cho lưu. Các con số, tên và thông tin nạp vào được lấy từ website cũ, không phải dữ liệu mới đã được xác minh.
+
+**Doanh nghiệp:** chọn **Doanh nghiệp thành viên → Thêm doanh nghiệp**, điền hồ sơ và nội dung chi tiết; dùng **Xem trước**, **Lưu bản nháp**, hoặc **Xuất bản**. Website được hiển thị dưới dạng liên kết mở trong tab mới. Ảnh đại diện có thể tải lên và thay/gỡ; không nhúng mã HTML tùy ý. Chưa có hồ sơ doanh nghiệp thực tế được tự tạo; quản trị viên nhập dữ liệu đã được thành viên cung cấp.
+
 Mở `/admin/` → đăng nhập → **Thêm bài viết**. Điền tiêu đề, chuyên mục, tóm tắt và các đoạn nội dung. **Xem trước** không lưu. **Lưu bản nháp** chỉ cho quản trị viên xem. **Xuất bản** đưa bài lên trang tin và mục hoạt động ở trang chủ.
 
 Để sửa bài, chọn **Chỉnh sửa** trong danh sách. Giữ đường dẫn nếu bài đã được chia sẻ. **Nội dung trang chủ** cho phép sửa từng mục; bấm **Lưu mục này** để công khai thay đổi. Lưu trước khi đóng trình duyệt.
@@ -62,7 +70,7 @@ Chưa cấu hình Supabase: trang quản trị thông báo chưa kết nối và
 
 - Mật khẩu chỉ gửi đến Supabase Auth; token lưu trong cookie HttpOnly, SameSite=Strict (Secure trên HTTPS), không trong localStorage.
 - API kiểm tra thành viên `ldbc_admins`; RLS trong database kiểm tra lại. Khách chỉ đọc bài published đã đến ngày đăng.
-- Nội dung là các khối văn bản/ảnh và hiển thị bằng `textContent`; không chạy HTML, script hay iframe người viết nhập vào.
+- Nội dung là các khối văn bản/ảnh/liên kết/hồ sơ và hiển thị bằng `textContent`; không chạy HTML, script hay iframe người viết nhập vào. Liên kết chỉ nhận HTTP/HTTPS và từ chối URL chứa thông tin đăng nhập.
 - Upload kiểm tra loại, kích thước và chữ ký tệp, chuyển byte gốc vào Storage; tối đa 3 MB để phù hợp giới hạn request của Vercel.
 - Khi hai người cùng sửa, phiên bản cũ bị từ chối ghi đè. Tải lại và đối chiếu thay đổi trước khi lưu tiếp.
 - Bản sao JSON chứa nội dung và đường dẫn ảnh, không chứa tệp ảnh. Cần sao lưu bucket `ldbc-post-images` riêng nếu muốn bản sao hoàn chỉnh. Khôi phục JSON hiện cần người quản trị kỹ thuật nhập lại; chưa có nút nhập bản sao trong giao diện.

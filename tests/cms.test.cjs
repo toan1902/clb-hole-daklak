@@ -23,3 +23,23 @@ test('Server validates post structure and accepts existing Vietnamese articles',
 test('Image validation rejects fake extensions, SVG, and oversized input',()=>{assert.throws(()=>handler.checkImage({type:'image/jpeg',data:Buffer.from('<script>x</script>').toString('base64')}));assert.throws(()=>handler.checkImage({type:'image/svg+xml',data:'aaaa'}));assert.throws(()=>handler.checkImage({type:'image/png',data:'a'.repeat(4194305)}));assert.equal(handler.checkImage({type:'image/png',data:Buffer.from([137,80,78,71,13,10,26,10,1]).toString('base64')}).extension,'png')});
 test('Rendering text containing HTML keeps it as text, never executable markup',()=>{const previous=global.document;const nodes=[];global.document={createElement(tag){const n={tag,children:[],append(...items){this.children.push(...items)}};nodes.push(n);return n}};const container={children:[],replaceChildren(){this.children=[]},append(n){this.children.push(n)}};CMS.renderBody(container,[{type:'p',text:'<img src=x onerror=alert(1)>'},{type:'img',src:'javascript:alert(1)'},{type:'script',text:'bad'}]);assert.equal(container.children.length,1);assert.equal(container.children[0].textContent,'<img src=x onerror=alert(1)>');assert.equal(container.children[0].innerHTML,undefined);global.document=previous});
 test('Logout clears cookies even when upstream is unavailable',async()=>{setup();global.fetch=async()=>{throw Error('offline')};const r=await call('logout',{method:'POST',body:{},cookie:'ldbc_access=example'});assert.equal(r.statusCode,200);assert.ok(r.headers['Set-Cookie'].every(c=>c.includes('Max-Age=0')))});
+
+test('Member directory is public only for published profiles; news excludes profiles',async()=>{
+ setup();const urls=[];global.fetch=async(url,opt)=>{urls.push(new URL(url));assert.equal(opt.headers.Authorization,undefined);return response([])};
+ assert.equal((await call('members')).statusCode,200);assert.equal(urls[0].searchParams.get('category'),'eq.Doanh nghiệp thành viên');assert.equal(urls[0].searchParams.get('status'),'eq.published');
+ urls.length=0;await call('public');assert.equal(urls[0].searchParams.get('category'),'neq.Doanh nghiệp thành viên');
+});
+test('Business profile round-trip retains contacts and website; unsafe links are rejected',()=>{
+ const profile={type:'profile',representative:'Lê Ví Dụ',sector:'Dịch vụ',phone:'0123456789',address:'Đắk Lắk',website:'https://example.com/'};
+ const input={...sample,category:'Doanh nghiệp thành viên',body:[profile,{type:'p',text:'Giới thiệu doanh nghiệp'},{type:'link',text:'Sản phẩm',href:'https://example.com/products'}]};
+ assert.deepEqual(CMS.validatePost(input).body,input.body);
+ for(const website of ['javascript:alert(1)','data:text/html,test','https://user:password@example.com'])assert.throws(()=>CMS.validatePost({...input,body:[{...profile,website}]}));
+ assert.throws(()=>CMS.validatePost({...input,body:[{type:'link',text:'X',href:'javascript:alert(1)'}]}));
+ assert.throws(()=>CMS.validatePost({...input,body:[profile,profile]}));
+});
+test('Unsafe homepage URLs are rejected after administrator authentication',async()=>{
+ setup();let writes=0;global.fetch=async(url,opt)=>{if(url.endsWith('/user'))return response({id:'admin-1'});if(url.includes('ldbc_admins'))return response([{user_id:'admin-1'}]);writes++;return response([])};
+ const field=require('../assets/content-fields.json').find(f=>f.kind==='href');
+ const r=await call('save-content',{method:'POST',cookie:'ldbc_access=example',body:{id:field.id,value:'javascript:alert(1)',updated_at:'2026-09-01T00:00:00Z'}});
+ assert.equal(r.statusCode,400);assert.equal(writes,0);
+});

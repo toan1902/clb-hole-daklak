@@ -64,10 +64,11 @@ module.exports=async function handler(req,res) {
     if(!configured)throw failure(503,'Chưa kết nối nơi lưu dữ liệu. Cần thiết lập Supabase và cấu hình Vercel.');
     if(action==='public'&&req.method==='GET') {
       const [posts,content]=await Promise.all([
-        upstream('/rest/v1/ldbc_posts?select=id,title,slug,category,excerpt,cover_url,published_at&status=eq.published&order=published_at.desc&limit=500'),
+        upstream('/rest/v1/ldbc_posts?select=id,title,slug,category,excerpt,cover_url,published_at&category=neq.'+encodeURIComponent('Doanh nghiệp thành viên')+'&status=eq.published&order=published_at.desc&limit=500'),
         upstream('/rest/v1/ldbc_site_content?select=id,value')]);
       return send(200,{posts,content});
     }
+    if(action==='members'&&req.method==='GET')return send(200,await upstream('/rest/v1/ldbc_posts?select=id,title,slug,category,excerpt,cover_url,published_at&category=eq.'+encodeURIComponent('Doanh nghiệp thành viên')+'&status=eq.published&order=title.asc&limit=500'));
     if(action==='article'&&req.method==='GET') {
       if(!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(q.slug||''))throw failure(400,'Đường dẫn bài viết không hợp lệ.');
       const rows=await upstream('/rest/v1/ldbc_posts?select=*&status=eq.published&slug=eq.'+encodeURIComponent(q.slug));
@@ -104,7 +105,11 @@ module.exports=async function handler(req,res) {
     if(action==='save-content'&&req.method==='POST') {
       const fields=require('../assets/content-fields.json');
       const {id,value,updated_at}=req.body||{};
-      if(!fields.some(f=>f.id===id)||typeof value!=='string'||value.length>10000||!updated_at||!Number.isFinite(Date.parse(updated_at)))throw failure(400,'Nội dung hoặc phiên bản không hợp lệ.');
+      const field=fields.find(f=>f.id===id);
+      if(!field||typeof value!=='string'||value.length>10000||!updated_at||!Number.isFinite(Date.parse(updated_at)))throw failure(400,'Nội dung hoặc phiên bản không hợp lệ.');
+      const {websiteURL,imageURL}=require('../assets/cms-common.js');
+      if(['image','src'].includes(field.kind)&&value&&!imageURL(value))throw failure(400,'Địa chỉ ảnh không hợp lệ.');
+      if(field.kind==='href'&&!websiteURL(value)&&! /^(#[a-zA-Z][\w-]*|tel:\+?[\d ()-]+|mailto:[^\s@]+@[^\s@]+|\/(?!\/)[\w./?#=&%-]*)$/.test(value))throw failure(400,'Liên kết không hợp lệ.');
       const rows=await upstream('/rest/v1/ldbc_site_content?id=eq.'+encodeURIComponent(id)+'&updated_at=eq.'+encodeURIComponent(updated_at),{token,method:'PATCH',body:{value},headers:{Prefer:'return=representation'}});
       if(!rows.length)throw failure(409,'Nội dung đã thay đổi. Hãy tải lại để tiếp tục.');
       return send(200,rows[0]);

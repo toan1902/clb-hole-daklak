@@ -880,8 +880,37 @@
     <button class="tab-btn">Tương thân tương ái</button>
   </div>
 
-  <div class="news-grid" id="cmsNews" aria-live="polite"><p>Đang tải tin hoạt động…</p></div>
-  <p><a href="/tin-tuc.html" class="btn-gold" style="margin-top:24px">Xem tất cả bài viết →</a></p>
+  <div class="news-grid" id="cmsNews"><div class="news-card" onclick="window.location.href='tin-chi-tiet.html?id=giao-luu-ca-phe'"><div class="news-img-placeholder" style="height:240px;">☕</div><div class="news-body"><div class="news-tag">Kết nối · Giao thương</div><h3>Giao lưu cà phê tại văn phòng CLB — Chủ tịch chia sẻ dòng lịch sử, định hướng phát triển doanh nghiệp cho thành viên</h3><p>Chủ tịch Lê Văn Vương cùng anh Lê Khâm, anh Lê Quang Toàn giao lưu tại văn phòng CLB. Anh Vương chia sẻ về dòng lịch sử, góp ý định hướng phát triển doanh nghiệp cho từng thành viên, khép lại bằng quà tặng trà hoa, trà cascara và quà Trung thu sớm.</p><div class="news-date">📅 06 tháng 9, 2026</div></div></div>
+    <div class="news-card" onclick="window.location.href='tin-chi-tiet.html?id=dai-hoi-clb-vn-i'">
+      <div class="news-img-placeholder" style="height:240px;">🏆</div>
+      <div class="news-body">
+        <div class="news-tag">Sự kiện quốc gia</div>
+        <h3>Đại hội CLB Doanh nhân Họ Lê Việt Nam lần thứ I — 300 đại biểu tại Hải Tiến, Thanh Hoá</h3>
+        <p>CLB Doanh nhân Họ Lê Đắk Lắk cử đoàn đại biểu tham dự Đại hội lần thứ I, nhiệm kỳ 2024-2030. Đại hội đã bầu 46 ủy viên BCH; TS. Lê Xuân Thảo đắc cử Chủ tịch CLB toàn quốc. Phái đoàn Đắk Lắk trình bày sáng kiến kết nối doanh nghiệp Tây Nguyên.</p>
+        <div class="news-date">📅 12 tháng 10, 2025</div>
+      </div>
+    </div>
+
+    <div class="news-card" onclick="window.location.href='tin-chi-tiet.html?id=le-dang-huong-lam-kinh'">
+      <div class="news-img-placeholder" style="height:155px;">🌿</div>
+      <div class="news-body">
+        <div class="news-tag">Tri ân tiên tổ</div>
+        <h3>Hành trình về nguồn — Lễ dâng hương tại Lam Kinh, Thanh Hoá</h3>
+        <p>Đoàn doanh nhân Họ Lê Đắk Lắk cùng đoàn dâng hương tưởng niệm Đức Vua Lê Thái Tổ tại Khu di tích đặc biệt Lam Kinh.</p>
+        <div class="news-date">📅 11 tháng 10, 2025</div>
+      </div>
+    </div>
+
+    <div class="news-card" onclick="window.location.href='tin-chi-tiet.html?id=hoc-bong-2024'">
+      <div class="news-img-placeholder" style="height:155px;">🎓</div>
+      <div class="news-body">
+        <div class="news-tag">Khuyến học</div>
+        <h3>Trao 50 suất học bổng "Họ Lê Tiếp Sức" cho học sinh xuất sắc Đắk Lắk</h3>
+        <p>CLB phối hợp Ban Khuyến học trao tặng học bổng, góp phần đầu tư cho thế hệ tương lai dòng họ.</p>
+        <div class="news-date">📅 20 tháng 10, 2024</div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- KHUYẾN HỌC – KHUYẾN TÀI -->
@@ -1055,7 +1084,7 @@
         <li><a href="#">Nhóm Zalo</a></li>
         <li><a href="#">Điều lệ CLB</a></li>
         <li><a href="#">Quy ước hoạt động</a></li>
-        <li><a href="#join">Liên hệ & Đăng ký</a></li><li><a href="/admin/">Quản trị website</a></li>
+        <li><a href="#join">Liên hệ & Đăng ký</a></li>
       </ul>
     </div>
   </div>
@@ -1065,6 +1094,6 @@
   </div>
 </footer><style>.news-modal{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(20,8,0,0.75);z-index:1000;align-items:center;justify-content:center;padding:20px;}.news-modal.active{display:flex;}.news-modal-content{background:#FDF6E3;border-radius:10px;max-width:600px;width:100%;max-height:85vh;overflow-y:auto;padding:32px;position:relative;box-shadow:0 20px 60px rgba(0,0,0,0.4);}.news-modal-close{position:absolute;top:14px;right:18px;font-size:26px;cursor:pointer;color:#7B1212;font-weight:700;line-height:1;}.news-modal-content h2{font-family:'Playfair Display',serif;font-size:22px;color:#2C1A0E;margin:10px 0 14px;line-height:1.35;}.news-modal-content p{font-size:14px;color:#5D4037;line-height:1.85;}</style><div id="newsModal" class="news-modal" onclick="closeNewsModal(event)"><div class="news-modal-content"><span class="news-modal-close" onclick="closeNewsModal(event)">&times;</span><div id="newsModalTag" class="news-tag"></div><h2 id="newsModalTitle"></h2><div id="newsModalDate" class="news-date" style="margin-bottom:16px;"></div><p id="newsModalBody"></p></div></div><script>function openNewsModal(card){var tagEl=card.querySelector('.news-tag');var titleEl=card.querySelector('h3');var bodyEl=card.querySelector('p');var dateEl=card.querySelector('.news-date');document.getElementById('newsModalTag').textContent=tagEl?tagEl.textContent:'';document.getElementById('newsModalTitle').textContent=titleEl?titleEl.textContent:'';document.getElementById('newsModalBody').textContent=bodyEl?bodyEl.textContent:'';document.getElementById('newsModalDate').textContent=dateEl?dateEl.textContent:'';document.getElementById('newsModal').classList.add('active');}function closeNewsModal(e){if(e.target.id==='newsModal'||e.target.classList.contains('news-modal-close')){document.getElementById('newsModal').classList.remove('active');}}</script>
 
-<script src="/stc-config.js?v=1"></script><script src="/assets/cms-common.js?v=1"></script><script src="/assets/public-cms.js?v=1"></script>
+<script src="/stc-config.js?v=3"></script><script src="/assets/cms-common.js?v=3"></script><script src="/assets/public-cms.js?v=3"></script>
 </body>
 </html>
