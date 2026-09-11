@@ -705,7 +705,7 @@
 <!-- TICKER -->
 <div class="ticker-wrap">
   <span class="ticker-label">TIN MỚI</span>
-  <span class="ticker-content">
+  <span class="ticker-content" data-cms="ticker">
     Đại hội CLB Doanh nhân Họ Lê Việt Nam lần I: 300 đại biểu, bầu 46 ủy viên BCH, Chủ tịch TS. Lê Xuân Thảo &nbsp;|&nbsp;
     CLB Doanh nhân Họ Lê Đắk Lắk kết nối với mạng lưới doanh nhân Họ Lê toàn quốc &nbsp;|&nbsp;
     Chương trình Khuyến học – Khuyến tài năm 2025: Trao 50 suất học bổng &nbsp;|&nbsp;
@@ -716,9 +716,9 @@
 <!-- HERO -->
 <section id="hero" style="margin-top:0;">
   <div class="hero-eyebrow">Thành lập tại Đắk Lắk · Trực thuộc CLB DN Họ Lê Việt Nam</div>
-  <h1>Câu Lạc Bộ<br><em>Doanh Nhân Họ Lê</em><br>Đắk Lắk</h1>
-  <div class="hero-motto">"Đoàn kết · Phát triển · Rạng danh Lê tộc Việt Nam"</div>
-  <p>Nơi kết nối, chia sẻ và cùng nhau phát triển của những doanh nhân mang dòng họ Lê trên mảnh đất Tây Nguyên hùng vĩ.</p>
+  <h1 data-cms="hero-title">Câu Lạc Bộ<br><em>Doanh Nhân Họ Lê</em><br>Đắk Lắk</h1>
+  <div class="hero-motto" data-cms="hero-motto">"Đoàn kết · Phát triển · Rạng danh Lê tộc Việt Nam"</div>
+  <p data-cms="hero-intro">Nơi kết nối, chia sẻ và cùng nhau phát triển của những doanh nhân mang dòng họ Lê trên mảnh đất Tây Nguyên hùng vĩ.</p>
   <div>
     <a href="#join" class="btn-gold">Tham gia CLB</a>
     <a href="#gioithieu" class="btn-outline">Tìm hiểu thêm</a>
@@ -740,14 +740,14 @@
     </div>
     <div>
       <div class="section-label">Về chúng tôi</div>
-      <h2 class="section-title">Đoàn kết dòng họ —<br>Kiến tạo tương lai</h2>
+      <h2 class="section-title" data-cms="about-title">Đoàn kết dòng họ —<br>Kiến tạo tương lai</h2>
 
       <div class="about-quote">
-        <p>"Với tinh thần Tự hào truyền thống, kiến tạo tương lai và Bản lĩnh vững vàng, vươn tới thịnh vượng, chúng tôi cùng nhau xây dựng mạng lưới kinh doanh Họ Lê vững mạnh trên đất Tây Nguyên."</p>
+        <p data-cms="about-quote">"Với tinh thần Tự hào truyền thống, kiến tạo tương lai và Bản lĩnh vững vàng, vươn tới thịnh vượng, chúng tôi cùng nhau xây dựng mạng lưới kinh doanh Họ Lê vững mạnh trên đất Tây Nguyên."</p>
         <cite>— Ban Chủ nhiệm CLB Doanh nhân Họ Lê Đắk Lắk</cite>
       </div>
 
-      <p class="section-sub" style="margin-bottom:20px;">
+      <p class="section-sub" style="margin-bottom:20px;" data-cms="about-intro">
         Câu lạc bộ Doanh nhân Họ Lê Đắk Lắk là thành viên của <strong>CLB Doanh nhân Họ Lê Việt Nam</strong> — tổ chức trực thuộc Hội đồng Họ Lê Việt Nam. Chúng tôi hoạt động theo tinh thần <em>tương thân tương ái</em>, cùng nhau phát triển kinh doanh và gìn giữ truyền thống dòng tộc.
       </p>
 
@@ -880,7 +880,7 @@
     <button class="tab-btn">Tương thân tương ái</button>
   </div>
 
-  <div class="news-grid"><div class="news-card" onclick="window.location.href='tin-chi-tiet.html?id=giao-luu-ca-phe'"><div class="news-img-placeholder" style="height:240px;">☕</div><div class="news-body"><div class="news-tag">Kết nối · Giao thương</div><h3>Giao lưu cà phê tại văn phòng CLB — Chủ tịch chia sẻ dòng lịch sử, định hướng phát triển doanh nghiệp cho thành viên</h3><p>Chủ tịch Lê Văn Vương cùng anh Lê Khâm, anh Lê Quang Toàn giao lưu tại văn phòng CLB. Anh Vương chia sẻ về dòng lịch sử, góp ý định hướng phát triển doanh nghiệp cho từng thành viên, khép lại bằng quà tặng trà hoa, trà cascara và quà Trung thu sớm.</p><div class="news-date">📅 06 tháng 9, 2026</div></div></div>
+  <div class="news-grid" id="cmsNews"><div class="news-card" onclick="window.location.href='tin-chi-tiet.html?id=giao-luu-ca-phe'"><div class="news-img-placeholder" style="height:240px;">☕</div><div class="news-body"><div class="news-tag">Kết nối · Giao thương</div><h3>Giao lưu cà phê tại văn phòng CLB — Chủ tịch chia sẻ dòng lịch sử, định hướng phát triển doanh nghiệp cho thành viên</h3><p>Chủ tịch Lê Văn Vương cùng anh Lê Khâm, anh Lê Quang Toàn giao lưu tại văn phòng CLB. Anh Vương chia sẻ về dòng lịch sử, góp ý định hướng phát triển doanh nghiệp cho từng thành viên, khép lại bằng quà tặng trà hoa, trà cascara và quà Trung thu sớm.</p><div class="news-date">📅 06 tháng 9, 2026</div></div></div>
     <div class="news-card" onclick="window.location.href='tin-chi-tiet.html?id=dai-hoi-clb-vn-i'">
       <div class="news-img-placeholder" style="height:240px;">🏆</div>
       <div class="news-body">
@@ -1039,8 +1039,8 @@
 
 <!-- JOIN -->
 <section id="join">
-  <h2>Trở Thành Thành Viên<br>Câu Lạc Bộ Họ Lê Đắk Lắk</h2>
-  <p>Cùng chúng tôi xây dựng mạng lưới doanh nhân Họ Lê vững mạnh — nơi mỗi thành viên được kết nối, hỗ trợ và cùng nhau phát triển dưới tinh thần <em>"Đoàn kết – Phát triển – Rạng danh Lê tộc Việt Nam".</em></p>
+  <h2 data-cms="join-title">Trở Thành Thành Viên<br>Câu Lạc Bộ Họ Lê Đắk Lắk</h2>
+  <p data-cms="join-intro">Cùng chúng tôi xây dựng mạng lưới doanh nhân Họ Lê vững mạnh — nơi mỗi thành viên được kết nối, hỗ trợ và cùng nhau phát triển dưới tinh thần <em>"Đoàn kết – Phát triển – Rạng danh Lê tộc Việt Nam".</em></p>
   <a href="tel:0823047047" class="btn-outline-gold">📞 Liên hệ đăng ký: 0823 047 047</a>
   <p style="color:rgba(255,255,255,0.5); font-size:12px; margin-top:10px;">Lê Quang Toàn — Chánh Văn phòng</p>
 </section>
@@ -1050,7 +1050,7 @@
   <div class="footer-grid">
     <div class="footer-brand">
       <h3>CLB Doanh Nhân Họ Lê Đắk Lắk</h3>
-      <p>
+      <p data-cms="contact">
         Địa chỉ: 321 Y Wang, P. Ea Kao, T.Đắk Lắk<br>
         Email: clbdoanhnanhhole.daklak@gmail.com<br>
         Điện thoại: <a href="tel:0945820779" style="color:rgba(255,255,255,0.6);">0945 820 779</a> (Chủ tịch Lê Văn Vương)
@@ -1094,5 +1094,6 @@
   </div>
 </footer><style>.news-modal{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(20,8,0,0.75);z-index:1000;align-items:center;justify-content:center;padding:20px;}.news-modal.active{display:flex;}.news-modal-content{background:#FDF6E3;border-radius:10px;max-width:600px;width:100%;max-height:85vh;overflow-y:auto;padding:32px;position:relative;box-shadow:0 20px 60px rgba(0,0,0,0.4);}.news-modal-close{position:absolute;top:14px;right:18px;font-size:26px;cursor:pointer;color:#7B1212;font-weight:700;line-height:1;}.news-modal-content h2{font-family:'Playfair Display',serif;font-size:22px;color:#2C1A0E;margin:10px 0 14px;line-height:1.35;}.news-modal-content p{font-size:14px;color:#5D4037;line-height:1.85;}</style><div id="newsModal" class="news-modal" onclick="closeNewsModal(event)"><div class="news-modal-content"><span class="news-modal-close" onclick="closeNewsModal(event)">&times;</span><div id="newsModalTag" class="news-tag"></div><h2 id="newsModalTitle"></h2><div id="newsModalDate" class="news-date" style="margin-bottom:16px;"></div><p id="newsModalBody"></p></div></div><script>function openNewsModal(card){var tagEl=card.querySelector('.news-tag');var titleEl=card.querySelector('h3');var bodyEl=card.querySelector('p');var dateEl=card.querySelector('.news-date');document.getElementById('newsModalTag').textContent=tagEl?tagEl.textContent:'';document.getElementById('newsModalTitle').textContent=titleEl?titleEl.textContent:'';document.getElementById('newsModalBody').textContent=bodyEl?bodyEl.textContent:'';document.getElementById('newsModalDate').textContent=dateEl?dateEl.textContent:'';document.getElementById('newsModal').classList.add('active');}function closeNewsModal(e){if(e.target.id==='newsModal'||e.target.classList.contains('news-modal-close')){document.getElementById('newsModal').classList.remove('active');}}</script>
 
+<script src="/stc-config.js?v=3"></script><script src="/assets/cms-common.js?v=3"></script><script src="/assets/public-cms.js?v=3"></script>
 </body>
 </html>
