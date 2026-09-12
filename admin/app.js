@@ -25,7 +25,7 @@ function renderList(){
   for(const p of list){const row=node('div',undefined,'post-row'),icon=node('div','Lê','post-icon'),info=node('div'),meta=node('div',undefined,'post-meta');if(CMS.imageURL(p.cover_url)){const img=node('img');img.src=CMS.imageURL(p.cover_url);img.alt='';icon.replaceChildren(img)}info.append(node('h3',p.title));meta.append(node('span',p.category),node('span',({draft:'Bản nháp',published:'Đã xuất bản',trash:'Thùng rác'})[p.status],'badge '+p.status),node('span',new Date(p.updated_at).toLocaleDateString('vi-VN')));info.append(meta);const edit=node('button',p.status==='trash'?'Khôi phục':'Chỉnh sửa','secondary');edit.onclick=()=>{if(leave()){dirty=false;openPost(p)}};row.append(icon,info,edit);$('postList').append(row)}
 }
 function setDirty(){dirty=true;$('saveState').textContent='Có thay đổi chưa lưu'}
-function openPost(p=null){$('businessImportFile').value='';$('importStatus').textContent='';current=p?structuredClone(p):null;cover=p?.cover_url||'';const profile=p?.body?.find(b=>b.type==='profile')||{};blocks=structuredClone(p?.body?.filter(b=>b.type!=='profile')||[{type:'p',text:''}]);const isMember=collection==='members';$('memberOwner').value=profile.member_id||memberCatalog.find(m=>CMS.slug(profile.representative||'')===m.id)?.id||'';$('profileFields').hidden=!isMember;$('backButton').textContent=isMember?'← Danh sách doanh nghiệp':'← Danh sách bài viết';$('postTitle').placeholder=isMember?'Nhập tên doanh nghiệp':'Nhập tiêu đề bài viết';$('excerpt').placeholder=isMember?'Giới thiệu ngắn trên thẻ doanh nghiệp':'Giới thiệu ngắn hiển thị trên danh sách tin';$('titleLabel').textContent=isMember?'Tên doanh nghiệp':'Tiêu đề bài viết';$('coverLabel').textContent=isMember?'Ảnh đại diện / logo doanh nghiệp':'Ảnh bìa';for(const [id,key] of [['representative','representative'],['sector','sector'],['businessPhone','phone'],['businessAddress','address'],['businessWebsite','website']])$(id).value=profile[key]||'';$('postTitle').value=p?.title||'';$('slug').value=p?.slug||'';$('excerpt').value=p?.excerpt||'';$('category').value=p?.category||(isMember?MEMBER_CATEGORY:CMS.categories[0]);$('category').disabled=isMember;for(const option of $('category').options)option.disabled=!isMember&&option.value===MEMBER_CATEGORY;$('publishedDate').value=p?.published_at?new Date(p.published_at).toLocaleDateString('en-CA',{timeZone:'Asia/Bangkok'}):new Date().toLocaleDateString('en-CA',{timeZone:'Asia/Bangkok'});$('saveState').textContent=p?'Đã lưu: '+new Date(p.updated_at).toLocaleString('vi-VN'):'Bài mới · Chưa lưu';$('trashButton').hidden=!p||p.status==='trash';$('publishButton').textContent=p?.status==='published'?'Cập nhật bài viết':'Xuất bản';$('draftButton').textContent=p?.status==='trash'?'Khôi phục vào bản nháp':'Lưu bản nháp';$('coverFile').value='';renderCover();renderBlocks();view('editor');tell(p?.status==='trash'?'Bài đang trong thùng rác. Lưu bản nháp để khôi phục.':'');dirty=false}
+function openPost(p=null){$('businessImportFile').value='';$('importStatus').textContent='';current=p?structuredClone(p):null;cover=p?.cover_url||'';const profile=p?.body?.find(b=>b.type==='profile')||{};blocks=structuredClone(p?.body?.filter(b=>b.type!=='profile')||[{type:'p',text:''}]);const isMember=collection==='members';$('memberOwner').value=profile.member_id||memberCatalog.find(m=>CMS.slug(profile.representative||'')===m.id)?.id||'';$('profileFields').hidden=!isMember;$('backButton').textContent=isMember?'← Danh sách doanh nghiệp':'← Danh sách bài viết';$('postTitle').placeholder=isMember?'Nhập tên doanh nghiệp':'Nhập tiêu đề bài viết';$('excerpt').placeholder=isMember?'Giới thiệu ngắn trên thẻ doanh nghiệp':'Giới thiệu ngắn hiển thị trên danh sách tin';$('titleLabel').textContent=isMember?'Tên doanh nghiệp':'Tiêu đề bài viết';$('coverLabel').textContent=isMember?'Ảnh đại diện / logo doanh nghiệp':'Ảnh bìa';for(const [id,key] of [['representative','representative'],['sector','sector'],['businessPhone','phone'],['businessAddress','address'],['businessWebsite','website'],['businessFacebook','facebook']])$(id).value=profile[key]||'';$('postTitle').value=p?.title||'';$('slug').value=p?.slug||'';$('excerpt').value=p?.excerpt||'';$('category').value=p?.category||(isMember?MEMBER_CATEGORY:CMS.categories[0]);$('category').disabled=isMember;for(const option of $('category').options)option.disabled=!isMember&&option.value===MEMBER_CATEGORY;$('publishedDate').value=p?.published_at?new Date(p.published_at).toLocaleDateString('en-CA',{timeZone:'Asia/Bangkok'}):new Date().toLocaleDateString('en-CA',{timeZone:'Asia/Bangkok'});$('saveState').textContent=p?'Đã lưu: '+new Date(p.updated_at).toLocaleString('vi-VN'):'Bài mới · Chưa lưu';$('trashButton').hidden=!p||p.status==='trash';$('publishButton').textContent=p?.status==='published'?'Cập nhật bài viết':'Xuất bản';$('draftButton').textContent=p?.status==='trash'?'Khôi phục vào bản nháp':'Lưu bản nháp';$('coverFile').value='';renderCover();renderBlocks();view('editor');tell(p?.status==='trash'?'Bài đang trong thùng rác. Lưu bản nháp để khôi phục.':'');dirty=false}
 function renderCover(){const url=CMS.imageURL(cover);$('coverPreview').hidden=!url;$('removeCover').hidden=!url;if(url)$('coverPreview').src=url;else $('coverPreview').removeAttribute('src')}
 async function upload(file){if(!file||!['image/jpeg','image/png','image/webp'].includes(file.type)||file.size>3*1024*1024)throw Error('Chọn ảnh JPG, PNG hoặc WEBP tối đa 3 MB.');const data=await new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(r.result.split(',')[1]);r.onerror=()=>reject(Error('Không đọc được ảnh.'));r.readAsDataURL(file)});return (await api('upload',{type:file.type,data})).url}
 function renderBlocks(){
@@ -37,7 +37,7 @@ function renderBlocks(){
     else{const text=node('textarea');text.rows=b.type==='h2'?2:5;text.value=b.text||'';text.maxLength=20000;text.setAttribute('aria-label',b.type==='h2'?'Nội dung tiêu đề mục':'Nội dung đoạn văn');text.oninput=()=>{b.text=text.value;setDirty()};wrap.append(text)}$('blocks').append(wrap)
   });
 }
-function values(status){if(collection==='members'&&!$('representative').value.trim())throw Error('Chọn thành viên hoặc nhập tên thành viên đại diện.');return CMS.validatePost({title:$('postTitle').value,slug:$('slug').value,excerpt:$('excerpt').value,category:$('category').value,cover_url:cover,body:collection==='members'?[{type:'profile',member_id:$('memberOwner').value||CMS.slug($('representative').value),representative:$('representative').value,sector:$('sector').value,phone:$('businessPhone').value,address:$('businessAddress').value,website:$('businessWebsite').value},...blocks]:blocks,status,published_at:$('publishedDate').value?new Date($('publishedDate').value+'T00:00:00+07:00').toISOString():null})}
+function values(status){if(collection==='members'&&!$('representative').value.trim())throw Error('Chọn thành viên hoặc nhập tên thành viên đại diện.');return CMS.validatePost({title:$('postTitle').value,slug:$('slug').value,excerpt:$('excerpt').value,category:$('category').value,cover_url:cover,body:collection==='members'?[{type:'profile',member_id:$('memberOwner').value||CMS.slug($('representative').value),representative:$('representative').value,sector:$('sector').value,phone:$('businessPhone').value,address:$('businessAddress').value,website:$('businessWebsite').value,facebook:$('businessFacebook').value},...blocks]:blocks,status,published_at:$('publishedDate').value?new Date($('publishedDate').value+'T00:00:00+07:00').toISOString():null})}
 async function save(status){
   if(status==='published'&&!confirm(current?.status==='published'?'Cập nhật nội dung bài đang công khai trên website?':'Xuất bản bài này để mọi người đọc trên website?'))return;
   const p=values(status);if(current){p.id=current.id;p.updated_at=current.updated_at}const saved=await api('save-post',p);const i=posts.findIndex(x=>x.id===saved.id);if(i<0)posts.unshift(saved);else posts[i]=saved;dirty=false;openPost(saved);renderList();tell(status==='published'?'Đã xuất bản. Bài viết đã được lưu vào cơ sở dữ liệu.':status==='trash'?'Đã chuyển vào thùng rác. Có thể khôi phục từ danh sách bài viết.':'Đã lưu bản nháp. Chỉ quản trị viên xem được.');if(status==='trash')view('posts')
@@ -54,7 +54,7 @@ $('search').oninput=renderList;$('filter').onchange=renderList;$('reloadButton')
 $('postTitle').oninput=()=>{if(!current){$('slug').value=CMS.slug($('postTitle').value)}setDirty()};for(const id of ['slug','excerpt','category','publishedDate'])$(id).oninput=setDirty;
 $('memberOwner').onchange=()=>{const m=memberCatalog.find(m=>m.id===$('memberOwner').value);if(m)$('representative').value=content.find(c=>c.id===m.fields.name)?.value||m.name;setDirty()};
 $('addLink').onclick=()=>{if(busy)return;blocks.push({type:'link',text:'',href:''});setDirty();renderBlocks()};
-for(const id of ['representative','sector','businessPhone','businessAddress','businessWebsite'])$(id).oninput=setDirty;
+for(const id of ['representative','sector','businessPhone','businessAddress','businessWebsite','businessFacebook'])$(id).oninput=setDirty;
 $('addParagraph').onclick=()=>{if(busy)return;blocks.push({type:'p',text:''});setDirty();renderBlocks()};$('addHeading').onclick=()=>{if(busy)return;blocks.push({type:'h2',text:''});setDirty();renderBlocks()};$('addImage').onclick=()=>{if(busy)return;blocks.push({type:'img',src:'',caption:''});setDirty();renderBlocks()};
 $('coverFile').onchange=async()=>{if(busy)return;busy=true;$('coverFile').disabled=true;try{cover=await upload($('coverFile').files[0]);setDirty();renderCover()}catch(e){tell(e.message,true)}finally{busy=false;$('coverFile').disabled=false}};$('removeCover').onclick=()=>{cover='';setDirty();renderCover()};
 $('postForm').onsubmit=e=>{e.preventDefault();const button=e.submitter||$('draftButton');run(button,()=>save(button.value||'draft'))};$('trashButton').onclick=()=>{if(confirm('Chuyển bài này vào thùng rác? Bài sẽ được gỡ khỏi website và có thể khôi phục.'))run($('trashButton'),()=>save('trash'))};
@@ -87,23 +87,38 @@ async function saveMemberAvatar(member,record,value){const saved=await api('save
 $('directoryBack').onclick=()=>{if(leave()){dirty=false;current=null;view('directory')}};
 $('otherMembersButton').onclick=()=>{selectedMember=null;$('search').value='';$('filter').value='all';view('posts');renderList()};
 
-const importFields={title:['Tên doanh nghiệp','postTitle'],representative:['Thành viên đại diện','representative'],sector:['Lĩnh vực kinh doanh','sector'],phone:['Điện thoại','businessPhone'],address:['Địa chỉ','businessAddress'],website:['Website','businessWebsite'],excerpt:['Tóm tắt','excerpt'],body:['Nội dung chi tiết',null]};
+const importFields={title:['Tên doanh nghiệp','postTitle'],representative:['Thành viên đại diện','representative'],sector:['Lĩnh vực kinh doanh','sector'],phone:['Điện thoại','businessPhone'],address:['Địa chỉ','businessAddress'],website:['Website','businessWebsite'],facebook:['Facebook','businessFacebook'],excerpt:['Tóm tắt','excerpt'],body:['Nội dung chi tiết',null]};
 let importSelections=[];
+function presentImportResult(parsed){
+ $('importCandidates').replaceChildren();importSelections=[];
+ for(const [key,value]of Object.entries(parsed.data)){
+  const def=importFields[key];if(!def)continue;
+  if(key==='representative'&&$('memberOwner').value){parsed.warnings.push('Giữ nguyên thành viên đã chọn; không đổi người đại diện theo tệp.');continue}
+  const old=def[1]?$(def[1]).value:blocks.some(b=>b.type==='img'||b.type==='link'||b.text?.trim())?'Nội dung hiện có':'';
+  const panel=node('div',undefined,'import-candidate'),label=node('label'),check=node('input');check.type='checkbox';check.checked=!old;label.append(check,document.createTextNode(def[0]));const input=node('textarea');input.value=value;input.maxLength=({title:240,representative:240,sector:240,phone:80,address:500,website:2000,facebook:2000,excerpt:600,body:100000})[key];input.rows=key==='body'?8:2;input.setAttribute('aria-label','Nội dung nhận diện: '+def[0]);panel.append(label,input);
+  if(old)panel.append(node('p','Trường đang có dữ liệu. Chỉ chọn nếu muốn thay thế.','hint'));
+  if(parsed.sources[key])panel.append(node('small','Nhận diện từ: '+parsed.sources[key]));$('importCandidates').append(panel);importSelections.push({key,check,input});
+ }
+ $('importWarnings').textContent=parsed.warnings.join(' ');$('importStatus').textContent='Đã nhận diện '+importSelections.length+' trường. Kiểm tra trước khi áp dụng.';$('importDialog').showModal();
+}
 $('readBusinessFile').onclick=()=>run($('readBusinessFile'),async()=>{
  const file=$('businessImportFile').files[0];if(!file)throw Error('Chọn tệp hồ sơ trước khi đọc.');
  $('importStatus').textContent='Đang đọc tài liệu…';
  try{
   const reader=await import('/assets/read-business-file.mjs?v=7');const result=await reader.readBusinessFile(file,text=>$('importStatus').textContent=text);
-  const parsed=BusinessImport.analyze(result.text,result.format);$('importCandidates').replaceChildren();importSelections=[];
-  for(const [key,value]of Object.entries(parsed.data)){
-   const def=importFields[key];if(!def)continue;
-   if(key==='representative'&&$('memberOwner').value){parsed.warnings.push('Giữ nguyên thành viên đã chọn; không đổi người đại diện theo tệp.');continue}
-   const old=def[1]?$(def[1]).value:blocks.some(b=>b.type==='img'||b.type==='link'||b.text?.trim())?'Nội dung hiện có':'';
-   const panel=node('div',undefined,'import-candidate'),label=node('label'),check=node('input');check.type='checkbox';check.checked=!old;label.append(check,document.createTextNode(def[0]));const input=node('textarea');input.value=value;input.maxLength=({title:240,representative:240,sector:240,phone:80,address:500,website:2000,excerpt:600,body:100000})[key];input.rows=key==='body'?8:2;input.setAttribute('aria-label','Nội dung nhận diện: '+def[0]);panel.append(label,input);
-   if(old)panel.append(node('p','Trường đang có dữ liệu. Chỉ chọn nếu muốn thay thế.','hint'));
-   if(parsed.sources[key])panel.append(node('small','Nhận diện từ: '+parsed.sources[key]));$('importCandidates').append(panel);importSelections.push({key,check,input});
-  }
-  $('importWarnings').textContent=parsed.warnings.join(' ');$('importStatus').textContent='Đã nhận diện '+importSelections.length+' trường. Kiểm tra trước khi áp dụng.';$('importDialog').showModal();
+  const parsed=BusinessImport.analyze(result.text,result.format);
+  presentImportResult(parsed);
+ }catch(e){$('importStatus').textContent='Chưa nhập dữ liệu: '+e.message;throw e}
+});
+$('readBusinessUrl').onclick=()=>run($('readBusinessUrl'),async()=>{
+ const url=$('businessImportUrl').value.trim();if(!url)throw Error('Nhập địa chỉ website trước khi đọc.');
+ $('importStatus').textContent='Đang tải trang…';
+ try{
+  const page=await api('fetch-url',{url});
+  const parsed=BusinessImport.analyze(page.text||' ','txt');
+  if(!parsed.data.title&&page.title){parsed.data.title=page.title.slice(0,240);parsed.sources.title='Thẻ tiêu đề trang web'}
+  if(!parsed.data.excerpt&&page.excerpt){parsed.data.excerpt=page.excerpt.slice(0,600);parsed.sources.excerpt='Thẻ mô tả trang web'}
+  presentImportResult(parsed);
  }catch(e){$('importStatus').textContent='Chưa nhập dữ liệu: '+e.message;throw e}
 });
 $('closeImport').onclick=()=>$('importDialog').close();
