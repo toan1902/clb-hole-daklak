@@ -55,6 +55,44 @@
       }
       return;
     }
+    if(location.pathname==='/doanh-nghiep.html'){
+      const slug=new URLSearchParams(location.search).get('id')||new URLSearchParams(location.search).get('slug');
+      const p=health.configured?await request('article&slug='+encodeURIComponent(slug||'')):posts.find(p=>p.slug===slug);
+      if(!p||p.category!=='Doanh nghiệp thành viên')throw Error('Không tìm thấy hồ sơ doanh nghiệp.');
+      const profile=p.body?.find(b=>b.type==='profile')||{};
+      document.title=p.title+' · Hồ sơ doanh nghiệp LĐBC';
+      title.textContent=p.title;
+      document.getElementById('tag').textContent=profile.sector||'Doanh nghiệp thành viên';
+      const excerptEl=document.getElementById('excerpt');if(excerptEl)excerptEl.textContent=p.excerpt||'';
+      const description=document.querySelector('meta[name="description"]');if(description)description.content=p.excerpt||p.title+' · Doanh nghiệp thành viên CLB Doanh nhân Họ Lê Đắk Lắk';
+      const banner=document.getElementById('banner');const logo=CMS.imageURL(p.cover_url);
+      if(logo){const img=el('img');img.src=logo;img.alt=p.title;banner.replaceChildren(img)}else banner.textContent='🏢';
+      const facts=document.getElementById('facts');
+      if(facts){
+        facts.replaceChildren();
+        if(profile.representative)facts.append(el('span','👤 Đại diện: '+profile.representative));
+        if(profile.address)facts.append(el('span','📍 '+profile.address));
+      }
+      const actions=document.getElementById('actions');
+      if(actions){
+        actions.replaceChildren();
+        if(profile.phone){const a=el('a','📞 Gọi ngay · '+profile.phone,'contact-button');a.href='tel:'+profile.phone.replace(/[^\d+]/g,'');actions.append(a)}
+        const site=CMS.websiteURL(profile.website);
+        if(site){const a=el('a','Truy cập website ↗','business-website');a.href=site;a.target='_blank';a.rel='noopener noreferrer';actions.append(a)}
+      }
+      const ownerId=CMS.memberKey(p),ownerLink=document.getElementById('ownerLink');
+      if(ownerLink&&ownerId){
+        const owner=catalog.find(m=>m.id===ownerId);
+        ownerLink.href='/thanh-vien.html?id='+encodeURIComponent(ownerId);
+        ownerLink.textContent='← Hồ sơ '+(owner?.name||profile.representative||'thành viên');
+        ownerLink.hidden=false;
+      }
+      const body=(p.body||[]).filter(b=>b.type!=='profile');
+      const contentEl=document.getElementById('content');
+      if(body.length)CMS.renderBody(contentEl,body);
+      else contentEl.replaceChildren(el('p','Thông tin giới thiệu đang được cập nhật.'));
+      return;
+    }
     if(title){
       const slug=new URLSearchParams(location.search).get('id')||new URLSearchParams(location.search).get('slug');
       const p=health.configured?await request('article&slug='+encodeURIComponent(slug||'')):posts.find(p=>p.slug===slug);
