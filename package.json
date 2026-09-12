@@ -1,5 +1,17 @@
 {
-  "name": "clb-hole-daklak", "version": "1.1.0", "private": true,
-  "scripts": { "dev": "node scripts/dev.cjs", "test": "node --test tests/*.test.cjs", "build": "node scripts/check.cjs && node scripts/build.cjs" },
-  "engines": { "node": "22.x" }
+  "name": "clb-hole-daklak",
+  "version": "1.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "node scripts/dev.cjs",
+    "test": "node --test tests/*.test.cjs",
+    "build": "node scripts/check.cjs && node scripts/build.cjs"
+  },
+  "engines": {
+    "node": "22.x"
+  },
+  "dependencies": {
+    "fflate": "0.8.3",
+    "pdfjs-dist": "6.3.289"
+  }
 }

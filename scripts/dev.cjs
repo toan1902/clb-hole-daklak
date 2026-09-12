@@ -1,9 +1,10 @@
 const http=require('node:http'),fs=require('node:fs'),path=require('node:path');
 const handler=require('../api/stc.js');const root=path.resolve(__dirname,'..');
 try{process.loadEnvFile(path.join(root,'.env'))}catch(e){if(e.code!=='ENOENT')throw e}
-const types={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.json':'application/json; charset=utf-8','.jpg':'image/jpeg','.png':'image/png','.webp':'image/webp'};
+const types={'.html':'text/html; charset=utf-8','.mjs':'text/javascript; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.json':'application/json; charset=utf-8','.jpg':'image/jpeg','.png':'image/png','.webp':'image/webp'};
 http.createServer(async(req,res)=>{try{
   const u=new URL(req.url,'http://localhost:4173');
+  const vendor=require('../scripts/import-vendor.cjs').resolve(u.pathname);if(vendor){res.setHeader('Content-Type',u.pathname.endsWith('.mjs')?'text/javascript; charset=utf-8':'text/plain');return res.end(fs.readFileSync(vendor))}
   if(u.pathname==='/api/stc'){
     const chunks=[];let size=0;for await(const chunk of req){size+=chunk.length;if(size>4.3*1024*1024){res.writeHead(413);return res.end('Too large')}chunks.push(chunk)}
     req.query=Object.fromEntries(u.searchParams);try{req.body=chunks.length?JSON.parse(Buffer.concat(chunks).toString()):undefined}catch{res.writeHead(400);return res.end('{}')}

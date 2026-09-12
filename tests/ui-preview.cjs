@@ -8,6 +8,7 @@ http.createServer(async(req,res)=>{
  try{
   const u=new URL(req.url,'http://localhost:4174');res.setHeader('Cache-Control','no-store');
   if(u.pathname==='/assets/test-avatar.png'&&testImage){res.setHeader('Content-Type',testImage.type);return res.end(testImage.bytes)}
+  const vendor=require('../scripts/import-vendor.cjs').resolve(u.pathname);if(vendor){res.setHeader('Content-Type',u.pathname.endsWith('.mjs')?'text/javascript; charset=utf-8':'text/plain');return res.end(fs.readFileSync(vendor))}
   if(u.pathname==='/api/stc'){
    const chunks=[];for await(const c of req)chunks.push(c);const body=chunks.length?JSON.parse(Buffer.concat(chunks)):{};
    const action=u.searchParams.get('action');let data;
@@ -26,6 +27,6 @@ http.createServer(async(req,res)=>{
   }
   const name=u.pathname.endsWith('/')?u.pathname+'index.html':u.pathname;
   if(!/^\/(?:index\.html|(?:doanh-nghiep|thanh-vien)\.html|tin-(?:tuc|chi-tiet)\.html|stc-config\.js|admin\/(?:index\.html|app\.js|style\.css)|assets\/[a-z0-9.-]+)$/.test(name))throw Error('Not found');
-  res.setHeader('Content-Type',({'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.json':'application/json'})[path.extname(name)]||'application/octet-stream');res.end(fs.readFileSync(path.join(root,name)));
+  res.setHeader('Content-Type',({'.html':'text/html; charset=utf-8','.mjs':'text/javascript; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.json':'application/json'})[path.extname(name)]||'application/octet-stream');res.end(fs.readFileSync(path.join(root,name)));
  }catch(e){res.statusCode=400;res.end(JSON.stringify({message:e.message}))}
 }).listen(4174,'127.0.0.1',()=>console.log('Isolated UI fixture: http://localhost:4174/admin/'));

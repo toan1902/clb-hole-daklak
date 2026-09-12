@@ -54,9 +54,10 @@ Mở `/admin/` → đăng nhập → **Thêm bài viết**. Điền tiêu đề,
 
 ## Kiểm tra cục bộ
 
-Node.js 22; không cần thư viện bên ngoài.
+Node.js 22. Cài các thư viện đọc tệp đã khóa phiên bản trong package-lock.json.
 
 ```text
+npm ci
 npm run dev
 npm test
 npm run build
@@ -95,3 +96,9 @@ Bấm một trong 7 thẻ Ban điều hành để mở `thanh-vien.html?id=...`.
 Trang `thanh-vien.html` dùng giao diện landing page gọn, giữ màu đỏ/vàng và font của CLB; ảnh đại diện và giới thiệu bên trên, nút liên hệ, các doanh nghiệp bên dưới. Giao diện trang chủ không đổi.
 
 Trong **Doanh nghiệp thành viên**, mỗi thẻ có ô **Đổi ảnh đại diện**: chọn JPG/PNG/WEBP tối đa 3 MB rồi **Lưu ảnh**. Ảnh lưu vào Storage và trường nội dung hiện có, đồng bộ với thẻ Ban điều hành và trang hồ sơ. **Gỡ ảnh** đưa thẻ về ký tự viết tắt, không xóa tệp gốc khỏi Storage. Không cần chạy SQL mới. Đã kiểm thử API cập nhật/gỡ ảnh và chống ghi đè; kiểm tra trực quan phiên bản này bị gián đoạn bởi giới hạn công cụ trình duyệt.
+
+## Nhập hồ sơ doanh nghiệp từ tệp
+
+Trong hồ sơ doanh nghiệp, chọn tệp → Đọc và nhận diện → kiểm tra các trường → Áp dụng → Lưu bản nháp hoặc Xuất bản. Hỗ trợ DOCX, PDF có văn bản (tối đa 30 trang), XLSX (trang tính đầu tiên, một doanh nghiệp), TXT UTF-8, CSV UTF-8 và JSON. Tối đa 5 MB và 100.000 ký tự. PDF ảnh quét và ảnh chụp chưa hỗ trợ OCR.
+
+Nhận diện bằng nhãn tiếng Việt/Anh và mẫu điện thoại, website; không gọi dịch vụ AI. Nhãn gợi ý: Tên doanh nghiệp, Người đại diện, Lĩnh vực, Điện thoại, Địa chỉ, Website, Giới thiệu. Excel/CSV dùng một dòng tiêu đề và một dòng dữ liệu, hoặc hai cột nhãn–giá trị. JSON dùng các trường tương ứng. Tệp được đọc tại trình duyệt bằng fflate/PDF.js; không tải tài liệu gốc lên máy chủ. Nội dung đã có không được chọn ghi đè sẵn, và liên kết thành viên được giữ nguyên. Logo/ảnh dùng ô tải ảnh riêng.
