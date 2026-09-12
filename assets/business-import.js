@@ -1,7 +1,7 @@
 (function(root){
  'use strict';
  const normalize=s=>String(s).normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[đĐ]/g,'d').toLowerCase().replace(/[^a-z0-9]/g,'');
- const aliases={title:['ten doanh nghiep','ten cong ty','company','company name','title','doanh nghiep','cong ty'],representative:['nguoi dai dien','dai dien','thanh vien dai dien','representative','giam doc'],sector:['linh vuc','linh vuc kinh doanh','nganh nghe','sector','industry'],phone:['dien thoai','so dien thoai','sdt','hotline','phone','tel'],address:['dia chi','tru so','dia chi tru so','address'],website:['website','web','trang web','url'],excerpt:['tom tat','gioi thieu ngan','excerpt','summary'],description:['noi dung','gioi thieu','gioi thieu doanh nghiep','mo ta','description','content']};
+ const aliases={title:['ten doanh nghiep','ten cong ty','company','company name','title','doanh nghiep','cong ty'],representative:['nguoi dai dien','dai dien','thanh vien dai dien','representative','giam doc'],sector:['linh vuc','linh vuc kinh doanh','nganh nghe','sector','industry'],phone:['dien thoai','so dien thoai','sdt','hotline','phone','tel'],address:['dia chi','tru so','dia chi tru so','address'],website:['website','web','trang web','url'],facebook:['facebook','fanpage','trang facebook','fb','fb page'],excerpt:['tom tat','gioi thieu ngan','excerpt','summary'],description:['noi dung','gioi thieu','gioi thieu doanh nghiep','mo ta','description','content']};
  const keyFor=k=>Object.keys(aliases).find(key=>aliases[key].some(a=>normalize(a)===normalize(k)));
  function csvRows(text){
   const first=text.split(/\r?\n/)[0],delimiter=first.includes('\t')?'\t':(first.split(';').length>first.split(',').length?';':',');
@@ -37,12 +37,14 @@
    if(!data.title){const line=lines.find(s=>/^(công ty|cty|doanh nghiệp|hộ kinh doanh|company)\b/i.test(s));if(line)put('title',line,'Dòng tên doanh nghiệp')}
    if(!data.phone){const m=text.match(/(?:\+84|0[235789])(?:[ .()-]*\d){7,9}\b/);if(m)put('phone',m[0],'Số điện thoại trong văn bản')}
    if(!data.website){const m=text.match(/https?:\/\/[^\s<>"']+|\bwww\.[^\s<>"']+/i);if(m)put('website',m[0],'Liên kết trong văn bản')}
+   if(!data.facebook){const m=text.match(/https?:\/\/(?:www\.|m\.)?facebook\.com\/[^\s<>"']+/i);if(m)put('facebook',m[0],'Liên kết Facebook trong văn bản')}
    bodyText=data.description||unlabeled.filter(s=>s!==data.title).join('\n\n');
   }
   if(data.website){const url=website(data.website);if(url)data.website=url;else{delete data.website;warnings.push('Không áp dụng địa chỉ website không hợp lệ.')}}
+  if(data.facebook){const url=website(data.facebook);if(url)data.facebook=url;else{delete data.facebook;warnings.push('Không áp dụng liên kết Facebook không hợp lệ.')}}
   if(!data.excerpt&&data.description){data.excerpt=data.description.slice(0,600);sources.excerpt='Phần đầu giới thiệu'}
   if(bodyText)data.body=bodyText;delete data.description;
-  const limits={title:240,representative:240,sector:240,phone:80,address:500,website:2000,excerpt:600,body:100000};
+  const limits={title:240,representative:240,sector:240,phone:80,address:500,website:2000,facebook:2000,excerpt:600,body:100000};
   for(const key of Object.keys(data))if(data[key].length>limits[key]){data[key]=data[key].slice(0,limits[key]);warnings.push('Đã rút gọn trường '+key+' theo giới hạn.')}
   if(!Object.keys(data).length)throw Error('Chưa nhận diện được thông tin. Thêm nhãn như “Tên doanh nghiệp:”, “Địa chỉ:”, “Website:”.');
   return {data,sources,warnings};
