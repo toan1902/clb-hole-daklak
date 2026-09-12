@@ -23,9 +23,11 @@
         if(input.category!=='Doanh nghiệp thành viên')throw Error('Thông tin doanh nghiệp chỉ dùng trong hồ sơ thành viên.');
         const website=b.website?websiteURL(b.website):'';
         if(b.website&&!website)throw Error('Website doanh nghiệp không hợp lệ.');
+        const facebook=b.facebook?websiteURL(b.facebook):'';
+        if(b.facebook&&!facebook)throw Error('Đường dẫn Facebook không hợp lệ.');
         const member_id=limit(b.member_id||'',180);
         if(member_id&&!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(member_id))throw Error('Mã thành viên không hợp lệ.');
-        return {type:'profile',...(member_id?{member_id}:{}),representative:limit(b.representative||'',240),sector:limit(b.sector||'',240),phone:limit(b.phone||'',80),address:limit(b.address||'',500),website};
+        return {type:'profile',...(member_id?{member_id}:{}),representative:limit(b.representative||'',240),sector:limit(b.sector||'',240),phone:limit(b.phone||'',80),address:limit(b.address||'',500),website,...(facebook?{facebook}:{})};
       }
       if (b.type === 'link') { const href=websiteURL(b.href); if(!href) throw Error('Liên kết website phải bắt đầu bằng https:// hoặc http://.'); return {type:'link',href,text:limit(b.text,240,true)}; }
       if (b.type === 'img') { const src=imageURL(b.src); if(!src) throw Error('Địa chỉ ảnh không hợp lệ.'); return {type:'img',src,caption:limit(b.caption || '',500)}; }
@@ -47,6 +49,7 @@
       if(b.type==='profile') {
         for(const [key,label] of [['representative','Thành viên đại diện'],['sector','Lĩnh vực'],['phone','Điện thoại'],['address','Địa chỉ']])if(b[key]){const p=document.createElement('p');p.textContent=label+': '+b[key];container.append(p)}
         if(websiteURL(b.website)){const p=document.createElement('p'),a=document.createElement('a');a.href=websiteURL(b.website);a.textContent='Truy cập website doanh nghiệp ↗';a.target='_blank';a.rel='noopener noreferrer';p.append(a);container.append(p)}
+        if(websiteURL(b.facebook)){const p=document.createElement('p'),a=document.createElement('a');a.href=websiteURL(b.facebook);a.textContent='Trang Facebook doanh nghiệp ↗';a.target='_blank';a.rel='noopener noreferrer';p.append(a);container.append(p)}
       }
       if(b.type==='img') { const src=imageURL(b.src); if(!src) continue; const fig=document.createElement('figure'),img=document.createElement('img'),cap=document.createElement('figcaption'); img.src=src;img.alt=b.caption||'';img.loading='lazy';cap.textContent=b.caption||'';fig.append(img,cap);container.append(fig); }
       else if(b.type==='link') { const href=websiteURL(b.href);if(!href)continue;const p=document.createElement('p'),a=document.createElement('a');a.href=href;a.textContent=b.text;a.target='_blank';a.rel='noopener noreferrer';p.append(a);container.append(p); }
