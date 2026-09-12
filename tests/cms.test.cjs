@@ -51,3 +51,11 @@ test('Business ownership is stable when a member changes display name and suppor
  assert.throws(()=>CMS.validatePost({...p,body:[{type:'profile',member_id:'../admin'}]}));
  const catalog=require('../assets/members.json');assert.equal(catalog.length,7);assert.equal(new Set(catalog.map(m=>m.id)).size,7);
 });
+test('Member avatar updates use the existing content field and version check; removing restores placeholder',async()=>{
+ setup();const member=require('../assets/members.json')[4],stamp='2026-09-12T00:00:00Z';let patch;
+ global.fetch=async(url,opt)=>{if(url.endsWith('/user'))return response({id:'admin-1'});if(url.includes('ldbc_admins'))return response([{user_id:'admin-1'}]);patch={url,method:opt.method,body:JSON.parse(opt.body)};return response([{id:member.fields.avatar,...patch.body,updated_at:'2026-09-12T00:01:00Z'}])};
+ for(const value of ['https://test.supabase.co/storage/v1/object/public/ldbc-post-images/avatar.jpg','']){
+  const r=await call('save-content',{method:'POST',cookie:'ldbc_access=example',body:{id:member.fields.avatar,value,updated_at:stamp}});
+  assert.equal(r.statusCode,200);assert.equal(r.data.value,value);assert.equal(patch.method,'PATCH');assert.ok(patch.url.includes('id=eq.'+member.fields.avatar));assert.ok(patch.url.includes('updated_at=eq.'));
+ }
+});

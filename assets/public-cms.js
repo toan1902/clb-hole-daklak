@@ -30,11 +30,13 @@
       document.getElementById('date').textContent='';
       const banner=document.getElementById('banner');banner.textContent=original?.initials||'Lê';
       const avatar=CMS.imageURL(field('avatar'));
-      if(avatar){const img=el('img');img.src=avatar;img.alt=name;img.style.cssText='width:160px;height:160px;object-fit:cover;border-radius:50%';banner.replaceChildren(img)}
+      if(avatar){const img=el('img');img.src=avatar;img.alt=name;banner.replaceChildren(img)}
       const container=document.getElementById('content');container.replaceChildren();
-      if(field('bio'))container.append(el('p',field('bio')));
-      const phone=field('phone');if(/^tel:\+?[\d ()-]+$/.test(phone)){const a=el('a','Điện thoại: '+phone.slice(4));a.href=phone;container.append(a)}
-      container.append(el('h2','Doanh nghiệp của thành viên'));
+      document.getElementById('memberBio').textContent=field('bio');
+      const contact=document.getElementById('memberContact');contact.replaceChildren();
+      const phone=field('phone');if(/^tel:\+?[\d ()-]+$/.test(phone)){const a=el('a','Gọi liên hệ · '+phone.slice(4),'contact-button');a.href=phone;contact.append(a)}
+      document.getElementById('businessCount').textContent=owned.length?owned.length+' doanh nghiệp':'';
+      const description=document.querySelector('meta[name="description"]');if(description)description.content=field('bio')||name+' · Thành viên CLB Doanh nhân Họ Lê Đắk Lắk';
       if(!owned.length){container.append(el('p','Thông tin doanh nghiệp đang được cập nhật.'))}
       else{
         const grid=el('div',undefined,'biz-grid');

@@ -2,7 +2,7 @@ const test=require('node:test'),assert=require('node:assert/strict'),fs=require(
 const CMS=require('../assets/cms-common.js'),legacy=require('../assets/legacy-layout.json'),posts=require('../assets/original-posts.json');
 const original=file=>cp.execFileSync('git',['show','b26c9b75b65483370140552631dd194fe655c433:'+file],{encoding:'utf8'}).replace(/\r/g,'');
 const current=file=>fs.readFileSync(file,'utf8').replace(/\r/g,'');
-const removeCms=s=>s.replace(/<script src="\/(?:stc-config\.js|assets\/(?:cms-common|public-cms)\.js)\?v=4"><\/script>/g,'').replace(/ data-cms="[^"]+"/g,'').replace(' id="cmsNews"','');
+const removeCms=s=>s.replace(/<script src="\/(?:stc-config\.js|assets\/(?:cms-common|public-cms)\.js)\?v=6"><\/script>/g,'').replace(/ data-cms="[^"]+"/g,'').replace(' id="cmsNews"','');
 test('Homepage preserves every original public element, style, font and link',()=>{
  const normalized=removeCms(current('index.html')).replace(/\n+(?=<\/body>)/,'\n');
  assert.equal(normalized,original('index.html').replace(/\n+(?=<\/body>)/,'\n'));

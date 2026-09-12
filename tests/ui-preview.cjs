@@ -3,9 +3,11 @@ const http=require('node:http'),fs=require('node:fs'),path=require('node:path'),
 const root=path.resolve(__dirname,'..'),CMS=require('../assets/cms-common.js');
 let posts=require('../assets/original-posts.json').map(p=>({...p,id:randomUUID(),updated_at:new Date().toISOString()}));
 const content=require('../assets/content-fields.json').map(f=>({id:f.id,value:f.default,updated_at:new Date().toISOString()}));
+let testImage=null;
 http.createServer(async(req,res)=>{
  try{
   const u=new URL(req.url,'http://localhost:4174');res.setHeader('Cache-Control','no-store');
+  if(u.pathname==='/assets/test-avatar.png'&&testImage){res.setHeader('Content-Type',testImage.type);return res.end(testImage.bytes)}
   if(u.pathname==='/api/stc'){
    const chunks=[];for await(const c of req)chunks.push(c);const body=chunks.length?JSON.parse(Buffer.concat(chunks)):{};
    const action=u.searchParams.get('action');let data;
@@ -18,6 +20,7 @@ http.createServer(async(req,res)=>{
    else if(action==='article')data=posts.find(p=>p.slug===u.searchParams.get('slug')&&p.status==='published');
    else if(action==='save-post'){data={...CMS.validatePost(body),id:body.id||randomUUID(),updated_at:new Date().toISOString()};posts=posts.filter(p=>p.id!==data.id);posts.push(data)}
    else if(action==='save-content'){data=content.find(c=>c.id===body.id);Object.assign(data,{value:body.value,updated_at:new Date().toISOString()})}
+   else if(action==='upload'){testImage={...require('../api/stc.js').checkImage(body),type:body.type};data={url:'/assets/test-avatar.png'}}
    else throw Error('Test action not implemented');
    res.setHeader('Content-Type','application/json');return res.end(JSON.stringify(data));
   }

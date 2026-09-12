@@ -89,3 +89,9 @@ Tài liệu nền tảng: [Vercel configuration](https://vercel.com/docs/project
 Bấm một trong 7 thẻ Ban điều hành để mở `thanh-vien.html?id=...`. Hồ sơ giữ tên, chức vụ, giới thiệu, điện thoại và ảnh đã sửa trong Nội dung trang chủ; bên dưới là tất cả doanh nghiệp đã xuất bản của người đó. Trong quản trị doanh nghiệp, chọn **Thuộc hồ sơ thành viên** trước khi lưu. Mã thành viên giữ nguyên khi thay đổi tên hiển thị. Với thành viên khác, nhập tên đại diện; trang chủ nhóm doanh nghiệp theo thành viên thay vì tạo một thẻ cho mỗi doanh nghiệp. Không cần nâng cấp schema cho liên kết này.
 
 Đã kiểm thử cục bộ bấm thẻ mở đúng hồ sơ, tách doanh nghiệp của hai thành viên, trạng thái chưa có doanh nghiệp, cùng 21 kiểm thử tự động và build. Tệp nạp 208 trường trang chủ vẫn là bước độc lập.
+
+## Hồ sơ dạng landing page và ảnh đại diện
+
+Trang `thanh-vien.html` dùng giao diện landing page gọn, giữ màu đỏ/vàng và font của CLB; ảnh đại diện và giới thiệu bên trên, nút liên hệ, các doanh nghiệp bên dưới. Giao diện trang chủ không đổi.
+
+Trong **Doanh nghiệp thành viên**, mỗi thẻ có ô **Đổi ảnh đại diện**: chọn JPG/PNG/WEBP tối đa 3 MB rồi **Lưu ảnh**. Ảnh lưu vào Storage và trường nội dung hiện có, đồng bộ với thẻ Ban điều hành và trang hồ sơ. **Gỡ ảnh** đưa thẻ về ký tự viết tắt, không xóa tệp gốc khỏi Storage. Không cần chạy SQL mới. Đã kiểm thử API cập nhật/gỡ ảnh và chống ghi đè; kiểm tra trực quan phiên bản này bị gián đoạn bởi giới hạn công cụ trình duyệt.

@@ -74,8 +74,15 @@ function renderDirectory(){
     const photo=CMS.imageURL(content.find(c=>c.id===m.fields.avatar)?.value||'');if(photo){const img=node('img');img.src=photo;img.alt='';avatar.replaceChildren(img)}
     const count=posts.filter(p=>p.category===MEMBER_CATEGORY&&p.status!=='trash'&&CMS.memberKey(p)===m.id).length;
     info.append(node('strong',memberName(m.id)),node('small',content.find(c=>c.id===m.fields.role)?.value||m.role),node('span',count+' doanh nghiệp'),node('span','Quản lý doanh nghiệp →'));button.append(avatar,info);
-    button.onclick=()=>{if(!leave())return;dirty=false;selectedMember=m.id;current=null;$('search').value='';$('filter').value='all';view('posts');renderList()};$('memberDirectory').append(button);
+    button.onclick=()=>{if(!leave())return;dirty=false;selectedMember=m.id;current=null;$('search').value='';$('filter').value='all';view('posts');renderList()};
+    const card=node('article',undefined,'member-directory-item'),actions=node('div',undefined,'member-photo-actions'),label=node('label','Đổi ảnh đại diện'),file=node('input');file.type='file';file.accept='image/jpeg,image/png,image/webp';file.setAttribute('aria-label','Ảnh đại diện '+memberName(m.id));label.append(file);
+    const savePhoto=node('button','Lưu ảnh','secondary'),removePhoto=node('button','Gỡ ảnh','quiet');removePhoto.hidden=!photo;savePhoto.disabled=true;
+    file.onchange=()=>{savePhoto.disabled=!file.files.length};
+    savePhoto.onclick=()=>run(savePhoto,async()=>{const record=content.find(c=>c.id===m.fields.avatar);if(!record)throw Error('Chưa có trường ảnh thành viên trong dữ liệu.');file.disabled=true;try{const url=await upload(file.files[0]);await saveMemberAvatar(m,record,url);tell('Đã cập nhật ảnh đại diện của '+memberName(m.id));}finally{file.disabled=false}});
+    removePhoto.onclick=()=>run(removePhoto,async()=>{const record=content.find(c=>c.id===m.fields.avatar);if(!record)throw Error('Không tìm thấy ảnh thành viên.');await saveMemberAvatar(m,record,'');tell('Đã gỡ ảnh đại diện của '+memberName(m.id));});
+    actions.append(label,node('small','JPG, PNG, WEBP · tối đa 3 MB'),savePhoto,removePhoto);card.append(button,actions);$('memberDirectory').append(card);
   }
 }
+async function saveMemberAvatar(member,record,value){const saved=await api('save-content',{id:member.fields.avatar,value,updated_at:record.updated_at});Object.assign(record,saved);renderDirectory()}
 $('directoryBack').onclick=()=>{if(leave()){dirty=false;current=null;view('directory')}};
 $('otherMembersButton').onclick=()=>{selectedMember=null;$('search').value='';$('filter').value='all';view('posts');renderList()};
