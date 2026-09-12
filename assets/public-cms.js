@@ -35,11 +35,21 @@
       if(field('bio'))container.append(el('p',field('bio')));
       const phone=field('phone');if(/^tel:\+?[\d ()-]+$/.test(phone)){const a=el('a','Điện thoại: '+phone.slice(4));a.href=phone;container.append(a)}
       container.append(el('h2','Doanh nghiệp của thành viên'));
-      if(!owned.length)container.append(el('p','Thông tin doanh nghiệp đang được cập nhật.'));
-      for(const business of owned){
-        const section=el('section');section.append(el('h2',business.title),el('p',business.excerpt));
-        if(CMS.imageURL(business.cover_url)){const img=el('img');img.src=CMS.imageURL(business.cover_url);img.alt=business.title;img.style.cssText='max-width:320px;max-height:320px;object-fit:contain';section.append(img)}
-        const body=el('div');CMS.renderBody(body,business.body);section.append(body);container.append(section);
+      if(!owned.length){container.append(el('p','Thông tin doanh nghiệp đang được cập nhật.'))}
+      else{
+        const grid=el('div',undefined,'biz-grid');
+        for(const business of owned){
+          const profileBlock=business.body?.find(b=>b.type==='profile');
+          const card=el('a',undefined,'biz-card');card.href='/doanh-nghiep.html?id='+encodeURIComponent(business.slug);
+          const thumb=el('div',undefined,'biz-thumb');const cover=CMS.imageURL(business.cover_url);
+          if(cover){const img=el('img');img.src=cover;img.alt=business.title;img.loading='lazy';thumb.append(img)}else thumb.textContent='🏢';
+          const info=el('div',undefined,'biz-info');info.append(el('h3',business.title));
+          if(profileBlock?.sector)info.append(el('span',profileBlock.sector,'biz-sector'));
+          if(business.excerpt)info.append(el('p',business.excerpt,'biz-excerpt'));
+          info.append(el('span','Xem chi tiết →','biz-link'));
+          card.append(thumb,info);grid.append(card);
+        }
+        container.append(grid);
       }
       return;
     }
@@ -49,12 +59,16 @@
       if(!p)throw Error('Bài viết không tồn tại hoặc chưa được xuất bản.');
       const display=CMS.presentation(p,legacy);
       document.title=p.title+' - CLB Doanh Nhan Ho Le Dak Lak';
-      title.textContent=p.title;document.getElementById('tag').textContent=display.detailTag;
+      title.textContent=p.title;
+      const profileBlock=p.category==='Doanh nghiệp thành viên'?p.body?.find(b=>b.type==='profile'):null;
+      document.getElementById('tag').textContent=profileBlock?.sector||display.detailTag;
       document.getElementById('date').textContent=display.detailDate;
       const description=document.querySelector('meta[name="description"]');if(description)description.content=p.excerpt||p.title;
-      const banner=document.getElementById('banner');banner.textContent=p.category==='Doanh nghiệp thành viên'?'🏢':display.emoji;
+      const banner=document.getElementById('banner');const bizLogo=profileBlock?CMS.imageURL(p.cover_url):'';
+      if(bizLogo){const img=el('img');img.src=bizLogo;img.alt=p.title;img.style.cssText='width:140px;height:140px;object-fit:cover;border-radius:50%';banner.replaceChildren(img)}
+      else banner.textContent=p.category==='Doanh nghiệp thành viên'?'🏢':display.emoji;
       CMS.renderBody(document.getElementById('content'),p.body);
-      if(CMS.imageURL(p.cover_url)){
+      if(!profileBlock&&CMS.imageURL(p.cover_url)){
         const cover=el('figure'),img=el('img');img.src=CMS.imageURL(p.cover_url);img.alt=p.title;
         cover.append(img);document.getElementById('content').prepend(cover);
       }
@@ -92,13 +106,16 @@
       try{
         const members=await request('members');
         const people=new Map();
-        for(const business of members){const key=CMS.memberKey(business),profile=business.body?.find(b=>b.type==='profile');if(key&&!catalog.some(m=>m.id===key)&&!people.has(key))people.set(key,profile)}
+        for(const business of members){const key=CMS.memberKey(business),profile=business.body?.find(b=>b.type==='profile');if(key&&!catalog.some(m=>m.id===key)&&!people.has(key))people.set(key,{profile,cover:business.cover_url})}
         if(people.size){
           const grid=el('div',undefined,'members-grid');
           for(const [id,member] of people){
             const card=el('a',undefined,'member-card');card.href='/thanh-vien.html?id='+encodeURIComponent(id);card.style.cssText='text-decoration:none;color:inherit';
-            const avatar=el('div','Lê','member-avatar');
-            card.append(avatar,el('h4',member.representative),el('p','Xem hồ sơ và doanh nghiệp','biz'));grid.append(card);
+            const avatar=el('div',undefined,'member-avatar');
+            const photo=CMS.imageURL(member.cover);
+            if(photo){const img=el('img');img.src=photo;img.alt=member.profile.representative||'';img.loading='lazy';img.style.cssText='width:100%;height:100%;object-fit:cover;border-radius:50%';avatar.append(img)}
+            else avatar.textContent='Lê';
+            card.append(avatar,el('h4',member.profile.representative),el('p','Xem hồ sơ và doanh nghiệp','biz'));grid.append(card);
           }
           memberSection.lastElementChild.replaceWith(grid);
         }
