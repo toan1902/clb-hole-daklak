@@ -90,6 +90,28 @@ module.exports=async function handler(req,res) {
     }
     const auth=await admin(req,res),token=auth.token;
     if(action==='session'&&req.method==='GET')return send(200,{email:auth.user.email});
+    if(action==='fetch-url'&&req.method==='POST') {
+      const raw=String(req.body?.url||'').trim();
+      let target;try{target=new URL(/^[a-zA-Z][a-zA-Z0-9+.-]*:\/\//.test(raw)?raw:'https://'+raw)}catch{throw failure(400,'Địa chỉ website không hợp lệ.')}
+      if(!['http:','https:'].includes(target.protocol))throw failure(400,'Chỉ hỗ trợ địa chỉ http hoặc https.');
+      const host=target.hostname.toLowerCase();
+      if(host==='localhost'||host==='0.0.0.0'||host==='::1'||host.endsWith('.local')||host.endsWith('.internal')||/^(10\.|127\.|169\.254\.|192\.168\.|172\.(1[6-9]|2\d|3[01])\.)/.test(host))throw failure(400,'Không hỗ trợ địa chỉ nội bộ.');
+      let response;try{response=await fetch(target.href,{signal:AbortSignal.timeout(15000),redirect:'follow',headers:{'User-Agent':'Mozilla/5.0 (compatible; LDBCBot/1.0; +https://ldbc.vn)'}})}catch{throw failure(502,'Không tải được trang. Kiểm tra lại địa chỉ hoặc thử lại.')}
+      if(!response.ok)throw failure(502,'Trang trả về lỗi '+response.status+'.');
+      if(!String(response.headers.get('content-type')||'').includes('text/html'))throw failure(400,'Địa chỉ này không trả về nội dung HTML.');
+      const reader=response.body?.getReader?.();let html='';
+      if(reader){const decoder=new TextDecoder();let total=0;
+        while(true){const {done,value}=await reader.read();if(done)break;total+=value.length;if(total>2*1024*1024)throw failure(400,'Trang quá lớn (giới hạn 2MB).');html+=decoder.decode(value,{stream:true})}
+      } else html=await response.text();
+      const decode=s=>s.replace(/&nbsp;/gi,' ').replace(/&amp;/gi,'&').replace(/&lt;/gi,'<').replace(/&gt;/gi,'>').replace(/&quot;/gi,'"').replace(/&#39;/gi,"'").replace(/\s+/g,' ').trim();
+      const titleMatch=html.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
+      const descMatch=html.match(/<meta[^>]+name=["']description["'][^>]*content=["']([\s\S]*?)["']/i)||html.match(/<meta[^>]+content=["']([\s\S]*?)["'][^>]+name=["']description["']/i);
+      let text=html.replace(/<script[\s\S]*?<\/script>/gi,' ').replace(/<style[\s\S]*?<\/style>/gi,' ')
+        .replace(/<\/(p|div|li|h[1-6]|br|tr)>/gi,'\n').replace(/<[^>]+>/g,' ');
+      text=text.split(/\n/).map(line=>decode(line)).filter(Boolean).join('\n\n');
+      if(text.length>100000)text=text.slice(0,100000);
+      return send(200,{title:titleMatch?decode(titleMatch[1]):'',excerpt:descMatch?decode(descMatch[1]):'',text});
+    }
     if(action==='posts'&&req.method==='GET')return send(200,await upstream('/rest/v1/ldbc_posts?select=*&order=updated_at.desc&limit=1000',{token}));
     if(action==='content'&&req.method==='GET')return send(200,await upstream('/rest/v1/ldbc_site_content?select=id,value,updated_at',{token}));
     if(action==='save-post'&&req.method==='POST') {
