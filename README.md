@@ -102,3 +102,7 @@ Trong **Doanh nghiệp thành viên**, mỗi thẻ có ô **Đổi ảnh đại 
 Trong hồ sơ doanh nghiệp, chọn tệp → Đọc và nhận diện → kiểm tra các trường → Áp dụng → Lưu bản nháp hoặc Xuất bản. Hỗ trợ DOCX, PDF có văn bản (tối đa 30 trang), XLSX (trang tính đầu tiên, một doanh nghiệp), TXT UTF-8, CSV UTF-8 và JSON. Tối đa 5 MB và 100.000 ký tự. PDF ảnh quét và ảnh chụp chưa hỗ trợ OCR.
 
 Nhận diện bằng nhãn tiếng Việt/Anh và mẫu điện thoại, website; không gọi dịch vụ AI. Nhãn gợi ý: Tên doanh nghiệp, Người đại diện, Lĩnh vực, Điện thoại, Địa chỉ, Website, Giới thiệu. Excel/CSV dùng một dòng tiêu đề và một dòng dữ liệu, hoặc hai cột nhãn–giá trị. JSON dùng các trường tương ứng. Tệp được đọc tại trình duyệt bằng fflate/PDF.js; không tải tài liệu gốc lên máy chủ. Nội dung đã có không được chọn ghi đè sẵn, và liên kết thành viên được giữ nguyên. Logo/ảnh dùng ô tải ảnh riêng.
+
+## Giữ Supabase không bị tạm dừng
+
+Gói miễn phí của Supabase tự tạm dừng dự án sau khoảng 7 ngày không có truy cập. `vercel.json` có một Vercel Cron gọi `GET /api/stc` (đọc danh sách bài công khai) mỗi ngày lúc 01:00 UTC (08:00 giờ Việt Nam), đủ để dự án luôn được tính là đang hoạt động. Nếu dự án vẫn bị dừng, vào Supabase → dự án `udxnpxtffsmenwhnajeb` → **Resume project**.
