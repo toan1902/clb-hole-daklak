@@ -165,7 +165,31 @@
       card.onclick=e=>{if(!e.target.closest('a,button'))location.href=href};
       card.onkeydown=e=>{if(e.target===card&&e.key==='Enter'){e.preventDefault();location.href=href}};
     });
-    if(memberSection&&health.configured){
+    // Danh sách thành viên chính thức (công cụ thanhvien-ldbc) hiện ngay trên trang chủ.
+    let clubShown=false;
+    if(memberSection){
+      try{
+        const club=await request('club-members');
+        const rank=r=>{r=(r||'').toLowerCase();return /^chủ tịch/.test(r)?0:/phó chủ tịch/.test(r)?1:/chánh văn phòng/.test(r)?2:/(ủy|uỷ) viên/.test(r)?3:4};
+        const list=(club.members||[]).filter(m=>m&&m.name&&m.name.trim()).sort((a,b)=>rank(a.role)-rank(b.role)||a.name.localeCompare(b.name,'vi'));
+        if(list.length){
+          const wrap=el('div');const grid=el('div',undefined,'members-grid');
+          for(const m of list){
+            const card=el('a',undefined,'member-card');card.href='/danh-sach-thanh-vien.html';card.style.cssText='text-decoration:none;color:inherit';
+            const avatar=el('div',undefined,'member-avatar');
+            if(/^data:image\/(jpeg|png|webp);base64,[A-Za-z0-9+/=]+$/.test(m.photo||'')){const img=el('img');img.src=m.photo;img.alt=m.name;img.loading='lazy';img.style.cssText='width:100%;height:100%;object-fit:cover;border-radius:50%';avatar.append(img)}
+            else avatar.textContent=m.name.trim().split(/\s+/).slice(-1)[0].charAt(0).toUpperCase();
+            card.append(avatar,el('h4',m.name.trim()),el('p',[m.role,m.company].map(x=>(x||'').replace(/\s+/g,' ').trim()).filter(Boolean).join(' · '),'biz'));grid.append(card);
+          }
+          const actions=el('div');actions.style.cssText='display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:32px';
+          const all=el('a','Xem danh sách đầy đủ →','btn-gold');all.href='/danh-sach-thanh-vien.html';
+          const join=el('a','Đăng ký tham gia CLB →','btn-gold');join.href='/dang-ky.html';
+          actions.append(all,join);wrap.append(grid,actions);
+          memberSection.lastElementChild.replaceWith(wrap);clubShown=true;
+        }
+      }catch{ /* Giữ nguyên khung cũ nếu chưa tải được danh sách. */ }
+    }
+    if(!clubShown&&memberSection&&health.configured){
       try{
         const members=await request('members');
         const people=new Map();
