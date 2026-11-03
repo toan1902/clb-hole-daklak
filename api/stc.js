@@ -48,6 +48,28 @@ function checkImage(body) {
   if(!valid||bytes.length>MAX_IMAGE)throw failure(400,'Tệp không phải ảnh hợp lệ hoặc vượt quá 3 MB.');
   return {bytes,extension:types[body.type]};
 }
+const REG_FIELDS={full_name:[120,true],birth_date:[40],occupation:[240],address:[500],id_number:[20],id_place:[240],phone:[20,true],company:[240],company_address:[500],business_license:[120],company_phone:[40],fax:[40],website:[300],email:[254],note:[1000]};
+function validateRegistration(body) {
+  if(!body||typeof body!=='object')throw failure(400,'Dữ liệu đăng ký không hợp lệ.');
+  if(body.hp)throw failure(400,'Không gửi được đơn. Vui lòng thử lại.');
+  const row={};
+  for(const [key,[max,required]] of Object.entries(REG_FIELDS)) {
+    const v=body[key]===undefined?'':body[key];
+    if(typeof v!=='string')throw failure(400,'Dữ liệu đăng ký không hợp lệ.');
+    const t=v.replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f]/g,'').trim();
+    if(t.length>max)throw failure(400,'Một số thông tin quá dài. Vui lòng rút gọn.');
+    if(required&&!t)throw failure(400,key==='phone'?'Vui lòng nhập số điện thoại.':'Vui lòng nhập họ và tên.');
+    row[key]=t;
+  }
+  if(row.full_name.length<2)throw failure(400,'Vui lòng nhập họ và tên đầy đủ.');
+  if(!/^\+?[0-9 .()-]{8,20}$/.test(row.phone)||row.phone.replace(/\D/g,'').length<9)throw failure(400,'Số điện thoại chưa đúng.');
+  if(row.email&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(row.email))throw failure(400,'Email chưa đúng.');
+  if(row.id_number&&!/^[0-9]{9,12}$/.test(row.id_number))throw failure(400,'Số CCCD gồm 12 chữ số.');
+  if(body.agreed_rules!==true)throw failure(400,'Vui lòng xác nhận đã đọc và tán thành Quy chế.');
+  if(body.agreed_data!==true)throw failure(400,'Vui lòng đồng ý cho CLB sử dụng thông tin để xét đơn.');
+  row.agreed_rules=true;row.agreed_data=true;
+  return row;
+}
 module.exports=async function handler(req,res) {
   res.setHeader('Cache-Control','no-store');res.setHeader('X-Content-Type-Options','nosniff');
   const send=(status,data)=>res.status(status).json(data);
@@ -75,6 +97,11 @@ module.exports=async function handler(req,res) {
       if(!rows.length)throw failure(404,'Bài viết không tồn tại hoặc chưa được xuất bản.');
       return send(200,rows[0]);
     }
+    if(action==='register'&&req.method==='POST') {
+      const row=validateRegistration(req.body);
+      await upstream('/rest/v1/ldbc_registrations',{method:'POST',body:row,headers:{Prefer:'return=minimal'}});
+      return send(200,{ok:true});
+    }
     if(action==='login'&&req.method==='POST') {
       if(typeof req.body?.email!=='string'||typeof req.body?.password!=='string'||req.body.email.length>254||req.body.password.length>1024)throw failure(400,'Nhập email và mật khẩu hợp lệ.');
       let s;try{s=await upstream('/auth/v1/token?grant_type=password',{method:'POST',body:{email:req.body.email,password:req.body.password}})}catch(e){if([400,401,422].includes(e.status))throw failure(401,'Email hoặc mật khẩu chưa đúng.');throw e}
@@ -90,6 +117,14 @@ module.exports=async function handler(req,res) {
     }
     const auth=await admin(req,res),token=auth.token;
     if(action==='session'&&req.method==='GET')return send(200,{email:auth.user.email});
+    if(action==='registrations'&&req.method==='GET')return send(200,await upstream('/rest/v1/ldbc_registrations?select=*&order=created_at.desc&limit=1000',{token}));
+    if(action==='registration-status'&&req.method==='POST') {
+      const {id,status}=req.body||{};
+      if(!/^[0-9a-f-]{36}$/i.test(String(id||''))||!['new','contacted','approved','rejected'].includes(status))throw failure(400,'Trạng thái không hợp lệ.');
+      const rows=await upstream('/rest/v1/ldbc_registrations?id=eq.'+id,{token,method:'PATCH',body:{status},headers:{Prefer:'return=representation'}});
+      if(!rows.length)throw failure(404,'Không tìm thấy đơn đăng ký.');
+      return send(200,rows[0]);
+    }
     if(action==='fetch-url'&&req.method==='POST') {
       const raw=String(req.body?.url||'').trim();
       let target;try{target=new URL(/^[a-zA-Z][a-zA-Z0-9+.-]*:\/\//.test(raw)?raw:'https://'+raw)}catch{throw failure(400,'Địa chỉ website không hợp lệ.')}
@@ -145,3 +180,4 @@ module.exports=async function handler(req,res) {
   } catch(e) { return send(e.status||500,{message:e.status?e.message:'Có lỗi xử lý. Vui lòng thử lại.'}); }
 };
 module.exports.checkImage=checkImage;
+module.exports.validateRegistration=validateRegistration;

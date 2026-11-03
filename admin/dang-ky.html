@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Đơn đăng ký tham gia · Quản trị LĐBC</title><link rel="stylesheet" href="/admin/style.css?v=7"><link rel="stylesheet" href="/admin/registrations.css?v=1"></head>
+<body class="reg-admin">
+<header class="reg-admin-head">
+  <div><span class="eyebrow">LĐBC / QUẢN TRỊ</span><h1>Đơn đăng ký tham gia CLB</h1><p class="hint">Đơn gửi từ trang <a href="/dang-ky.html" target="_blank" rel="noopener">lđbc.vn/dang-ky.html</a>. Thông tin cá nhân chỉ dùng để xét kết nạp; không chia sẻ ra ngoài.</p></div>
+  <div class="reg-admin-actions"><a class="button-link" href="/admin/">← Quản trị bài viết</a><button id="csvButton" class="primary" type="button" disabled>Tải danh sách (Excel/CSV)</button></div>
+</header>
+<p id="regMessage" class="message" role="status" aria-live="polite">Đang tải…</p>
+<div class="reg-filter"><label>Lọc theo trạng thái<select id="statusFilter"><option value="">Tất cả</option><option value="new">Mới</option><option value="contacted">Đã liên hệ</option><option value="approved">Đã chấp thuận</option><option value="rejected">Không chấp thuận</option></select></label><span id="regCount" class="hint"></span></div>
+<div class="reg-table-wrap"><table id="regTable"><thead><tr><th>Ngày gửi</th><th>Họ và tên</th><th>Điện thoại / Email</th><th>Doanh nghiệp</th><th>Chi tiết</th><th>Trạng thái</th></tr></thead><tbody id="regBody"></tbody></table></div>
+<script src="/stc-config.js?v=6"></script><script src="/admin/registrations.js?v=1"></script>
+</body></html>

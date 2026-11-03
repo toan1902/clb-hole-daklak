@@ -1,0 +1,15 @@
+.reg-admin{padding:32px clamp(16px,4vw,48px);max-width:1400px;margin:auto}
+.reg-admin-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;align-items:flex-end;margin-bottom:12px}
+.reg-admin-head h1{margin:6px 0 8px}
+.reg-admin-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.button-link{display:inline-flex;align-items:center;min-height:44px;padding:10px 16px;border:1px solid var(--line);border-radius:7px;background:white;font-weight:600;text-decoration:none}
+.reg-filter{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end;margin:12px 0}
+.reg-filter label{margin:0;min-width:220px}
+.reg-table-wrap{overflow-x:auto;background:white;border:1px solid var(--line);border-radius:10px}
+#regTable{width:100%;border-collapse:collapse;font-size:.92rem}
+#regTable th,#regTable td{text-align:left;vertical-align:top;padding:12px 14px;border-bottom:1px solid var(--line)}
+#regTable th{background:#faf6f0;font-size:.8rem;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);white-space:nowrap}
+#regTable td.detail{min-width:260px;color:var(--muted);font-size:.85rem;line-height:1.55}
+#regTable select{margin:0;min-width:160px}
+#regTable tr.status-new td:first-child{border-left:4px solid var(--red)}
+.reg-empty{padding:28px;text-align:center;color:var(--muted)}
