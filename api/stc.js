@@ -97,6 +97,15 @@ module.exports=async function handler(req,res) {
       if(!rows.length)throw failure(404,'Bài viết không tồn tại hoặc chưa được xuất bản.');
       return send(200,rows[0]);
     }
+    if(action==='club-members'&&req.method==='GET') {
+      // Danh sách công khai từ công cụ quản lý thành viên (QR "Danh sách thành viên LĐBC").
+      let r;try{r=await fetch('https://thanhvien-ldbc.vercel.app/api/members',{signal:AbortSignal.timeout(15000),headers:{Accept:'application/json'}})}catch{throw failure(502,'Chưa tải được danh sách thành viên.')}
+      if(!r.ok)throw failure(502,'Chưa tải được danh sách thành viên.');
+      const d=await r.json(),keys=['id','name','role','position','company','industry','phone','email','address','branches','website','facebook','zalo','intro','photo'];
+      const members=(Array.isArray(d.members)?d.members:[]).map(m=>Object.fromEntries(keys.map(k=>[k,typeof m[k]==='string'?m[k].slice(0,k==='photo'?400000:2000):''])));
+      res.setHeader('Cache-Control','public, s-maxage=60, stale-while-revalidate=300');
+      return res.status(200).json({members,revision:d.revision||0});
+    }
     if(action==='register'&&req.method==='POST') {
       const row=validateRegistration(req.body);
       await upstream('/rest/v1/ldbc_registrations',{method:'POST',body:row,headers:{Prefer:'return=minimal'}});

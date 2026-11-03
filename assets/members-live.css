@@ -1,0 +1,22 @@
+.ml-tools{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end;justify-content:space-between;margin-bottom:12px}
+.ml-search{flex:1 1 320px;max-width:520px;margin:0}
+.ml-count{font-size:14px;color:var(--muted)}
+.ml-status{color:var(--muted);margin:8px 0 20px}
+.ml-status.err{color:#b3261e;font-weight:600}
+.ml-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:20px;padding-bottom:64px}
+.ml-card{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:14px;box-shadow:0 12px 36px #462e180a}
+.ml-head{display:flex;gap:16px;align-items:center}
+.ml-avatar{width:76px;height:76px;flex:none;border-radius:50%;overflow:hidden;background:linear-gradient(145deg,#a52b32,#65161d);color:#ecd19b;display:flex;align-items:center;justify-content:center;font:28px Georgia,serif;border:3px solid #ecd19b}
+.ml-avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.ml-name{font:700 21px/1.25 'Playfair Display',Georgia,serif;color:var(--wine);margin:0}
+.ml-role{display:inline-block;margin-top:6px;font-size:12px;font-weight:700;letter-spacing:.5px;color:#fff;background:var(--red);border-radius:999px;padding:3px 10px}
+.ml-company{font-weight:700;font-size:15.5px}
+.ml-company small{display:block;font-weight:500;color:var(--muted);font-size:13.5px}
+.ml-info{display:grid;gap:5px;font-size:14px;margin:0}
+.ml-info div{display:grid;grid-template-columns:92px 1fr;gap:8px}
+.ml-info dt{color:var(--muted)}
+.ml-info dd{margin:0;overflow-wrap:anywhere}
+.ml-intro{font-size:14px;color:var(--muted);border-top:1px dashed var(--line);padding-top:10px;white-space:pre-line}
+.ml-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
+.ml-actions a{min-height:40px;padding:8px 14px;font-size:14px}
+@media(max-width:600px){.ml-grid{grid-template-columns:1fr}.ml-card{padding:18px}}
