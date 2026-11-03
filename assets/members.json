@@ -76,11 +76,11 @@
   },
   {
     "id": "le-long",
-    "name": "Lê Long",
+    "name": "Lê Hoàng Long",
     "role": "Ủy viên BCH",
     "bio": "Ủy viên Ban Chấp hành, tham gia hoạch định chiến lược và triển khai các hoạt động của CLB.",
     "phone": "tel:0984553246",
-    "initials": "LL",
+    "initials": "HL",
     "fields": {
       "name": "page-99",
       "role": "page-100",
@@ -103,5 +103,13 @@
       "phone": "page-110",
       "avatar": "page-104"
     }
+  },
+  {
+    "id": "le-thi-lan",
+    "name": "Lê Thị Lan",
+    "role": "Ủy viên BCH",
+    "bio": "Ủy viên Ban Chấp hành, nhà sáng lập Văn phòng phẩm Vũ Phát – phân phối văn phòng phẩm, hoa tươi và quà tặng.",
+    "phone": "tel:0973887878",
+    "initials": "TL"
   }
 ]

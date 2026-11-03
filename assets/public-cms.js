@@ -14,7 +14,7 @@
     if(slug)originalCards.set(slug,card.cloneNode(true));
   }
   try{
-    const [health,legacy,catalog]=await Promise.all([request('health'),asset('/assets/legacy-layout.json?v=2'),asset('/assets/members.json?v=4')]);
+    const [health,legacy,catalog]=await Promise.all([request('health'),asset('/assets/legacy-layout.json?v=2'),asset('/assets/members.json?v=5')]);
     let posts=[],content=[];
     if(!health.configured)posts=await asset('/assets/original-posts.json');
     if(location.pathname==='/thanh-vien.html'){
