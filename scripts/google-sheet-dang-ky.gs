@@ -4,7 +4,7 @@
 // (Thực thi với tư cách: Tôi; Người có quyền truy cập: Bất kỳ ai) → copy URL /exec.
 // SECRET phải trùng biến môi trường GSHEET_SECRET trên Vercel.
 const SECRET = 'THAY_BANG_GSHEET_SECRET';
-const NOTIFY_TO = 'toanlqfpt1902@gmail.com';
+const NOTIFY_TO = 'doanhnhanholedaklak@gmail.com';
 const ADMIN_URL = 'https://xn--lbc-vqa.vn/admin/dang-ky.html';
 
 function doPost(e) {
