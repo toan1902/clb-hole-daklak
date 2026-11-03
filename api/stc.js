@@ -100,6 +100,10 @@ module.exports=async function handler(req,res) {
     if(action==='register'&&req.method==='POST') {
       const row=validateRegistration(req.body);
       await upstream('/rest/v1/ldbc_registrations',{method:'POST',body:row,headers:{Prefer:'return=minimal'}});
+      // Gửi thêm bản sao sang Google Sheet + email báo (không làm hỏng việc lưu đơn nếu lỗi).
+      if(process.env.GSHEET_WEBHOOK_URL&&process.env.GSHEET_SECRET) {
+        try{await fetch(process.env.GSHEET_WEBHOOK_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...row,created_at:new Date().toISOString(),secret:process.env.GSHEET_SECRET}),signal:AbortSignal.timeout(15000)})}catch{}
+      }
       return send(200,{ok:true});
     }
     if(action==='login'&&req.method==='POST') {
